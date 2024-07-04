@@ -1,0 +1,166 @@
+body {
+    position: relative;
+}
+
+.main_background {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+}
+
+.main_nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(255, 255, 255, 0.3);
+    padding: 10px 0;
+}
+
+.main_nav_logo {
+    width: 5%;
+}
+
+.main_small_logo {
+    width: 100%;
+    cursor: pointer;
+}
+
+.main_nav_text {
+    text-align: center;
+    color: black;
+    font-size: 1.5vw;
+    font-family: Inter;
+    font-weight: 500;
+}
+
+.main_logout {
+    background: white;
+    border: 1px black solid;
+    border-radius: 10px;
+    overflow: hidden;
+    display: inline-block;
+    font-size: 1vw;
+    font-family: Inter;
+    font-weight: 200;
+    cursor: pointer;
+}
+
+.main_logo {
+    width: 25%;
+    display: block;
+    margin: 0 auto;
+    padding-top: 10%;
+    opacity: 1;
+}
+
+.main_logo_text {
+    text-align: center;
+    font-size: 1.5vw;
+    font-family: Inter;
+    font-weight: 600;
+    padding-bottom: 5%;
+}
+
+.main_best_color_comment {
+    display: flex;
+    justify-content: space-between;
+    margin: 6% 0;
+}
+
+.main_best_color_div {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main_best_color_img {
+    width: 90%;
+    margin: 7%;
+}
+
+.main_best_color_text {
+    position: absolute;
+    font-size: 1.4vw;
+    font-family: Inter;
+    font-weight: 600;
+}
+
+#main_best_color_num {
+    font-size: 1.1vw;
+}
+
+.main_best_comment_div {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main_best_comment_img {
+    width: 90%;
+    margin: 7%;
+}
+
+.main_best_comment_text {
+    position: absolute;
+    font-size: 1.3vw;
+    font-family: Inter;
+    font-weight: 600;
+}
+
+#main_best_comment_num {
+    font-size: 1.1vw;
+}
+
+.main_article_div {
+    width: 100%;
+    background: #9cb18e;
+    display: flex;
+    justify-content: space-around;
+    padding: 6% 0;
+}
+
+.main_hr {
+    width: 200%;
+    border: 1px black solid;
+}
+
+.main_new_article_div {
+    padding-right: 20vw;
+}
+.main_follow_article_div {
+    padding-right: 20vw;
+}
+
+.main_new_article {
+    font-size: 2.2vw;
+    font-family: Inter;
+    font-weight: bold;
+    margin-bottom: 10%;
+}
+
+.main_follow_article {
+    font-size: 2.2vw;
+    font-family: Inter;
+    font-weight: bold;
+    margin-bottom: 10%;
+}
+
+.main_article_title {
+    font-size: 1.3vw;
+    font-family: Inter;
+    font-weight: bold;
+}
+
+.main_article_subtitle {
+    font-size: 1vw;
+    font-family: Inter;
+}
+
+.main_more_btn {
+    font-size: 1vw;
+    color: black;
+    margin-top: 50px;
+}
