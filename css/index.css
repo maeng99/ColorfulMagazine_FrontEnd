@@ -10,11 +10,15 @@ body {
 }
 
 .main_nav {
+    width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: rgb(255, 255, 255, 0.3);
-    padding: 10px 0;
+    background-color: rgb(255, 255, 255, 0.5);
+    padding: 5px 0;
+    position: fixed;
+    top: 0;
+    z-index: 2;
 }
 
 .main_nav_logo {
@@ -32,11 +36,12 @@ body {
     font-size: 1.5vw;
     font-family: Inter;
     font-weight: 500;
+    text-decoration-line: none;
 }
 
 .main_logout {
     background: white;
-    border: 1px black solid;
+    border: none;
     border-radius: 10px;
     overflow: hidden;
     display: inline-block;
