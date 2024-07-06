@@ -3,7 +3,66 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <title>색다른 주간지</title>
+        <link rel="stylesheet" href="./css/write.css" />
     </head>
-    <body></body>
+    <body>
+        <div class="write_nav">
+            <a class="write_nav_logo" href="index.html">
+                <img src="./img/small_logo.png" class="write_small_logo" />
+            </a>
+            <a class="write_nav_text" href="mypage.html">마이페이지</a>
+            <a class="write_nav_text" href="write.html"><b>작성페이지</b></a>
+            <a class="write_nav_text" href="search.html">검색페이지</a>
+            <a class="write_nav_logout" href="login.html">
+                <button class="write_logout">로그아웃</button>
+            </a>
+        </div>
+
+        <form class="write_form">
+            <div class="write_form_input_div">
+                <div>
+                    <input type="text" class="write_form_title" placeholder="제목을 입력해주세요" required />
+                </div>
+                <hr class="write_hr" />
+                <div>
+                    <label class="write_form_date_label">날짜를 선택해주세요</label>
+                    <input
+                        type="date"
+                        class="write_form_date"
+                        name="write_date"
+                        min="2000-01-01"
+                        max="2030-12-31"
+                        placeholder="날짜를 입력해주세요"
+                        required
+                    />
+                </div>
+                <hr class="write_hr" />
+                <div>
+                    <label class="write_form_color_label"
+                        >이번 주는 어떠한 색깔로 살아오셨나요?&nbsp;
+                        <img src="./img/question.png" class="write_color_info" />
+                    </label>
+                    <button type="button" class="write_form_color_btn">빨강</button>
+                    <button type="button" class="write_form_color_btn">주황</button>
+                    <button type="button" class="write_form_color_btn">노랑</button>
+                    <button type="button" class="write_form_color_btn">초록</button>
+                    <button type="button" class="write_form_color_btn">파랑</button>
+                    <button type="button" class="write_form_color_btn">보라</button>
+                </div>
+                <hr class="write_hr" />
+                <div>
+                    <textarea class="write_form_content" placeholder="당신의 이야기를 적어주세요" required></textarea>
+                </div>
+                <hr class="write_hr" />
+                <div>
+                    <textarea class="write_form_comment" placeholder="코멘트를 작성해주세요" required></textarea>
+                </div>
+            </div>
+            <div class="write_form_submit_div">
+                <button type="button" class="write_form_cancel">취소</button>
+                <button type="submit" class="write_form_submit">발행</button>
+            </div>
+        </form>
+    </body>
 </html>

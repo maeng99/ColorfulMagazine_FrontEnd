@@ -1,701 +1,109 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <title>색다른 주간지</title>
+        <link rel="stylesheet" href="./css/index.css" />
     </head>
     <body>
-        <div style="width: 100%; position: relative; background: #f9f5ef">
-            <img
-                style="width: 1440px; height: 1543px; left: -2px; top: 0px; position: absolute"
-                src="https://via.placeholder.com/1440x1543"
-            />
-            <div
-                style="
-                    left: 543px;
-                    top: 317px;
-                    position: absolute;
-                    color: #2c323e;
-                    font-size: 128px;
-                    font-family: Inter;
-                    font-weight: 900;
-                    word-wrap: break-word;
-                "
-            >
-                색다른
+        <div>
+            <img src="./img/main_background 1.png" class="main_background" />
+        </div>
+
+        <div class="main_nav">
+            <a class="main_nav_logo" href="index.html">
+                <img src="./img/small_logo.png" class="main_small_logo" />
+            </a>
+            <a class="main_nav_text" href="mypage.html">마이페이지</a>
+            <a class="main_nav_text" href="write.html">작성페이지</a>
+            <a class="main_nav_text" href="search.html">검색페이지</a>
+            <a class="main_nav_logout" href="login.html">
+                <button class="main_logout">로그아웃</button>
+            </a>
+        </div>
+
+        <div>
+            <img src="./img/main_logo.png" alt="main_logo" class="main_logo" />
+            <p class="main_logo_text">나만의 주간지를 다채로운 색깔로 채워보세요</p>
+        </div>
+        <div class="main_best_color_comment">
+            <div class="main_best_color_div">
+                <img src="./img/best_color.png" class="main_best_color_img" />
+                <p class="main_best_color_text">
+                    6월 4주 <br />가장 많이 선택된 컬러<br /><br />
+                    <span id="main_best_color_num">✒︎ 630</span>
+                </p>
             </div>
-            <div
-                style="width: 1440px; height: 850px; left: 0px; top: 1518px; position: absolute; background: #9cb18e"
-            ></div>
-            <div
-                style="
-                    width: 566px;
-                    height: 261.5px;
-                    left: 37px;
-                    top: 1102.23px;
-                    position: absolute;
-                    transform: rotate(-16.55deg);
-                    transform-origin: 0 0;
-                    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-                    border-radius: 20px;
-                    border: 120px #9cb18e solid;
-                "
-            ></div>
-            <div
-                style="
-                    width: 20px;
-                    height: 20px;
-                    padding-top: 1.58px;
-                    padding-bottom: 1.21px;
-                    padding-left: 2.05px;
-                    padding-right: 0.76px;
-                    left: 237px;
-                    top: 1186px;
-                    position: absolute;
-                    justify-content: center;
-                    align-items: center;
-                    display: inline-flex;
-                "
-            >
-                <div style="width: 17.2px; height: 17.21px; background: #2c323e"></div>
+            <div class="main_best_comment_div">
+                <img src="./img/best_comment.png" class="main_best_comment_img" />
+                <p class="main_best_comment_text">
+                    6월 4주 <br />가장 많은 공감을 얻은 코멘트<br /><br />
+                    “하나의 그림에는 수많은 색채가 담겨져 있다.<br />하나의 색깔로만 칠해진 그림은 어디에도 없다.<br />수많은
+                    색채들이 어울려서 하나의 명작을 만들어낸다.”<br /><br />-헤르만 헤세-<br /><br />
+                    <span id="main_best_comment_num">♥︎ 2024</span>
+                </p>
             </div>
-            <div
-                style="
-                    left: 544px;
-                    top: 472px;
-                    position: absolute;
-                    color: #2c323e;
-                    font-size: 128px;
-                    font-family: Inter;
-                    font-weight: 900;
-                    word-wrap: break-word;
-                "
-            >
-                주간지
-            </div>
-            <div
-                style="
-                    left: 613px;
-                    top: 381px;
-                    position: absolute;
-                    color: #8298ca;
-                    font-size: 120px;
-                    font-family: Kapakana;
-                    font-weight: 400;
-                    word-wrap: break-word;
-                "
-            >
-                color
-            </div>
-            <div
-                style="
-                    left: 499px;
-                    top: 627px;
-                    position: absolute;
-                    color: #2c323e;
-                    font-size: 24px;
-                    font-family: Inter;
-                    font-weight: 600;
-                    word-wrap: break-word;
-                "
-            >
-                나만의 주간지를 다채로운 색깔로 채워보세요
-            </div>
-            <div
-                style="
-                    left: 261px;
-                    top: 1187px;
-                    position: absolute;
-                    color: #2c323e;
-                    font-size: 15px;
-                    font-family: Inter;
-                    font-weight: 500;
-                    word-wrap: break-word;
-                "
-            >
-                630
-            </div>
-            <div
-                style="
-                    left: 237px;
-                    top: 1118px;
-                    position: absolute;
-                    color: #2c323e;
-                    font-size: 24px;
-                    font-family: Inter;
-                    font-weight: 600;
-                    word-wrap: break-word;
-                "
-            >
-                6월 4주 <br />가장 많이 선택된 컬러
-            </div>
-            <div
-                style="
-                    left: 84px;
-                    top: 1662px;
-                    position: absolute;
-                    text-align: center;
-                    color: #2c323e;
-                    font-size: 32px;
-                    font-family: Inter;
-                    font-weight: 600;
-                    word-wrap: break-word;
-                "
-            >
-                최신 발행 주간지
-            </div>
-            <div
-                style="
-                    width: 580px;
-                    height: 0px;
-                    left: 84px;
-                    top: 1831px;
-                    position: absolute;
-                    border-radius: 20px;
-                    border: 2px #2c323e solid;
-                "
-            ></div>
-            <div
-                style="
-                    width: 580px;
-                    height: 0px;
-                    left: 84px;
-                    top: 1920px;
-                    position: absolute;
-                    border-radius: 20px;
-                    border: 2px #2c323e solid;
-                "
-            ></div>
-            <div
-                style="
-                    width: 580px;
-                    height: 0px;
-                    left: 84px;
-                    top: 2011px;
-                    position: absolute;
-                    border-radius: 20px;
-                    border: 2px #2c323e solid;
-                "
-            ></div>
-            <div
-                style="
-                    width: 580px;
-                    height: 0px;
-                    left: 84px;
-                    top: 2099px;
-                    position: absolute;
-                    border-radius: 20px;
-                    border: 2px #2c323e solid;
-                "
-            ></div>
-            <div
-                style="
-                    width: 580px;
-                    height: 0px;
-                    left: 84px;
-                    top: 2189px;
-                    position: absolute;
-                    border-radius: 20px;
-                    border: 2px #2c323e solid;
-                "
-            ></div>
-            <div style="width: 300px; left: 84px; top: 1756px; position: absolute">
-                <span
-                    style="color: #2c323e; font-size: 24px; font-family: Inter; font-weight: 600; word-wrap: break-word"
-                    >주간 강아지 22호<br /></span
-                ><span
-                    style="color: #2c323e; font-size: 20px; font-family: Inter; font-weight: 500; word-wrap: break-word"
-                    >부제</span
-                >
-            </div>
-            <div style="width: 300px; left: 84px; top: 1847px; position: absolute">
-                <span
-                    style="color: #2c323e; font-size: 24px; font-family: Inter; font-weight: 600; word-wrap: break-word"
-                    >주간 고양이 21호<br /></span
-                ><span
-                    style="color: #2c323e; font-size: 20px; font-family: Inter; font-weight: 500; word-wrap: break-word"
-                    >부제</span
-                >
-            </div>
-            <div style="width: 300px; left: 84px; top: 1938px; position: absolute">
-                <span
-                    style="color: #2c323e; font-size: 24px; font-family: Inter; font-weight: 600; word-wrap: break-word"
-                    >주간 햄스터 22호<br /></span
-                ><span
-                    style="color: #2c323e; font-size: 20px; font-family: Inter; font-weight: 500; word-wrap: break-word"
-                    >부제</span
-                >
-            </div>
-            <div style="width: 300px; left: 84px; top: 2027px; position: absolute">
-                <span
-                    style="color: #2c323e; font-size: 24px; font-family: Inter; font-weight: 600; word-wrap: break-word"
-                    >주간 판다 20호<br /></span
-                ><span
-                    style="color: #2c323e; font-size: 20px; font-family: Inter; font-weight: 500; word-wrap: break-word"
-                    >부제</span
-                >
-            </div>
-            <div style="width: 300px; left: 84px; top: 2117px; position: absolute">
-                <span
-                    style="color: #2c323e; font-size: 24px; font-family: Inter; font-weight: 600; word-wrap: break-word"
-                    >주간 호랑이 22호<br /></span
-                ><span
-                    style="color: #2c323e; font-size: 20px; font-family: Inter; font-weight: 500; word-wrap: break-word"
-                    >부제</span
-                >
-            </div>
-            <div
-                style="
-                    left: 84px;
-                    top: 2212px;
-                    position: absolute;
-                    color: #2c323e;
-                    font-size: 16px;
-                    font-family: Inter;
-                    font-weight: 500;
-                    text-decoration: underline;
-                    word-wrap: break-word;
-                "
-            >
-                더보기
-            </div>
-            <div
-                style="
-                    left: 764px;
-                    top: 1662px;
-                    position: absolute;
-                    text-align: center;
-                    color: #2c323e;
-                    font-size: 32px;
-                    font-family: Inter;
-                    font-weight: 600;
-                    word-wrap: break-word;
-                "
-            >
-                아기사자님의 팔로잉
-            </div>
-            <div
-                style="
-                    width: 580px;
-                    height: 0px;
-                    left: 764px;
-                    top: 1831px;
-                    position: absolute;
-                    border-radius: 20px;
-                    border: 2px #2c323e solid;
-                "
-            ></div>
-            <div
-                style="
-                    width: 580px;
-                    height: 0px;
-                    left: 764px;
-                    top: 1920px;
-                    position: absolute;
-                    border-radius: 20px;
-                    border: 2px #2c323e solid;
-                "
-            ></div>
-            <div
-                style="
-                    width: 580px;
-                    height: 0px;
-                    left: 764px;
-                    top: 2011px;
-                    position: absolute;
-                    border-radius: 20px;
-                    border: 2px #2c323e solid;
-                "
-            ></div>
-            <div
-                style="
-                    width: 580px;
-                    height: 0px;
-                    left: 764px;
-                    top: 2099px;
-                    position: absolute;
-                    border-radius: 20px;
-                    border: 2px #2c323e solid;
-                "
-            ></div>
-            <div
-                style="
-                    width: 580px;
-                    height: 0px;
-                    left: 764px;
-                    top: 2189px;
-                    position: absolute;
-                    border-radius: 20px;
-                    border: 2px #2c323e solid;
-                "
-            ></div>
-            <div style="width: 300px; left: 764px; top: 1756px; position: absolute">
-                <span
-                    style="color: #2c323e; font-size: 24px; font-family: Inter; font-weight: 600; word-wrap: break-word"
-                    >주간 수뭉 22호<br /></span
-                ><span
-                    style="color: #2c323e; font-size: 20px; font-family: Inter; font-weight: 500; word-wrap: break-word"
-                    >부제</span
-                >
-            </div>
-            <div style="width: 300px; left: 764px; top: 1847px; position: absolute">
-                <span
-                    style="color: #2c323e; font-size: 24px; font-family: Inter; font-weight: 600; word-wrap: break-word"
-                    >주간 수뭉 21호<br /></span
-                ><span
-                    style="color: #2c323e; font-size: 20px; font-family: Inter; font-weight: 500; word-wrap: break-word"
-                    >부제</span
-                >
-            </div>
-            <div style="width: 300px; left: 764px; top: 1938px; position: absolute">
-                <span
-                    style="color: #2c323e; font-size: 24px; font-family: Inter; font-weight: 600; word-wrap: break-word"
-                    >주간 수뭉 20호<br /></span
-                ><span
-                    style="color: #2c323e; font-size: 20px; font-family: Inter; font-weight: 500; word-wrap: break-word"
-                    >부제</span
-                >
-            </div>
-            <div style="width: 300px; left: 764px; top: 2027px; position: absolute">
-                <span
-                    style="color: #2c323e; font-size: 24px; font-family: Inter; font-weight: 600; word-wrap: break-word"
-                    >주간 수뭉 19호<br /></span
-                ><span
-                    style="color: #2c323e; font-size: 20px; font-family: Inter; font-weight: 500; word-wrap: break-word"
-                    >부제</span
-                >
-            </div>
-            <div style="width: 300px; left: 764px; top: 2117px; position: absolute">
-                <span
-                    style="color: #2c323e; font-size: 24px; font-family: Inter; font-weight: 600; word-wrap: break-word"
-                    >주간 수뭉 18호<br /></span
-                ><span
-                    style="color: #2c323e; font-size: 20px; font-family: Inter; font-weight: 500; word-wrap: break-word"
-                    >부제</span
-                >
-            </div>
-            <div
-                style="
-                    left: 764px;
-                    top: 2212px;
-                    position: absolute;
-                    color: #2c323e;
-                    font-size: 16px;
-                    font-family: Inter;
-                    font-weight: 500;
-                    text-decoration: underline;
-                    word-wrap: break-word;
-                "
-            >
-                더보기
-            </div>
-            <img
-                style="
-                    width: 600px;
-                    height: 420px;
-                    left: 799.91px;
-                    top: 949px;
-                    position: absolute;
-                    transform: rotate(2.58deg);
-                    transform-origin: 0 0;
-                    background: linear-gradient(0deg, #e7e3df 0%, #e7e3df 100%);
-                    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-                "
-                src="https://via.placeholder.com/600x420"
-            />
-            <div
-                style="
-                    width: 580px;
-                    height: 300px;
-                    left: 806.98px;
-                    top: 1015.25px;
-                    position: absolute;
-                    transform: rotate(2.58deg);
-                    transform-origin: 0 0;
-                "
-            >
-                <div
-                    style="
-                        width: 580px;
-                        height: 300px;
-                        left: 0px;
-                        top: 0px;
-                        position: absolute;
-                        transform: rotate(2.58deg);
-                        transform-origin: 0 0;
-                        background: rgba(217, 217, 217, 0);
-                        border: 1px rgba(0, 0, 0, 0.1) solid;
-                    "
-                ></div>
-                <div
-                    style="
-                        width: 0px;
-                        height: 298px;
-                        left: 118.47px;
-                        top: 6.34px;
-                        position: absolute;
-                        transform: rotate(2.58deg);
-                        transform-origin: 0 0;
-                        border: 1px rgba(0, 0, 0, 0.1) solid;
-                    "
-                ></div>
-                <div
-                    style="
-                        width: 460.7px;
-                        height: 0px;
-                        left: 116.76px;
-                        top: 44.3px;
-                        position: absolute;
-                        transform: rotate(2.58deg);
-                        transform-origin: 0 0;
-                        border: 1px rgba(0, 0, 0, 0.1) solid;
-                    "
-                ></div>
-                <div
-                    style="
-                        width: 460.7px;
-                        height: 0px;
-                        left: 114.96px;
-                        top: 84.26px;
-                        position: absolute;
-                        transform: rotate(2.58deg);
-                        transform-origin: 0 0;
-                        border: 1px rgba(0, 0, 0, 0.1) solid;
-                    "
-                ></div>
-                <div
-                    style="
-                        width: 460.7px;
-                        height: 0px;
-                        left: 113.16px;
-                        top: 124.22px;
-                        position: absolute;
-                        transform: rotate(2.58deg);
-                        transform-origin: 0 0;
-                        border: 1px rgba(0, 0, 0, 0.1) solid;
-                    "
-                ></div>
-                <div
-                    style="
-                        width: 460.7px;
-                        height: 0px;
-                        left: 111.36px;
-                        top: 164.18px;
-                        position: absolute;
-                        transform: rotate(2.58deg);
-                        transform-origin: 0 0;
-                        border: 1px rgba(0, 0, 0, 0.1) solid;
-                    "
-                ></div>
-                <div
-                    style="
-                        width: 460.7px;
-                        height: 0px;
-                        left: 105.96px;
-                        top: 284.06px;
-                        position: absolute;
-                        transform: rotate(2.58deg);
-                        transform-origin: 0 0;
-                        border: 1px rgba(0, 0, 0, 0.1) solid;
-                    "
-                ></div>
-                <div
-                    style="
-                        width: 460.7px;
-                        height: 0px;
-                        left: 109.56px;
-                        top: 204.14px;
-                        position: absolute;
-                        transform: rotate(2.58deg);
-                        transform-origin: 0 0;
-                        border: 1px rgba(0, 0, 0, 0.1) solid;
-                    "
-                ></div>
-                <div
-                    style="
-                        width: 460.7px;
-                        height: 0px;
-                        left: 107.71px;
-                        top: 245.1px;
-                        position: absolute;
-                        transform: rotate(2.58deg);
-                        transform-origin: 0 0;
-                        border: 1px rgba(0, 0, 0, 0.1) solid;
-                    "
-                ></div>
-            </div>
-            <div
-                style="
-                    left: 827px;
-                    top: 1026px;
-                    position: absolute;
-                    color: #2c323e;
-                    font-size: 24px;
-                    font-family: Inter;
-                    font-weight: 600;
-                    word-wrap: break-word;
-                "
-            >
-                6월 4주 <br />가장 많은 공감을 얻은 코멘트
-            </div>
-            <div
-                style="
-                    width: 560px;
-                    left: 827px;
-                    top: 1121px;
-                    position: absolute;
-                    color: #2c323e;
-                    font-size: 24px;
-                    font-family: Inter;
-                    font-weight: 600;
-                    word-wrap: break-word;
-                "
-            >
-                “하나의 그림에는 수많은 색채가 담겨져 있다.<br />하나의 색깔로만 칠해진 그림은 어디에도 없다.<br />수많은
-                색채들이 어울려서 하나의 명작을 만들어낸다.”<br /><br />-헤르만 헤세-
-            </div>
-            <div
-                style="width: 20px; height: 20px; left: 827px; top: 1304px; position: absolute; background: #545454"
-            ></div>
-            <div
-                style="
-                    left: 855px;
-                    top: 1305px;
-                    position: absolute;
-                    text-align: center;
-                    color: #2c323e;
-                    font-size: 15px;
-                    font-family: Inter;
-                    font-weight: 600;
-                    word-wrap: break-word;
-                "
-            >
-                2024
-            </div>
-            <div
-                style="
-                    width: 1440px;
-                    height: 100px;
-                    left: 0px;
-                    top: 0px;
-                    position: absolute;
-                    background: rgba(249, 245, 239, 0);
-                "
-            ></div>
-            <div
-                style="
-                    left: 474px;
-                    top: 36px;
-                    position: absolute;
-                    justify-content: flex-start;
-                    align-items: flex-start;
-                    gap: 80px;
-                    display: inline-flex;
-                "
-            >
-                <div
-                    style="
-                        text-align: center;
-                        color: #2c323e;
-                        font-size: 24px;
-                        font-family: Inter;
-                        font-weight: 500;
-                        word-wrap: break-word;
-                    "
-                >
-                    마이페이지
+        </div>
+
+        <div class="main_article_div">
+            <div class="main_new_article_div">
+                <div class="main_new_article">최신 발행 주간지</div>
+                <div>
+                    <span class="main_article_title">비가 오는 날<br /></span>
+                    <span class="main_article_subtitle">주간 강아지 22호</span>
+                    <hr class="main_hr" />
                 </div>
-                <div
-                    style="
-                        text-align: center;
-                        color: #2c323e;
-                        font-size: 24px;
-                        font-family: Inter;
-                        font-weight: 500;
-                        word-wrap: break-word;
-                    "
-                >
-                    작성페이지
+                <div>
+                    <span class="main_article_title">제목<br /></span>
+                    <span class="main_article_subtitle">주간 고양이 22호</span>
+                    <hr class="main_hr" />
                 </div>
-                <div
-                    style="
-                        text-align: center;
-                        color: #2c323e;
-                        font-size: 24px;
-                        font-family: Inter;
-                        font-weight: 500;
-                        word-wrap: break-word;
-                    "
-                >
-                    검색페이지
+                <div>
+                    <span class="main_article_title">제목<br /></span>
+                    <span class="main_article_subtitle">주간 햄스터 22호</span>
+                    <hr class="main_hr" />
                 </div>
+                <div>
+                    <span class="main_article_title">제목<br /></span>
+                    <span class="main_article_subtitle">주간 푸바오 22호</span>
+                    <hr class="main_hr" />
+                </div>
+                <div>
+                    <span class="main_article_title">제목<br /></span>
+                    <span class="main_article_subtitle">주간 호랑이 22호</span>
+                    <hr class="main_hr" />
+                </div>
+                <div><a href="#" class="main_more_btn">더보기</a></div>
             </div>
-            <div
-                style="
-                    padding-left: 9px;
-                    padding-right: 9px;
-                    padding-top: 8px;
-                    padding-bottom: 8px;
-                    left: 1323px;
-                    top: 32px;
-                    position: absolute;
-                    background: white;
-                    border-radius: 10px;
-                    overflow: hidden;
-                    justify-content: center;
-                    align-items: center;
-                    gap: 10px;
-                    display: inline-flex;
-                "
-            >
-                <div
-                    style="color: #2c323e; font-size: 16px; font-family: Inter; font-weight: 400; word-wrap: break-word"
-                >
-                    로그아웃
+            <div class="main_follow_article_div">
+                <div class="main_follow_article">아기사자님의 팔로잉</div>
+                <div class="main_article_content">
+                    <span class="main_article_title">색깔이 우리에게 주는 힘<br /></span>
+                    <span class="main_article_subtitle">주간 수뭉 22호</span>
+                    <hr class="main_hr" />
                 </div>
-            </div>
-            <div style="width: 60px; height: 60px; left: 41px; top: 32px; position: absolute">
-                <div
-                    style="
-                        width: 60px;
-                        height: 60px;
-                        left: 60px;
-                        top: 0px;
-                        position: absolute;
-                        transform: rotate(90deg);
-                        transform-origin: 0 0;
-                        background: #8298ca;
-                    "
-                ></div>
-                <div
-                    style="
-                        left: 13.62px;
-                        top: 7px;
-                        position: absolute;
-                        color: #f9f5ef;
-                        font-size: 20px;
-                        font-family: Inter;
-                        font-weight: 600;
-                        word-wrap: break-word;
-                    "
-                >
-                    색<br />다른
+                <div>
+                    <span class="main_article_title">제목<br /></span>
+                    <span class="main_article_subtitle">주간 수뭉 21호</span>
+                    <hr class="main_hr" />
                 </div>
-                <div
-                    style="
-                        left: 23.62px;
-                        top: 14px;
-                        position: absolute;
-                        color: #ffbe98;
-                        font-size: 24px;
-                        font-family: Kapakana;
-                        font-weight: 400;
-                        word-wrap: break-word;
-                    "
-                >
-                    color
+                <div>
+                    <span class="main_article_title">제목<br /></span>
+                    <span class="main_article_subtitle">주간 수뭉 20호</span>
+                    <hr class="main_hr" />
                 </div>
+                <div>
+                    <span class="main_article_title">제목<br /></span>
+                    <span class="main_article_subtitle">주간 수뭉 19호</span>
+                    <hr class="main_hr" />
+                </div>
+                <div>
+                    <span class="main_article_title">제목<br /></span>
+                    <span class="main_article_subtitle">주간 수뭉 18호</span>
+                    <hr class="main_hr" />
+                </div>
+                <div><a href="#" class="main_more_btn">더보기</a></div>
             </div>
         </div>
     </body>
