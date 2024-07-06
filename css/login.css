@@ -1,0 +1,107 @@
+body {
+    background-color: #F9F5EF;
+    overflow-y: scroll;
+}
+
+.login_login_btn {
+    width: 480px;
+    height: 70px;
+    left: 480px;
+    top: 730px;
+    position: absolute;
+    background-color: #f3d1b9;
+    border-radius: 20px;
+    border: 1px rgba(0,0,0,0.10);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.login_login_btn span{
+    width: 70px;
+    height: 20px;
+    left: 685px;
+    top: 740px;
+    position: static;
+    color: #2C323E;
+    font-size: 24px;
+    font-family: Inter;
+    font-weight: 500;
+    word-wrap: break-word;
+}
+
+.login_id {
+    width: 110px;
+    height: 20px;
+    left: 484px;
+    top: 473px;
+    position: absolute;
+    color: #2C323E;
+    font-size: 20px;
+    font-family: Inter;
+    font-weight: 600;
+    word-wrap: break-word;
+}
+
+.login_password {
+    width: 110px;
+    height: 20px;
+    left: 484px;
+    top: 591px;
+    position: absolute;
+    color: #2C323E;
+    font-size: 20px;
+    font-family: Inter;
+    font-weight: 600;
+    word-wrap: break-word;
+}
+
+.login_signup_btn span{
+    width: 66px;
+    height: 18px;
+    left: 687px;
+    top: 829px;
+    position: absolute;
+    color: #2C323E;
+    font-size: 16px;
+    font-family: Inter;
+    font-weight: 500;
+    text-decoration: underline;
+    word-wrap: break-word;
+}
+
+input[type="text"] {
+    width: 480px;
+    height: 70px;
+    left: 480px;
+    top: 501px;
+    position: absolute;
+    background-color: white;
+    border-radius: 20px;
+    border: 1px rgba(0, 0, 0, 0.10) solid;
+}
+
+input[type="password"]{
+    width: 480px;
+    height: 70px;
+    left: 480px;
+    top: 620px;
+    position: absolute;
+    background-color: white;
+    border-radius: 20px;
+    border: 1px rgba(0, 0, 0, 0.10) solid;
+}
+
+.login_main {
+    padding-bottom: 300px; /* 페이지 하단에 여백 추가 */
+}
+
+.container {
+    margin-bottom: 600px;
+}
+
+.Color {
+    font-family: 'Dancing Script', cursive;
+    word-wrap: break-word;
+}
