@@ -64,7 +64,7 @@ body {
     background: #f0ece6;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
-    border: 1px rgba(0, 0, 0, 0.1) solid;
+    border: none;
     padding: 10%;
 }
 
