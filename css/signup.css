@@ -1,0 +1,314 @@
+body {
+    background-color: #F9F5EF;
+    overflow-y: scroll;
+}
+
+.signup_logo {
+    width: 60px;
+    height: 60px;
+    left: 41px;
+    top: 32px;
+    position: absolute;
+}
+
+.signup_vector {
+    width: 60px;
+    height: 60px;
+    left: 60px;
+    top: 0px;
+    position: absolute;
+    transform: rotate(90deg);
+    transform-origin: 0 0;
+    background: #8298CA;
+    border-radius: 13px;
+}
+
+.signup_word {
+    left: 13.62px; top: 7px; 
+    position: absolute; 
+    color: #F9F5EF; 
+    font-size: 20px; 
+    font-family: Inter; 
+    font-weight: 650; 
+    word-wrap: break-word
+}
+
+.signup_eng {
+    left: 23px; 
+    top: 16px; 
+    position: absolute; 
+    color: #FFBE98; 
+    font-size: 18px; 
+    font-weight: 340; 
+    word-wrap: break-word;
+    font-family: 'Dancing Script', cursive;
+}
+
+.signup_login {
+    width: 78px; 
+    height: 36px; 
+    left: 1323px; 
+    top: 32px; 
+    position: absolute; 
+    background: white; 
+    border-radius: 10px; 
+    border: 1px rgba(0, 0, 0, 0.10) solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.signup_login span {
+    color: black; 
+    font-size: 16px; 
+    font-family: Inter; 
+    font-weight: 400; 
+    word-wrap: break-word;
+    position: static;
+    text-decoration: none;
+}
+
+
+.signup_signup {
+    width: 150px; 
+    height: 50px; 
+    left: 645px; 
+    top: 200px; 
+    position: absolute; 
+    color: #2C323E; 
+    font-size: 40px; 
+    font-family: Inter; 
+    font-weight: 800; 
+    word-wrap: break-word;
+}
+
+.signup_id {
+    width: 110px; 
+    height: 20px; 
+    left: 484px; 
+    top: 323px; 
+    position: absolute; 
+    color: #2C323E; 
+    font-size: 20px; 
+    font-family: Inter; 
+    font-weight: 600; 
+    word-wrap: break-word;
+}
+
+#username {
+    width: 480px;
+    height: 70px;
+    left: 480px;
+    top: 348px;
+    position: absolute;
+    background-color: white;
+    border-radius: 20px;
+    border: 1px rgba(0, 0, 0, 0.10) solid;
+}
+
+#nickname {
+    width: 480px;
+    height: 70px;
+    left: 480px;
+    top: 470px;
+    position: absolute;
+    background-color: white;
+    border-radius: 20px;
+    border: 1px rgba(0, 0, 0, 0.10) solid;
+}
+
+#password1 {
+    width: 480px;
+    height: 70px;
+    left: 480px;
+    top: 610px;
+    position: absolute;
+    background-color: white;
+    border-radius: 20px;
+    border: 1px rgba(0, 0, 0, 0.10) solid;
+}
+
+#password2 {
+    width: 480px;
+    height: 70px;
+    left: 480px;
+    top: 690px;
+    position: absolute;
+    background-color: white;
+    border-radius: 20px;
+    border: 1px rgba(0, 0, 0, 0.10) solid;
+}
+
+.signup_nickname {
+    width: 110px; 
+    height: 20px; 
+    left: 484px; 
+    top: 443px; 
+    position: absolute; 
+    color: #2C323E; 
+    font-size: 20px; 
+    font-family: Inter; 
+    font-weight: 600; 
+    word-wrap: break-word;
+}
+
+.signup_password {
+    width: 110px; 
+    height: 20px; 
+    left: 483px; 
+    top: 581px; 
+    position: absolute; 
+    color: #2C323E; 
+    font-size: 20px; 
+    font-family: Inter; 
+    font-weight: 600; 
+    word-wrap: break-word;
+}
+
+.signup_age1 {
+    width: 110px; 
+    height: 20px; 
+    left: 484px; 
+    top: 912px; 
+    position: absolute; 
+    color: #2C323E; 
+    font-size: 20px; 
+    font-family: Inter; 
+    font-weight: 600; 
+    word-wrap: break-word;
+}
+
+#age {
+    width: 180px;
+    height: 70px;
+    left: 480px;
+    top: 940px;
+    position: absolute;
+    background-color: white;
+    border-radius: 20px;
+    border: 1px rgba(0, 0, 0, 0.10) solid;
+}
+
+.signup_join_btn {
+    width: 480px; 
+    height: 70px; 
+    left: 480px; 
+    top: 1049px; 
+    position: absolute; 
+    background: #F3D1B9; 
+    border-radius: 20px; 
+    border: 1px rgba(0, 0, 0, 0.10) solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.signup_join_btn a {
+    text-decoration: none; 
+}
+
+.signup_join_btn span {
+    color: #2C323E; 
+    font-size: 24px; 
+    font-family: Inter; 
+    font-weight: 500; 
+    font-style: none;
+}
+
+.signup_main {
+    padding-bottom: 300px;
+}
+
+.signup_container {
+    margin-bottom: 800px;
+}
+
+.signup_gender-selection {
+    position: absolute; /* 절대 위치 설정 */
+    top: 830px;
+    left: 465px;
+    width: 35%;
+    display: flex;
+    justify-content: center;
+}
+
+.form_toggle {
+    width: 100%;
+    display: flex;
+    justify-content: space-around; /* 자식 요소들 사이에 간격을 줌 */
+}
+.signup_gender_text{
+    width: 100px; 
+    height: 20px; 
+    left: 484px; 
+    top: 792px; 
+    position: absolute; 
+    color: #2C323E; 
+    font-size: 20px; 
+    font-family: Inter; 
+    font-weight: 600; 
+    word-wrap: break-word;
+}
+
+.signup_gender {
+    width: 45%;
+    height : 60px;
+    border: 1px solid #EAE7E7;
+    border-radius: 10px;
+}
+.signup_gender input[type=radio] {
+    display: none;
+}
+.signup_gender label {
+    display: block;
+    border-radius: 10px;
+    margin: 0 auto;
+    text-align: center;
+    height: -webkit-fill-available;
+    line-height: 60px;
+}
+/* Checked */
+.signup_gender input[type=radio]:checked + label {
+    background: #F3D1B9;
+    color: white;
+}
+ 
+/* Hover */
+.signup_gender label:hover {
+    color: #666;
+}
+ 
+/* Disabled */
+.form_radio_btn input[type=radio] + label {
+    background: white;
+    color: #666;
+}
+
+
+/*
+.signup_button1 {
+    width: 45px; 
+    height: 20px; 
+    left: 527px; 
+    top: 843px; 
+    position: absolute; 
+    color: rgba(0, 0, 0, 0.75); 
+    font-size: 24px; font-family: 
+    Inter; font-weight: 500; 
+    word-wrap: break-word;
+}
+
+.signup_button2 {
+    width: 45px; 
+    height: 20px; 
+    left: 691px; 
+    top: 843px; 
+    position: absolute; 
+    color: rgba(0, 0, 0, 0.75); 
+    font-size: 24px; font-family: 
+    Inter; font-weight: 500; 
+    word-wrap: break-word;
+} */
+
+
