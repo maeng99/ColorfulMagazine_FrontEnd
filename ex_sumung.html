@@ -7,6 +7,7 @@
         <link rel="icon" href="./img/small_logo.png" type="image/x-icon" />
         <link rel="stylesheet" href="./components/nav.css" />
         <link rel="stylesheet" href="./css/screens/mypage.css" />
+        <link rel="stylesheet" href="./css/screens/mypage_color.css" />
     </head>
     <body>
         <div class="nav">
@@ -25,7 +26,7 @@
                     <img src="./img/profile.png" class="mypage_profile_img" />
                 </div>
                 <div class="mypage_profile_text">
-                    <span class="mypage_profile_nickname">아기사자</span><br /><br />
+                    <span class="mypage_profile_nickname">수뭉</span><br /><br />
                     <button type="button" class="mypage_follower_btn" onclick="location.href='follower_list.html'">
                         팔로워 <span>00</span>명</button
                     ><br />
@@ -35,24 +36,22 @@
                 </div>
             </div>
             <div class="mypage_main_btn_div">
-                <div class="mypage_main_btn_div_1">
-                    <button type="button" class="mypage_main_btn" onclick="location.href='mypage_edit.html'">
-                        프로필 수정
-                    </button>
-                    <button type="button" class="mypage_main_btn" onclick="location.href='mypage_badge.html'">
-                        뱃지 설정
-                    </button>
-                </div>
-                <div class="mypage_main_btn_div_1">
-                    <button type="button" class="mypage_main_btn" onclick="location.href='mypage_color.html'">
-                        나의 색깔들
-                    </button>
-                    <button type="button" class="mypage_main_btn" onclick="location.href='mypage_article.html'">
-                        나의 주간지
-                    </button>
-                </div>
+                <button
+                    type="button"
+                    id="sumung_follow_state"
+                    class="mypage_main_btn"
+                    style="width: 50%; padding: 10px; background-color: #bdc6dc"
+                >
+                    팔로우
+                </button>
             </div>
         </div>
         <hr class="mypage_hr" />
+
+        <div class="mypage_piechart_title">나의 주간지 색 통계</div>
+        <div id="mypage_piechart"></div>
+
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script src="./js/ex_sumung.js"></script>
     </body>
 </html>

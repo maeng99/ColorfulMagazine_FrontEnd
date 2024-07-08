@@ -1,0 +1,38 @@
+#mypage_article_btn {
+    background-color: #f3d1b9;
+}
+
+.mypage_article_list {
+    width: 700px;
+    margin: 10px auto;
+    font-size: 10px;
+    font-size: Inter;
+    font-weight: 300;
+}
+
+.mypage_article_div {
+    margin: 30px;
+}
+
+.mypage_article {
+    width: 600px;
+    margin: 10px auto;
+    padding: 15px;
+    background-color: #eec8c8;
+    border-radius: 20px;
+}
+.mypage_article:hover {
+    cursor: pointer;
+}
+
+.mypage_article_title {
+    font-size: 15px;
+    font-size: Inter;
+    font-weight: 600;
+}
+
+.mypage_article_subtitle {
+    font-size: 12px;
+    font-size: Inter;
+    font-weight: 400;
+}

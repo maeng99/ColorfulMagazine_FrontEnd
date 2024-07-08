@@ -1,0 +1,208 @@
+body {
+    position: relative;
+    background-color: #f9f5ef;
+}
+
+.signup_nav {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px 20px;
+}
+
+.main_small_logo {
+    width: 50px;
+}
+
+.signup_login {
+    background: white;
+    border: 1px rgba(0, 0, 0, 0.3) solid;
+    border-radius: 10px;
+    display: inline-block;
+    font-size: 12px;
+    font-family: Inter;
+    font-weight: 200;
+    cursor: pointer;
+}
+.signup_login:hover {
+    border: 1px rgba(0, 0, 0, 1) solid;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.signup_title {
+    color: #000;
+    font-size: 40px;
+    font-family: Inter;
+    font-weight: 800;
+    text-align: center;
+    margin: 50px 0;
+}
+
+.signup_form {
+    width: 400px;
+    margin: 0 auto;
+}
+
+.signup_id {
+    font-size: 15px;
+    font-family: Inter;
+    font-weight: 600;
+}
+
+#username {
+    width: 100%;
+    height: 40px;
+    font-size: 15px;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px rgba(0, 0, 0, 0.1) solid;
+    margin-top: 4px;
+    margin-bottom: 10px;
+}
+
+.signup_nickname {
+    font-size: 15px;
+    font-family: Inter;
+    font-weight: 600;
+}
+
+#nickname {
+    width: 100%;
+    height: 40px;
+    font-size: 15px;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px rgba(0, 0, 0, 0.1) solid;
+    margin-top: 4px;
+    margin-bottom: 10px;
+}
+
+.signup_password {
+    font-size: 15px;
+    font-family: Inter;
+    font-weight: 600;
+}
+
+#password {
+    width: 100%;
+    height: 40px;
+    font-size: 15px;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px rgba(0, 0, 0, 0.1) solid;
+    margin-top: 4px;
+    margin-bottom: 10px;
+}
+
+.signup_repassword {
+    font-size: 15px;
+    font-family: Inter;
+    font-weight: 600;
+}
+
+#repassword {
+    width: 100%;
+    height: 40px;
+    font-size: 15px;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px rgba(0, 0, 0, 0.1) solid;
+    margin-top: 4px;
+    margin-bottom: 10px;
+}
+
+.signup_gender_text {
+    font-size: 15px;
+    font-family: Inter;
+    font-weight: 600;
+}
+
+.signup_gender-selection {
+    width: 60%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 4px;
+    margin-bottom: 10px;
+}
+
+.signup_gender {
+    width: 40%;
+    margin-right: 10%;
+    height: 40px;
+    border: 1px solid #eae7e7;
+    border-radius: 10px;
+}
+.signup_gender input[type='radio'] {
+    display: none;
+}
+.signup_gender label {
+    display: block;
+    border-radius: 10px;
+    margin: 0 auto;
+    text-align: center;
+    height: -webkit-fill-available;
+    line-height: 40px;
+}
+/* Checked */
+.signup_gender input[type='radio']:checked + label {
+    background: #f3d1b9;
+    color: rgb(0, 0, 0) !important;
+}
+
+/* Hover */
+.signup_gender input[type='radio'] + label:hover {
+    color: rgb(0, 0, 0) !important;
+    cursor: pointer;
+}
+
+/* Disabled */
+.signup_gender input[type='radio'] + label {
+    background: white;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.signup_age {
+    font-size: 15px;
+    font-family: Inter;
+    font-weight: 600;
+}
+
+#age {
+    width: 55%;
+    height: 40px;
+    font-size: 15px;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px rgba(0, 0, 0, 0.1) solid;
+    margin-top: 4px;
+    margin-bottom: 10px;
+}
+
+.signup_btn {
+    width: 100%;
+    height: 40px;
+    font-size: 15px;
+    font-family: Inter;
+    font-weight: 500;
+    background-color: #f3d1b9;
+    border-radius: 10px;
+    border: 1px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+    margin-bottom: 60px;
+    cursor: pointer;
+}
+.signup_btn:hover {
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.error {
+    color: red;
+    font-size: 12px;
+    display: none;
+}

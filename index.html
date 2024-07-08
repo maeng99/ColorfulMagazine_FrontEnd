@@ -4,34 +4,35 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>색다른 주간지</title>
-        <link rel="stylesheet" href="./css/index.css" />
+        <link rel="icon" href="./img/small_logo.png" type="image/x-icon" />
+        <link rel="stylesheet" href="./components/nav.css" />
+        <link rel="stylesheet" href="./css/screens/index.css" />
     </head>
     <body>
-        <div>
-            <img src="./img/main_background 1.png" class="main_background" />
+        <div class="main_background">
+            <img src="./img/main_background 1.png" class="main_background_img" />
         </div>
 
-        <div class="main_nav">
-            <a class="main_nav_logo" href="index.html">
-                <img src="./img/small_logo.png" class="main_small_logo" />
+        <div class="nav">
+            <a class="nav_logo" href="index.html">
+                <img src="./img/small_logo.png" class="nav_small_logo" />
             </a>
-            <a class="main_nav_text" href="mypage.html">마이페이지</a>
-            <a class="main_nav_text" href="write.html">작성페이지</a>
-            <a class="main_nav_text" href="search.html">검색페이지</a>
-            <a class="main_nav_logout" href="login.html">
-                <button type="button" class="main_logout">로그아웃</button>
-            </a>
+            <a class="nav_text" href="mypage.html">마이페이지</a>
+            <a class="nav_text" href="write.html">작성페이지</a>
+            <a class="nav_text" href="search.html">검색페이지</a>
+            <button type="button" class="nav_logout" onclick="location.href='login.html'">로그아웃</button>
         </div>
 
         <div>
             <img src="./img/main_logo.png" alt="main_logo" class="main_logo" />
             <p class="main_logo_text">나만의 주간지를 다채로운 색깔로 채워보세요</p>
         </div>
+
         <div class="main_best_color_comment">
             <div class="main_best_color_div">
                 <img src="./img/best_color.png" class="main_best_color_img" />
                 <p class="main_best_color_text">
-                    6월 4주 <br />가장 많이 선택된 컬러<br /><br />
+                    6월 4주 <br />가장 많이 선택된 컬러<br />
                     <span id="main_best_color_num">✒︎ 630</span>
                 </p>
             </div>
@@ -41,70 +42,75 @@
                     6월 4주 <br />가장 많은 공감을 얻은 코멘트<br /><br />
                     “하나의 그림에는 수많은 색채가 담겨져 있다.<br />하나의 색깔로만 칠해진 그림은 어디에도 없다.<br />수많은
                     색채들이 어울려서 하나의 명작을 만들어낸다.”<br /><br />-헤르만 헤세-<br /><br />
-                    <span id="main_best_comment_num">♥︎ 2024</span>
+                    <i id="article_hrt_state" class="fa-regular fa-heart" onclick="hrtState()"></i>
+                    &nbsp;<span id="article_hrt_num">2024</span>
                 </p>
             </div>
         </div>
-
-        <div class="main_article_div">
-            <div class="main_new_article_div">
-                <div class="main_new_article">최신 발행 주간지</div>
-                <div>
-                    <span class="main_article_title">비가 오는 날<br /></span>
-                    <span class="main_article_subtitle">주간 강아지 22호</span>
-                    <hr class="main_hr" />
+        <div class="main_article_background">
+            <div class="main_article_div">
+                <div class="main_new_article_div">
+                    <div class="main_new_article">최신 발행 주간지</div>
+                    <div class="main_article_content" onclick="location.href='ex_article2.html'">
+                        <span class="main_article_title">비가 오는 날<br /></span>
+                        <span class="main_article_subtitle">주간 강아지 22호</span>
+                        <hr class="main_hr" />
+                    </div>
+                    <div class="main_article_content">
+                        <span class="main_article_title">제목<br /></span>
+                        <span class="main_article_subtitle">주간 고양이 22호</span>
+                        <hr class="main_hr" />
+                    </div>
+                    <div class="main_article_content">
+                        <span class="main_article_title">제목<br /></span>
+                        <span class="main_article_subtitle">주간 햄스터 22호</span>
+                        <hr class="main_hr" />
+                    </div>
+                    <div class="main_article_content">
+                        <span class="main_article_title">제목<br /></span>
+                        <span class="main_article_subtitle">주간 푸바오 22호</span>
+                        <hr class="main_hr" />
+                    </div>
+                    <div class="main_article_content">
+                        <span class="main_article_title">제목<br /></span>
+                        <span class="main_article_subtitle">주간 호랑이 22호</span>
+                        <hr class="main_hr" />
+                    </div>
+                    <div><a href="search.html" class="main_more_btn">더보기</a></div>
                 </div>
-                <div>
-                    <span class="main_article_title">제목<br /></span>
-                    <span class="main_article_subtitle">주간 고양이 22호</span>
-                    <hr class="main_hr" />
+                <div class="main_follow_article_div">
+                    <div class="main_follow_article">아기사자님의 팔로잉</div>
+                    <div class="main_article_content" onclick="location.href='ex_article1.html'">
+                        <span class="main_article_title">색깔이 우리에게 주는 힘</span><br />
+                        <span class="main_article_subtitle">주간 수뭉 22호</span>
+                        <hr class="main_hr" />
+                    </div>
+                    <div class="main_article_content">
+                        <span class="main_article_title">제목<br /></span>
+                        <span class="main_article_subtitle">주간 수뭉 21호</span>
+                        <hr class="main_hr" />
+                    </div>
+                    <div class="main_article_content">
+                        <span class="main_article_title">제목<br /></span>
+                        <span class="main_article_subtitle">주간 수뭉 20호</span>
+                        <hr class="main_hr" />
+                    </div>
+                    <div class="main_article_content">
+                        <span class="main_article_title">제목<br /></span>
+                        <span class="main_article_subtitle">주간 수뭉 19호</span>
+                        <hr class="main_hr" />
+                    </div>
+                    <div class="main_article_content">
+                        <span class="main_article_title">제목<br /></span>
+                        <span class="main_article_subtitle">주간 수뭉 18호</span>
+                        <hr class="main_hr" />
+                    </div>
+                    <div><a href="following_article.html" class="main_more_btn">더보기</a></div>
                 </div>
-                <div>
-                    <span class="main_article_title">제목<br /></span>
-                    <span class="main_article_subtitle">주간 햄스터 22호</span>
-                    <hr class="main_hr" />
-                </div>
-                <div>
-                    <span class="main_article_title">제목<br /></span>
-                    <span class="main_article_subtitle">주간 푸바오 22호</span>
-                    <hr class="main_hr" />
-                </div>
-                <div>
-                    <span class="main_article_title">제목<br /></span>
-                    <span class="main_article_subtitle">주간 호랑이 22호</span>
-                    <hr class="main_hr" />
-                </div>
-                <div><a href="#" class="main_more_btn">더보기</a></div>
-            </div>
-            <div class="main_follow_article_div">
-                <div class="main_follow_article">아기사자님의 팔로잉</div>
-                <div class="main_article_content">
-                    <span class="main_article_title">색깔이 우리에게 주는 힘<br /></span>
-                    <span class="main_article_subtitle">주간 수뭉 22호</span>
-                    <hr class="main_hr" />
-                </div>
-                <div>
-                    <span class="main_article_title">제목<br /></span>
-                    <span class="main_article_subtitle">주간 수뭉 21호</span>
-                    <hr class="main_hr" />
-                </div>
-                <div>
-                    <span class="main_article_title">제목<br /></span>
-                    <span class="main_article_subtitle">주간 수뭉 20호</span>
-                    <hr class="main_hr" />
-                </div>
-                <div>
-                    <span class="main_article_title">제목<br /></span>
-                    <span class="main_article_subtitle">주간 수뭉 19호</span>
-                    <hr class="main_hr" />
-                </div>
-                <div>
-                    <span class="main_article_title">제목<br /></span>
-                    <span class="main_article_subtitle">주간 수뭉 18호</span>
-                    <hr class="main_hr" />
-                </div>
-                <div><a href="#" class="main_more_btn">더보기</a></div>
             </div>
         </div>
+
+        <script src="https://kit.fontawesome.com/48b6d74663.js" crossorigin="anonymous"></script>
+        <script src="./js/index.js"></script>
     </body>
 </html>

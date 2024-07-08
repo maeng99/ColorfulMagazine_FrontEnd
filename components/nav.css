@@ -1,0 +1,47 @@
+.nav {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(255, 255, 255, 0.5);
+    padding: 3px 0;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+}
+
+.nav_logo {
+    width: 50px;
+}
+
+.nav_small_logo {
+    width: 100%;
+    cursor: pointer;
+}
+
+.nav_text {
+    text-align: center;
+    color: #000;
+    font-size: 15px;
+    font-family: Inter;
+    font-weight: 500;
+    text-decoration-line: none;
+}
+.nav_text:hover {
+    font-weight: 600;
+}
+
+.nav_logout {
+    background: white;
+    border: 1px rgba(0, 0, 0, 0.3) solid;
+    border-radius: 10px;
+    display: inline-block;
+    font-size: 12px;
+    font-family: Inter;
+    font-weight: 200;
+}
+.nav_logout:hover {
+    font-weight: 600;
+    border: 1px rgba(0, 0, 0, 1) solid;
+    cursor: pointer;
+}

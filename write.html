@@ -4,23 +4,38 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>색다른 주간지</title>
-        <link rel="stylesheet" href="./css/write.css" />
+        <link rel="icon" href="./img/small_logo.png" type="image/x-icon" />
+        <link rel="stylesheet" href="./components/nav.css" />
+        <link rel="stylesheet" href="./css/screens/write.css" />
+
+        <script type="text/javascript">
+            function colorInfoPopup() {
+                const popup = document.getElementById('popup');
+                popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
+            }
+
+            // 클릭 이벤트가 팝업 외부에서 발생하면 팝업을 닫음
+            window.onclick = function (event) {
+                const popup = document.getElementById('popup');
+                if (event.target === popup) {
+                    popup.style.display = 'none';
+                }
+            };
+        </script>
     </head>
     <body>
-        <div class="write_nav">
-            <a class="write_nav_logo" href="index.html">
-                <img src="./img/small_logo.png" class="write_small_logo" />
+        <div class="nav">
+            <a class="nav_logo" href="index.html">
+                <img src="./img/small_logo.png" class="nav_small_logo" />
             </a>
-            <a class="write_nav_text" href="mypage.html">마이페이지</a>
-            <a class="write_nav_text" href="write.html"><b>작성페이지</b></a>
-            <a class="write_nav_text" href="search.html">검색페이지</a>
-            <a class="write_nav_logout" href="login.html">
-                <button type="button" class="write_logout">로그아웃</button>
-            </a>
+            <a class="nav_text" href="mypage.html">마이페이지</a>
+            <a class="nav_text" href="write.html"><b>작성페이지</b></a>
+            <a class="nav_text" href="search.html">검색페이지</a>
+            <button type="button" class="nav_logout" onclick="location.href='login.html'">로그아웃</button>
         </div>
 
         <form class="write_form">
-            <div class="write_form_input_div">
+            <div id="write_input_div" class="write_form_input_div">
                 <div>
                     <input type="text" class="write_form_title" placeholder="제목을 입력해주세요" required />
                 </div>
@@ -41,14 +56,40 @@
                 <div>
                     <label class="write_form_color_label"
                         >이번 주는 어떠한 색깔로 살아오셨나요?&nbsp;
-                        <img src="./img/question.png" class="write_color_info" />
+                        <img src="./img/question.png" class="write_color_info" onclick="colorInfoPopup()" />
+                        <div id="popup" class="popup">
+                            <div class="popup-content">
+                                <span class="close" onclick="colorInfoPopup()">&times;</span>
+                                <img src="./img/color_info.png" class="write_color_info_img" alt="Popup Image" />
+                            </div>
+                        </div>
                     </label>
-                    <button type="button" class="write_form_color_btn">빨강</button>
-                    <button type="button" class="write_form_color_btn">주황</button>
-                    <button type="button" class="write_form_color_btn">노랑</button>
-                    <button type="button" class="write_form_color_btn">초록</button>
-                    <button type="button" class="write_form_color_btn">파랑</button>
-                    <button type="button" class="write_form_color_btn">보라</button>
+                    <div class="write_color-selection">
+                        <div class="write_color red">
+                            <input type="radio" name="color" value="red" id="red" required />
+                            <label class="write_color_name" for="red">빨강</label>
+                        </div>
+                        <div class="write_color orange">
+                            <input type="radio" name="color" value="orange" id="orange" required />
+                            <label class="write_color_name" for="orange">주황</label>
+                        </div>
+                        <div class="write_color yellow">
+                            <input type="radio" name="color" value="yellow" id="yellow" required />
+                            <label class="write_color_name" for="yellow">노랑</label>
+                        </div>
+                        <div class="write_color green">
+                            <input type="radio" name="color" value="green" id="green" required />
+                            <label class="write_color_name" for="green">초록</label>
+                        </div>
+                        <div class="write_color blue">
+                            <input type="radio" name="color" value="blue" id="blue" required />
+                            <label class="write_color_name" for="blue">파랑</label>
+                        </div>
+                        <div class="write_color purple">
+                            <input type="radio" name="color" value="purple" id="purple" required />
+                            <label class="write_color_name" for="purple">보라</label>
+                        </div>
+                    </div>
                 </div>
                 <hr class="write_hr" />
                 <div>
@@ -60,9 +101,11 @@
                 </div>
             </div>
             <div class="write_form_submit_div">
-                <button type="button" class="write_form_cancel">취소</button>
-                <button type="submit" class="write_form_submit">발행</button>
+                <button type="button" id="write_cancel" class="write_form_cancel">취소</button>
+                <button type="submit" class="write_form_submit" onclick="location.href='ex_article1.html'">발행</button>
             </div>
         </form>
+
+        <script src="./js/write.js"></script>
     </body>
 </html>
