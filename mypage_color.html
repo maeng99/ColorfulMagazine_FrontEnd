@@ -7,6 +7,7 @@
         <link rel="icon" href="./img/small_logo.png" type="image/x-icon" />
         <link rel="stylesheet" href="./components/nav.css" />
         <link rel="stylesheet" href="./css/screens/mypage.css" />
+        <link rel="stylesheet" href="./css/screens/mypage_color.css" />
     </head>
     <body>
         <div class="nav">
@@ -44,8 +45,13 @@
                     </button>
                 </div>
                 <div class="mypage_main_btn_div_1">
-                    <button type="button" class="mypage_main_btn" onclick="location.href='mypage_color.html'">
-                        나의 색깔들
+                    <button
+                        type="button"
+                        id="mypage_color_btn"
+                        class="mypage_main_btn"
+                        onclick="location.href='mypage_color.html'"
+                    >
+                        <b>나의 색깔들</b>
                     </button>
                     <button type="button" class="mypage_main_btn" onclick="location.href='mypage_article.html'">
                         나의 주간지
@@ -54,5 +60,11 @@
             </div>
         </div>
         <hr class="mypage_hr" />
+
+        <div class="mypage_piechart_title">나의 주간지 색 통계</div>
+        <div id="mypage_piechart"></div>
+
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script src="./js/mypage_color.js"></script>
     </body>
 </html>

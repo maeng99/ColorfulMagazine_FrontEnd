@@ -1,0 +1,25 @@
+.bottomTabs_div {
+    display: flex;
+    justify-content: center;
+}
+
+.bottomTabs {
+    position: fixed;
+    bottom: 0;
+    margin-bottom: 20px;
+}
+
+.bottomTab {
+    font-size: 12px;
+    font-size: Inter;
+    font-weight: 300;
+    margin: 0 5px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.bottomTab:hover,
+.bottomTab.active {
+    font-weight: 600;
+}

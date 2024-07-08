@@ -1,0 +1,98 @@
+body {
+    position: relative;
+    background-color: #f9f5ef;
+}
+
+.login_logo {
+    width: 200px;
+    margin: 10vh auto;
+    margin-bottom: 70px;
+}
+
+.login_logo_text {
+    text-align: left;
+    font-size: 20px;
+    font-family: Inter;
+    font-weight: 600;
+    padding-left: 10px;
+}
+
+.login_logo_img {
+    width: 200px;
+    display: block;
+    margin: 0 auto;
+}
+
+.login_form {
+    width: 400px;
+    margin: 0 auto;
+}
+
+.login_id {
+    font-size: 15px;
+    font-family: Inter;
+    font-weight: 600;
+}
+
+#username {
+    width: 100%;
+    height: 40px;
+    font-size: 15px;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px rgba(0, 0, 0, 0.1) solid;
+    margin-top: 4px;
+    margin-bottom: 10px;
+}
+
+.login_password {
+    font-size: 15px;
+    font-family: Inter;
+    font-weight: 600;
+}
+
+#password {
+    width: 100%;
+    height: 40px;
+    font-size: 15px;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px rgba(0, 0, 0, 0.1) solid;
+    margin-top: 4px;
+    margin-bottom: 10px;
+}
+
+.login_btn {
+    width: 100%;
+    height: 40px;
+    font-size: 15px;
+    font-family: Inter;
+    font-weight: 500;
+    background-color: #f3d1b9;
+    border-radius: 10px;
+    border: 1px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 15px 0;
+}
+.login_btn:hover {
+    font-weight: 600;
+    background-color: #f3d1b9;
+    cursor: pointer;
+}
+
+.login_signup_div {
+    text-align: center;
+    margin: 45px 0;
+}
+
+.login_signup_btn {
+    color: #000;
+    font-size: 13px;
+    font-family: Inter;
+    font-weight: 500;
+}
+.login_signup_btn:hover {
+    font-weight: 600;
+}

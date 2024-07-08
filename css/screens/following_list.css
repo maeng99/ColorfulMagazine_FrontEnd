@@ -1,0 +1,85 @@
+body {
+    position: relative;
+    background: #f9f5ef;
+}
+
+.follower_or_following {
+    text-align: center;
+    margin-top: 130px;
+}
+
+.follower_btn {
+    font-size: 15px;
+    font-family: Inter;
+    font-weight: 550;
+    color: rgb(125, 125, 125);
+    line-height: 25px;
+    padding-bottom: 10px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.following_btn {
+    font-size: 15px;
+    font-family: Inter;
+    font-weight: 550;
+    line-height: 25px;
+    padding-bottom: 10px;
+    border: none;
+    border-bottom: 2px #000 solid;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.follower_list_div {
+    background-color: rgb(240, 236, 230);
+    width: 600px;
+    margin: 0 auto;
+    padding: 50px;
+    border-radius: 30px;
+}
+
+.followers {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.follower_img_nickname {
+    display: flex;
+    align-items: center;
+    color: #000;
+    text-decoration-line: none;
+}
+
+.follower_profile_img {
+    width: 40px;
+    background-color: #d9d9d9;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.follower_nickname {
+    font-size: 20px;
+    font-family: Inter;
+    font-weight: 600;
+    padding-left: 20px;
+}
+
+.follower_state {
+    width: 150px;
+    height: 40px;
+    background: white;
+    border: 1px rgba(0, 0, 0, 0.1) solid;
+    border-radius: 10px;
+    display: inline-block;
+    font-size: 13px;
+    font-family: Inter;
+    font-weight: 500;
+}
+.follower_state {
+    font-weight: 600;
+    cursor: pointer;
+}

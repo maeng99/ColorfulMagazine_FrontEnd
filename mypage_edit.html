@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>색다른 주간지</title>
+        <link rel="icon" href="./img/small_logo.png" type="image/x-icon" />
+        <link rel="stylesheet" href="./components/nav.css" />
+        <link rel="stylesheet" href="./css/screens/mypage.css" />
+        <link rel="stylesheet" href="./css/screens/mypage_edit.css" />
+    </head>
+    <body>
+        <div class="nav">
+            <a class="nav_logo" href="index.html">
+                <img src="./img/small_logo.png" class="nav_small_logo" />
+            </a>
+            <a class="nav_text" href="mypage.html"><b>마이페이지</b></a>
+            <a class="nav_text" href="write.html">작성페이지</a>
+            <a class="nav_text" href="search.html">검색페이지</a>
+            <button type="button" class="nav_logout" onclick="location.href='login.html'">로그아웃</button>
+        </div>
+
+        <div class="mypage_profile">
+            <div class="mypage_profile_img_text">
+                <div id="mypage_profile_img_div">
+                    <img src="./img/profile.png" id="mypage_base_profile" class="mypage_profile_img" />
+                </div>
+                <div class="mypage_profile_text">
+                    <span class="mypage_profile_nickname">아기사자</span><br /><br />
+                    <button type="button" class="mypage_edit_changeImg" onclick="mypageImgPopup()">사진 변경</button>
+                    <div id="popup" class="popup">
+                        <div class="popup-content">
+                            <span class="close" onclick="mypageImgPopup()">&times;</span>
+                            <div class="mypage_changeImg_title">프로필 사진 변경</div>
+                            <input
+                                type="file"
+                                id="chooseFile"
+                                name="chooseFile"
+                                accept="image/*"
+                                onchange="changeImgFile(this)"
+                            />
+                            <div>
+                                <label class="mypage_changeImg_select" for="chooseFile">사진 업로드</label>
+                            </div>
+                            <button type="button" id="mypage_deleteImg" class="mypage_changeImg_delete">
+                                현재 사진 삭제
+                            </button>
+                            <button type="button" class="mypage_changeImg_cancel" onclick="mypageImgPopup()">
+                                취소
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <form class="mypage_edit_form">
+            <div>
+                <label for="nickname" class="mypage_edit_nickname">닉네임</label><br />
+                <input type="text" id="nickname" name="nickname" placeholder="  한글, 숫자 2-10자" required />
+            </div>
+            <div>
+                <label for="password" class="mypage_edit_password">비밀번호</label><br />
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder=" 영문, 숫자, 특수문자가 모두 들어간 8-20자"
+                    required
+                />
+            </div>
+            <div>
+                <label for="repassword" class="mypage_edit_repassword">비밀번호 확인</label><br />
+                <input
+                    type="password"
+                    id="repassword"
+                    name="repassword"
+                    placeholder=" 비밀번호를 한 번 더 입력해 주세요"
+                    required
+                />
+            </div>
+            <div>
+                <div class="mypage_edit_age">나이</div>
+                <select class="mypage_edit_age_select" id="age">
+                    <option disabled selected>나이 선택</option>
+                    <option value="20">20</option>
+                    <option value="20">21</option>
+                    <option value="20">22</option>
+                    <option value="20">23</option>
+                    <option value="20">24</option>
+                    <option value="20">25</option>
+                </select>
+            </div>
+            <div class="mypage_edit_form_submit_div">
+                <button type="button" id="mypage_edit_cancel" class="mypage_edit_form_cancel">취소</button>
+                <button type="submit" class="mypage_edit_form_submit" onclick="location.href='mypage.html'">
+                    수정 완료
+                </button>
+            </div>
+        </form>
+
+        <script src="./js/mypage_edit.js"></script>
+    </body>
+</html>
