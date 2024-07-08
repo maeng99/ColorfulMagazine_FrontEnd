@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>색다른 주간지</title>
+        <link rel="icon" href="./img/small_logo.png" type="image/x-icon" />
+        <link rel="stylesheet" href="./components/nav.css" />
+        <link rel="stylesheet" href="./css/screens/article.css" />
+    </head>
+    <body>
+        <div class="nav">
+            <a class="nav_logo" href="index.html">
+                <img src="./img/small_logo.png" class="nav_small_logo" />
+            </a>
+            <a class="nav_text" href="mypage.html">마이페이지</a>
+            <a class="nav_text" href="write.html">작성페이지</a>
+            <a class="nav_text" href="search.html">검색페이지</a>
+            <button type="button" class="nav_logout" onclick="location.href='login.html'">로그아웃</button>
+        </div>
+
+        <div class="article_div">
+            <div class="article_unit">[빨강] 주간 수뭉 22호</div>
+            <div class="article_title">색깔이 우리에게 주는 힘</div>
+            <div class="article_date">2024.01.01</div>
+            <div class="article_content">
+                화가 파블로 피카소(Pablo Picasso)는 색은 특징처럼 감정의 변화를 따른다”고 말했다. 색은 강력한 의사소통
+                도구이며 행동을 알리고 기분에 영향을 미치며 심지어 생리적 반응에도 영향을 미치는 데 사용할 수 있다. 특정
+                색은 혈압 상승, 신진대사 증가, 눈의 피로 등 생리적 변화와 관련이 있다. 색이 우리 삶에서 그토록 강력한
+                힘을 발휘하는 이유는 무엇인까? 우리의 몸과 마음에 어떤 영향을 미칠 수 있는가?  색에 대한 인식은 다소
+                주관적이지만 일부 색의 효과는 보편적인 의미를 갖는다.  색  스펙트럼의 빨간색 영역에 있는 색들은 따뜻한
+                색으로 알려져 있으며 빨간색, 주황색 및 노란색이 포함된다. 이러한 따뜻한 색은 따뜻함과 편안함에서 분노와
+                적대감에 이르기까지 다양한 감정을 불러일으킨다.  스펙트럼의 파란색 쪽에 있는 색들은 차가운 색으로 알려져
+                있으며 파란색, 보라색 및 녹색을 포함한다. 이러한 색들은 종종 차분한 것으로 묘사되지만 슬픔이나 무관심의
+                감정을 불러일으킬 수도 있다.
+            </div>
+            <hr />
+            <div>
+                <div class="article_hrt">
+                    <i id="article_hrt_state" class="fa-regular fa-heart" onclick="hrtState()"></i>
+                    <span id="article_hrt_num" class="article_hrt_num">0</span>
+                </div>
+                <div class="article_comment">삶은 자신을 발견하는 과정이 아니라, 자신을 창조하는 과정이다.</div>
+            </div>
+        </div>
+
+        <script src="https://kit.fontawesome.com/48b6d74663.js" crossorigin="anonymous"></script>
+        <script src="./js/article.js"></script>
+    </body>
+</html>

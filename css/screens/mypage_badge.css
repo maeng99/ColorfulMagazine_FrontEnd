@@ -1,0 +1,124 @@
+#mypage_badge_btn {
+    background-color: #f3d1b9;
+}
+
+.mypage_badge_list {
+    width: 700px;
+    margin: 10px auto;
+    font-size: 10px;
+    font-size: Inter;
+    font-weight: 300;
+}
+
+.mypage_badge_img_div {
+    width: 700px;
+    margin: 30px auto;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.mypage_badge_img {
+    width: 60px;
+    height: 60px;
+    margin: 40px;
+    margin-top: 0;
+    padding: 15px;
+    background-color: lightgray;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+#badge1,
+#badge2,
+#badge3,
+#badge4,
+#badge5,
+#badge6,
+#badge7 {
+    background-color: #ffffff;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 9;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup-content {
+    position: relative;
+    background-color: #fff;
+    margin: 150px auto;
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 30px;
+    width: 300px;
+    text-align: center;
+}
+
+.close {
+    color: rgb(170, 170, 170);
+    float: right;
+    font-size: 30px;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.mypage_badge_popupImg {
+    width: 100px;
+    height: 100px;
+    margin-top: 50px;
+}
+
+.mypage_badge_title {
+    margin-top: 25px;
+    margin-right: 22px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    font-size: Inter;
+    font-weight: 600;
+}
+
+.mypage_badge_task {
+    margin-right: 22px;
+    font-size: 13px;
+    font-size: Inter;
+    font-weight: 300;
+}
+
+.mypage_progress_div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.mypage_progress-bar {
+    width: 67%;
+    margin-left: 25px;
+    height: 5px;
+    background-color: #d9d9d9;
+}
+
+.mypage_progress_pct {
+    width: 100%;
+    height: 5px;
+    background-color: #f3d1b9;
+}
+
+.mypage_progress {
+    margin-right: 25px;
+    font-size: 13px;
+    font-size: Inter;
+    font-weight: 600;
+}

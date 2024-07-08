@@ -4,19 +4,20 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>색다른 주간지</title>
-        <link rel="stylesheet" href="./css/mypage.css" />
+        <link rel="icon" href="./img/small_logo.png" type="image/x-icon" />
+        <link rel="stylesheet" href="./components/nav.css" />
+        <link rel="stylesheet" href="./css/screens/mypage.css" />
+        <link rel="stylesheet" href="./css/screens/mypage_color.css" />
     </head>
     <body>
-        <div class="write_nav">
-            <a class="write_nav_logo" href="index.html">
-                <img src="./img/small_logo.png" class="write_small_logo" />
+        <div class="nav">
+            <a class="nav_logo" href="index.html">
+                <img src="./img/small_logo.png" class="nav_small_logo" />
             </a>
-            <a class="write_nav_text" href="mypage.html"><b>마이페이지</b></a>
-            <a class="write_nav_text" href="write.html">작성페이지</a>
-            <a class="write_nav_text" href="search.html">검색페이지</a>
-            <a class="write_nav_logout" href="login.html">
-                <button type="button" class="write_logout">로그아웃</button>
-            </a>
+            <a class="nav_text" href="mypage.html"><b>마이페이지</b></a>
+            <a class="nav_text" href="write.html">작성페이지</a>
+            <a class="nav_text" href="search.html">검색페이지</a>
+            <button type="button" class="nav_logout" onclick="location.href='login.html'">로그아웃</button>
         </div>
 
         <div class="mypage_profile">
@@ -26,8 +27,12 @@
                 </div>
                 <div class="mypage_profile_text">
                     <span class="mypage_profile_nickname">아기사자</span><br /><br />
-                    팔로워 <span>00</span>명<br />
-                    팔로잉 <span>00</span>명
+                    <button type="button" class="mypage_follower_btn" onclick="location.href='follower_list.html'">
+                        팔로워 <span>00</span>명</button
+                    ><br />
+                    <button type="button" class="mypage_following_btn" onclick="location.href='following_list.html'">
+                        팔로잉 <span>00</span>명
+                    </button>
                 </div>
             </div>
             <div class="mypage_main_btn_div">
@@ -40,8 +45,13 @@
                     </button>
                 </div>
                 <div class="mypage_main_btn_div_1">
-                    <button type="button" class="mypage_main_btn" onclick="location.href='mypage_color.html'">
-                        나의 색깔들
+                    <button
+                        type="button"
+                        id="mypage_color_btn"
+                        class="mypage_main_btn"
+                        onclick="location.href='mypage_color.html'"
+                    >
+                        <b>나의 색깔들</b>
                     </button>
                     <button type="button" class="mypage_main_btn" onclick="location.href='mypage_article.html'">
                         나의 주간지
@@ -49,5 +59,12 @@
                 </div>
             </div>
         </div>
+        <hr class="mypage_hr" />
+
+        <div class="mypage_piechart_title">나의 주간지 색 통계</div>
+        <div id="mypage_piechart"></div>
+
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script src="./js/mypage_color.js"></script>
     </body>
 </html>

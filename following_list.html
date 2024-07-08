@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>색다른 주간지</title>
+        <link rel="icon" href="./img/small_logo.png" type="image/x-icon" />
+        <link rel="stylesheet" href="./components/nav.css" />
+        <link rel="stylesheet" href="./css/screens/following_list.css" />
+    </head>
+    <body>
+        <div class="nav">
+            <a class="nav_logo" href="index.html">
+                <img src="./img/small_logo.png" class="nav_small_logo" />
+            </a>
+            <a class="nav_text" href="mypage.html"><b>마이페이지</b></a>
+            <a class="nav_text" href="write.html">작성페이지</a>
+            <a class="nav_text" href="search.html">검색페이지</a>
+            <button type="button" class="nav_logout" onclick="location.href='login.html'">로그아웃</button>
+        </div>
+
+        <div class="follower_or_following">
+            <button type="button" class="follower_btn" onclick="location.href='follower_list.html'">팔로워</button>
+            <button type="button" class="following_btn" onclick="location.href='following_list.html'">팔로잉</button>
+        </div>
+
+        <div class="follower_list_div">
+            <div class="followers">
+                <a href="ex_sumung.html" class="follower_img_nickname">
+                    <img src="./img/profile.png" class="follower_profile_img" />
+                    <span class="follower_nickname">수뭉</span>
+                </a>
+                <div>
+                    <button type="button" class="follower_state">팔로잉 취소</button>
+                </div>
+            </div>
+            <div class="followers">
+                <a href="#" class="follower_img_nickname">
+                    <img src="./img/profile.png" class="follower_profile_img" />
+                    <span class="follower_nickname">호랑이</span>
+                </a>
+                <div>
+                    <button type="button" class="follower_state">팔로잉 취소</button>
+                </div>
+            </div>
+            <div class="followers">
+                <a href="#" class="follower_img_nickname">
+                    <img src="./img/profile.png" class="follower_profile_img" />
+                    <span class="follower_nickname">미어캣</span>
+                </a>
+                <div>
+                    <button type="button" class="follower_state">팔로잉 취소</button>
+                </div>
+            </div>
+        </div>
+
+        <script src="./js/following_list.js"></script>
+    </body>
+</html>

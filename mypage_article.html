@@ -4,19 +4,21 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>색다른 주간지</title>
-        <link rel="stylesheet" href="./css/mypage.css" />
+        <link rel="icon" href="./img/small_logo.png" type="image/x-icon" />
+        <link rel="stylesheet" href="./components/nav.css" />
+        <link rel="stylesheet" href="./components/bottomTabs.css" />
+        <link rel="stylesheet" href="./css/screens/mypage.css" />
+        <link rel="stylesheet" href="./css/screens/mypage_article.css" />
     </head>
     <body>
-        <div class="write_nav">
-            <a class="write_nav_logo" href="index.html">
-                <img src="./img/small_logo.png" class="write_small_logo" />
+        <div class="nav">
+            <a class="nav_logo" href="index.html">
+                <img src="./img/small_logo.png" class="nav_small_logo" />
             </a>
-            <a class="write_nav_text" href="mypage.html"><b>마이페이지</b></a>
-            <a class="write_nav_text" href="write.html">작성페이지</a>
-            <a class="write_nav_text" href="search.html">검색페이지</a>
-            <a class="write_nav_logout" href="login.html">
-                <button type="button" class="write_logout">로그아웃</button>
-            </a>
+            <a class="nav_text" href="mypage.html"><b>마이페이지</b></a>
+            <a class="nav_text" href="write.html">작성페이지</a>
+            <a class="nav_text" href="search.html">검색페이지</a>
+            <button type="button" class="nav_logout" onclick="location.href='login.html'">로그아웃</button>
         </div>
 
         <div class="mypage_profile">
@@ -26,8 +28,12 @@
                 </div>
                 <div class="mypage_profile_text">
                     <span class="mypage_profile_nickname">아기사자</span><br /><br />
-                    팔로워 <span>00</span>명<br />
-                    팔로잉 <span>00</span>명
+                    <button type="button" class="mypage_follower_btn" onclick="location.href='follower_list.html'">
+                        팔로워 <span>00</span>명</button
+                    ><br />
+                    <button type="button" class="mypage_following_btn" onclick="location.href='following_list.html'">
+                        팔로잉 <span>00</span>명
+                    </button>
                 </div>
             </div>
             <div class="mypage_main_btn_div">
@@ -43,11 +49,63 @@
                     <button type="button" class="mypage_main_btn" onclick="location.href='mypage_color.html'">
                         나의 색깔들
                     </button>
-                    <button type="button" class="mypage_main_btn" onclick="location.href='mypage_article.html'">
-                        나의 주간지
+                    <button
+                        type="button"
+                        id="mypage_article_btn"
+                        class="mypage_main_btn"
+                        onclick="location.href='mypage_article.html'"
+                    >
+                        <b>나의 주간지</b>
                     </button>
                 </div>
             </div>
         </div>
+        <hr class="mypage_hr" />
+
+        <div class="mypage_article_list">
+            <span>전체</span
+            >&nbsp;|&nbsp;<span>빨강</span>&nbsp;|&nbsp;<span>주황</span>&nbsp;|&nbsp;<span>노랑</span>&nbsp;|&nbsp;<span>초록</span>&nbsp;|&nbsp;<span>파랑</span>&nbsp;|&nbsp;<span
+                >보라</span
+            >
+        </div>
+
+        <div class="mypage_article_div">
+            <div id="sumung_article_22" class="mypage_article" onclick="location.href='ex_article2.html'">
+                <div class="mypage_article_title">비가 오는 날</div>
+                <div class="mypage_article_subtitle">주간 아기사자 22호</div>
+            </div>
+            <div id="sumung_article_21" class="mypage_article">
+                <div class="mypage_article_title">제목</div>
+                <div class="mypage_article_subtitle">주간 아기사자 21호</div>
+            </div>
+            <div id="sumung_article_21" class="mypage_article">
+                <div class="mypage_article_title">제목</div>
+                <div class="mypage_article_subtitle">주간 아기사자 20호</div>
+            </div>
+            <div id="sumung_article_21" class="mypage_article">
+                <div class="mypage_article_title">제목</div>
+                <div class="mypage_article_subtitle">주간 아기사자 19호</div>
+            </div>
+            <div id="sumung_article_21" class="mypage_article">
+                <div class="mypage_article_title">제목</div>
+                <div class="mypage_article_subtitle">주간 아기사자 18호</div>
+            </div>
+        </div>
+
+        <div class="bottomTabs_div">
+            <div class="bottomTabs">
+                <button class="bottomTab"><<</button>
+                <button class="bottomTab"><</button>
+                <button class="bottomTab">1</button>
+                <button class="bottomTab">2</button>
+                <button class="bottomTab">3</button>
+                <button class="bottomTab">4</button>
+                <button class="bottomTab">5</button>
+                <button class="bottomTab">></button>
+                <button class="bottomTab">>></button>
+            </div>
+        </div>
+
+        <script src="./js/mypage_article.js"></script>
     </body>
 </html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>색다른 주간지</title>
+        <link rel="icon" href="./img/small_logo.png" type="image/x-icon" />
+        <link rel="stylesheet" href="./components/nav.css" />
+        <link rel="stylesheet" href="./components/bottomTabs.css" />
+        <link rel="stylesheet" href="./css/screens/search.css" />
+    </head>
+
+    <body>
+        <div class="nav">
+            <a class="nav_logo" href="index.html">
+                <img src="./img/small_logo.png" class="nav_small_logo" />
+            </a>
+            <a class="nav_text" href="mypage.html">마이페이지</a>
+            <a class="nav_text" href="write.html">작성페이지</a>
+            <a class="nav_text" href="search.html">검색페이지</a>
+            <button type="button" class="nav_logout" onclick="location.href='login.html'">로그아웃</button>
+        </div>
+
+        <div
+            class="following_article_headtext"
+            style="
+                text-align: center;
+                margin-top: 110px;
+                margin-bottom: 55px;
+                font-size: 18px;
+                font-size: Inter;
+                font-weight: 600;
+            "
+        >
+            아기사자님의 팔로잉 게시물
+        </div>
+
+        <div class="search_article_div">
+            <div id="sumung_article_22" class="search_article" onclick="location.href='ex_article1.html';">
+                <div class="search_article_title">색깔이 우리에게 주는 힘</div>
+                <div class="search_article_subtitle">주간 수뭉 22호</div>
+            </div>
+            <div id="sumung_article_21" class="search_article">
+                <div class="search_article_title">제목</div>
+                <div class="search_article_subtitle">주간 수뭉 21호</div>
+            </div>
+            <div id="sumung_article_21" class="search_article">
+                <div class="search_article_title">제목</div>
+                <div class="search_article_subtitle">주간 수뭉 21호</div>
+            </div>
+            <div id="sumung_article_21" class="search_article">
+                <div class="search_article_title">제목</div>
+                <div class="search_article_subtitle">주간 수뭉 21호</div>
+            </div>
+            <div id="sumung_article_21" class="search_article">
+                <div class="search_article_title">제목</div>
+                <div class="search_article_subtitle">주간 수뭉 21호</div>
+            </div>
+            <div id="sumung_article_21" class="search_article">
+                <div class="search_article_title">제목</div>
+                <div class="search_article_subtitle">주간 수뭉 21호</div>
+            </div>
+        </div>
+
+        <div class="bottomTabs_div">
+            <div class="bottomTabs">
+                <button class="bottomTab"><<</button>
+                <button class="bottomTab"><</button>
+                <button class="bottomTab">1</button>
+                <button class="bottomTab">2</button>
+                <button class="bottomTab">3</button>
+                <button class="bottomTab">4</button>
+                <button class="bottomTab">5</button>
+                <button class="bottomTab">></button>
+                <button class="bottomTab">>></button>
+            </div>
+        </div>
+
+        <script src="./js/following_article.js"></script>
+    </body>
+</html>

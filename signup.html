@@ -1,9 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <title>색다른 주간지</title>
+        <link rel="icon" href="./img/small_logo.png" type="image/x-icon" />
+        <link rel="stylesheet" href="css/screens/signup.css" />
     </head>
-    <body></body>
+    <body>
+        <div class="signup_nav">
+            <img src="./img/small_logo.png" class="main_small_logo" />
+            <button type="button" class="signup_login" onclick="location.href='login.html'">로그인</button>
+        </div>
+
+        <div class="signup_title">회원가입</div>
+
+        <form class="signup_form">
+            <div>
+                <label for="username" class="signup_id">아이디</label><br />
+                <input type="text" id="username" name="username" placeholder=" 영문, 숫자, 특수문자 2-20자" required />
+                <span class="error" id="usernameError"></span>
+            </div>
+            <div>
+                <label for="nickname" class="signup_nickname">닉네임</label><br />
+                <input type="text" id="nickname" name="nickname" placeholder="  한글, 숫자 2-10자" required />
+                <span class="error" id="nicknameError"></span>
+            </div>
+            <div>
+                <label for="password" class="signup_password">비밀번호</label><br />
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder=" 영문, 숫자, 특수문자가 모두 들어간 8-20자"
+                    required
+                />
+                <span class="error" id="passwordError"></span>
+            </div>
+            <div>
+                <label for="repassword" class="signup_repassword">비밀번호 확인</label><br />
+                <input
+                    type="password"
+                    id="repassword"
+                    name="repassword"
+                    placeholder=" 비밀번호를 한 번 더 입력해 주세요"
+                    required
+                />
+                <span class="error" id="repasswordError"></span>
+            </div>
+            <div class="signup_gender_text">성별</div>
+            <div class="signup_gender-selection">
+                <div class="signup_gender male">
+                    <input type="radio" name="gender" value="male" id="male" required />
+                    <label for="male">남성</label>
+                </div>
+                <div class="signup_gender female">
+                    <input type="radio" name="gender" value="female" id="female" required />
+                    <label for="female">여성</label>
+                </div>
+            </div>
+            <div>
+                <div class="signup_age">나이</div>
+                <select class="signup_age_select" id="age">
+                    <option disabled selected>나이 선택</option>
+                    <option value="20">20</option>
+                    <option value="20">21</option>
+                    <option value="20">22</option>
+                    <option value="20">23</option>
+                    <option value="20">24</option>
+                    <option value="20">25</option>
+                </select>
+                <span class="error" id="ageError"></span>
+            </div>
+            <div>
+                <button type="submit" class="signup_btn">가입 완료</button>
+            </div>
+        </form>
+
+        <script src="./js/signup.js"></script>
+    </body>
 </html>
