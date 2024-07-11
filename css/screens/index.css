@@ -6,6 +6,7 @@ body {
 .main_background {
     width: 800px;
     margin: 0 auto;
+    position: relative;
 }
 
 .main_background_img {
@@ -55,7 +56,7 @@ body {
 }
 
 #main_best_color_num {
-    font-size: 12px;
+    font-size: 10px;
 }
 
 .main_best_comment_div {
@@ -76,8 +77,9 @@ body {
     font-weight: 600;
 }
 
-#main_best_comment_num {
-    font-size: 11px;
+#article_hrt_state,
+#article_hrt_num {
+    font-size: 10px;
 }
 
 #article_hrt_state:hover {
@@ -102,7 +104,7 @@ body {
 }
 
 .main_hr {
-    border: 1px black solid;
+    border: 1px rgba(0, 0, 0, 0.5) solid;
 }
 
 .main_new_article_div {

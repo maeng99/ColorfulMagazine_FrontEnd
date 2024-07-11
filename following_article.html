@@ -18,48 +18,44 @@
             <a class="nav_text" href="mypage.html">마이페이지</a>
             <a class="nav_text" href="write.html">작성페이지</a>
             <a class="nav_text" href="search.html">검색페이지</a>
-            <button type="button" class="nav_logout" onclick="location.href='login.html'">로그아웃</button>
+            <button type="button" class="nav_logout" onclick="location.href='login.html';">로그아웃</button>
         </div>
 
-        <div
-            class="following_article_headtext"
-            style="
-                text-align: center;
-                margin-top: 110px;
-                margin-bottom: 55px;
-                font-size: 18px;
-                font-size: Inter;
-                font-weight: 600;
-            "
-        >
-            아기사자님의 팔로잉 게시물
+        <div class="search_headtext"><span id="following_article_username"></span>님의 팔로잉 게시물</div>
+
+        <div class="write_color-selection">
+            <div class="write_color all">
+                <input type="radio" name="color" value="all" id="all" required checked />
+                <label class="write_color_name" for="all">전체</label>
+            </div>
+            <div class="write_color red">
+                <input type="radio" name="color" value="red" id="red" required />
+                <label class="write_color_name" for="red">빨강</label>
+            </div>
+            <div class="write_color orange">
+                <input type="radio" name="color" value="orange" id="orange" required />
+                <label class="write_color_name" for="orange">주황</label>
+            </div>
+            <div class="write_color yellow">
+                <input type="radio" name="color" value="yellow" id="yellow" required />
+                <label class="write_color_name" for="yellow">노랑</label>
+            </div>
+            <div class="write_color green">
+                <input type="radio" name="color" value="green" id="green" required />
+                <label class="write_color_name" for="green">초록</label>
+            </div>
+            <div class="write_color blue">
+                <input type="radio" name="color" value="blue" id="blue" required />
+                <label class="write_color_name" for="blue">파랑</label>
+            </div>
+            <div class="write_color purple">
+                <input type="radio" name="color" value="purple" id="purple" required />
+                <label class="write_color_name" for="purple">보라</label>
+            </div>
         </div>
 
-        <div class="search_article_div">
-            <div id="sumung_article_22" class="search_article" onclick="location.href='ex_article1.html';">
-                <div class="search_article_title">색깔이 우리에게 주는 힘</div>
-                <div class="search_article_subtitle">주간 수뭉 22호</div>
-            </div>
-            <div id="sumung_article_21" class="search_article">
-                <div class="search_article_title">제목</div>
-                <div class="search_article_subtitle">주간 수뭉 21호</div>
-            </div>
-            <div id="sumung_article_21" class="search_article">
-                <div class="search_article_title">제목</div>
-                <div class="search_article_subtitle">주간 수뭉 21호</div>
-            </div>
-            <div id="sumung_article_21" class="search_article">
-                <div class="search_article_title">제목</div>
-                <div class="search_article_subtitle">주간 수뭉 21호</div>
-            </div>
-            <div id="sumung_article_21" class="search_article">
-                <div class="search_article_title">제목</div>
-                <div class="search_article_subtitle">주간 수뭉 21호</div>
-            </div>
-            <div id="sumung_article_21" class="search_article">
-                <div class="search_article_title">제목</div>
-                <div class="search_article_subtitle">주간 수뭉 21호</div>
-            </div>
+        <div id="search_article_div" class="search_article_div">
+            <!-- 이 부분에 article 동적 할당 -->
         </div>
 
         <div class="bottomTabs_div">

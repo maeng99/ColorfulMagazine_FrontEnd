@@ -2,12 +2,55 @@
     background-color: #f3d1b9;
 }
 
-.mypage_badge_list {
+.mypage_badge_selection {
     width: 700px;
-    margin: 10px auto;
+    margin: 0 auto;
+    display: flex;
+    justify-content: left;
+    align-items: center;
     font-size: 10px;
-    font-size: Inter;
+}
+
+.write_color {
+    width: 30px;
+    height: 10px;
+    margin-right: 5px;
+    margin-left: 5px;
+    border-radius: 10px;
+    border: none;
+}
+
+.write_color input[name='color'] {
+    display: none;
+}
+
+.write_color label {
+    font-size: 10px;
+    font-family: Inter;
     font-weight: 300;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    margin: 0 auto;
+    height: -webkit-fill-available;
+}
+/* Checked */
+.write_color input[name='color']:checked + label {
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+}
+
+/* Hover */
+.write_color label:hover {
+    color: rgba(0, 0, 0) !important;
+    font-weight: 600 !important;
+    cursor: pointer;
+}
+
+/* Disabled */
+.write_color input[name='color'] + label {
+    color: rgba(0, 0, 0, 0.5);
 }
 
 .mypage_badge_img_div {

@@ -15,48 +15,71 @@
 
         <div class="signup_title">회원가입</div>
 
-        <form class="signup_form">
+        <form class="signup_form" onsubmit="return validateForm(event)">
             <div>
-                <label for="username" class="signup_id">아이디</label><br />
-                <input type="text" id="username" name="username" placeholder=" 영문, 숫자, 특수문자 2-20자" required />
-                <span class="error" id="usernameError"></span>
+                <label for="username" class="signup_id">아이디</label>
+                <input type="text" id="username" name="username" placeholder=" 영문, 숫자, 특수문자 2~12자" />
+                <div class="signup_username_message">
+                    <div class="success_message avail_username hide">✅ 사용 가능한 아이디입니다</div>
+                    <div class="failure_message none_username hide">* 아이디를 입력해주세요</div>
+                    <div class="failure_message wrong_username1 hide">
+                        * 아이디는 영문, 숫자가 모두 포함된 2~12자이어야 합니다
+                    </div>
+                    <div class="failure_message wrong_username2 hide">* 영어 또는 숫자만 가능합니다</div>
+                </div>
             </div>
             <div>
-                <label for="nickname" class="signup_nickname">닉네임</label><br />
-                <input type="text" id="nickname" name="nickname" placeholder="  한글, 숫자 2-10자" required />
-                <span class="error" id="nicknameError"></span>
+                <label for="nickname" class="signup_nickname">닉네임</label>
+                <input type="text" id="nickname" name="nickname" placeholder="  한글, 숫자 2~12자" />
+                <div class="signup_nickname_message">
+                    <div class="success_message avail_nickname hide">✅ 사용 가능한 닉네임입니다</div>
+                    <div class="failure_message none_nickname hide">* 닉네임을 입력해주세요</div>
+                    <div class="failure_message wrong_nickname1 hide">
+                        * 닉네임은 한글, 숫자가 포함된 2~12자이어야 합니다
+                    </div>
+                    <div class="failure_message wrong_nickname2 hide">* 한글 또는 숫자만 가능합니다</div>
+                </div>
             </div>
             <div>
-                <label for="password" class="signup_password">비밀번호</label><br />
+                <label for="password" class="signup_password">비밀번호</label>
                 <input
                     type="password"
                     id="password"
                     name="password"
                     placeholder=" 영문, 숫자, 특수문자가 모두 들어간 8-20자"
-                    required
                 />
-                <span class="error" id="passwordError"></span>
+                <div class="signup_password_message">
+                    <div class="failure_message none_password hide">* 비밀번호를 입력해주세요</div>
+                    <div class="failure_message wrong_password hide">
+                        * 비밀번호는 영문, 숫자, 특수문자(@$!%*#?&)가 모두 포함된 8자 이상이어야 합니다
+                    </div>
+                </div>
             </div>
             <div>
-                <label for="repassword" class="signup_repassword">비밀번호 확인</label><br />
+                <label for="repassword" class="signup_repassword">비밀번호 확인</label>
                 <input
                     type="password"
                     id="repassword"
                     name="repassword"
                     placeholder=" 비밀번호를 한 번 더 입력해 주세요"
-                    required
                 />
-                <span class="error" id="repasswordError"></span>
+                <div class="signup_repassword_message">
+                    <div class="success_message avail_repassword hide">✅ 비밀번호가 일치합니다</div>
+                    <div class="failure_message mismatch_repassword hide">* 비밀번호가 일치하지 않습니다</div>
+                </div>
             </div>
             <div class="signup_gender_text">성별</div>
             <div class="signup_gender-selection">
                 <div class="signup_gender male">
-                    <input type="radio" name="gender" value="male" id="male" required />
+                    <input type="radio" name="gender" value="male" id="male" />
                     <label for="male">남성</label>
                 </div>
                 <div class="signup_gender female">
-                    <input type="radio" name="gender" value="female" id="female" required />
+                    <input type="radio" name="gender" value="female" id="female" />
                     <label for="female">여성</label>
+                </div>
+                <div class="signup_gender_message">
+                    <div class="failure_message none_gender hide">* 성별을 선택해주세요</div>
                 </div>
             </div>
             <div>
@@ -70,7 +93,9 @@
                     <option value="20">24</option>
                     <option value="20">25</option>
                 </select>
-                <span class="error" id="ageError"></span>
+                <div class="signup_age_message">
+                    <div class="failure_message none_age hide">* 나이를 선택해주세요</div>
+                </div>
             </div>
             <div>
                 <button type="submit" class="signup_btn">가입 완료</button>

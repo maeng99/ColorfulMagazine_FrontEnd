@@ -81,5 +81,8 @@ body {
 }
 
 .mypage_hr {
+    border: none;
+    background-color: rgba(0, 0, 0, 0.3);
+    height: 2px;
     width: 700px;
 }
