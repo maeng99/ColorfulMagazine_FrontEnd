@@ -21,6 +21,24 @@
                     popup.style.display = 'none';
                 }
             };
+            function validateForm(event) {
+                event.preventDefault(); // 기본 폼 제출 동작 방지
+
+                const title = document.querySelector('.write_form_title').value.trim();
+                const date = document.querySelector('.write_form_date').value.trim();
+                const color = document.querySelector('input[name="color"]:checked');
+                const content = document.querySelector('.write_form_content').value.trim();
+                const comment = document.querySelector('.write_form_comment').value.trim();
+
+                if (!title || !date || !color || !content || !comment) {
+                    alert("⚠️ 모든 입력란을 입력해주세요 ⚠️");
+                    return false;
+                }
+
+                // 모든 필드가 채워졌을 때 폼 제출
+                window.location.href = 'ex_article1.html';
+                return true;
+            }
         </script>
     </head>
     <body>
@@ -41,7 +59,7 @@
                 </div>
                 <hr class="write_hr" />
                 <div>
-                    <label class="write_form_date_label">날짜를 선택해주세요</label>
+                    <label class="write_form_date_label" required>날짜를 선택해주세요</label>
                     <input
                         type="date"
                         class="write_form_date"
@@ -64,7 +82,7 @@
                             </div>
                         </div>
                     </label>
-                    <div class="write_color-selection">
+                    <div class="write_color-selection" required="">
                         <div class="write_color red">
                             <input type="radio" name="color" value="red" id="red" required />
                             <label class="write_color_name" for="red">빨강</label>
@@ -102,7 +120,7 @@
             </div>
             <div class="write_form_submit_div">
                 <button type="button" id="write_cancel" class="write_form_cancel">취소</button>
-                <button type="submit" class="write_form_submit" onclick="location.href='ex_article1.html'">발행</button>
+                <button type="submit" class="write_form_submit" onclick="return validateForm(event)">발행</button>
             </div>
         </form>
 

@@ -18,12 +18,22 @@
         <form class="signup_form">
             <div>
                 <label for="username" class="signup_id">아이디</label><br />
-                <input type="text" id="username" name="username" placeholder=" 영문, 숫자, 특수문자 2-20자" required />
+                <input type="text" id="username" name="username" placeholder=" 영문, 숫자가 모두 들어간 4-12자" required />
+                <div class="signup_username_message">
+                  <div class="success-message hide">✅ 사용 가능한 아이디입니다</div>
+                  <div class="failure-message hide">* 아이디는 영어, 숫자 포함 4~12자이어야 합니다</div>
+                  <div class="failure-message2 hide">* 영어 또는 숫자만 가능합니다</div>
+                </div>
                 <span class="error" id="usernameError"></span>
             </div>
             <div>
                 <label for="nickname" class="signup_nickname">닉네임</label><br />
-                <input type="text" id="nickname" name="nickname" placeholder="  한글, 숫자 2-10자" required />
+                <input type="text" id="nickname" name="nickname" placeholder="  한글, 숫자 4-12자" required />
+                <div class="signup_nickname_message">
+                  <div class="success-message-nic hide">✅ 사용 가능한 닉네임입니다</div>
+                  <div class="failure-message-nic hide">* 닉네임은 한글, 숫자 포함 4~12자이어야 합니다</div>
+                  <div class="failure-message2-nic hide">* 한글 또는 숫자만 가능합니다</div>
+                </div>
                 <span class="error" id="nicknameError"></span>
             </div>
             <div>
@@ -32,10 +42,10 @@
                     type="password"
                     id="password"
                     name="password"
-                    placeholder=" 영문, 숫자, 특수문자가 모두 들어간 8-20자"
+                    placeholder=" 영문, 숫자, 특수문자(@$!%*#?&)가 모두 들어간 8자 이상"
                     required
                 />
-                <span class="error" id="passwordError"></span>
+                <div class="strongPassword-message hide">* 8글자 이상, 영문, 숫자, 특수문자(@$!%*#?&)를 모두 사용하세요</div>
             </div>
             <div>
                 <label for="repassword" class="signup_repassword">비밀번호 확인</label><br />
@@ -48,6 +58,7 @@
                 />
                 <span class="error" id="repasswordError"></span>
             </div>
+            <div class="mismatch-message hide">* 비밀번호가 일치하지 않습니다</div>
             <div class="signup_gender_text">성별</div>
             <div class="signup_gender-selection">
                 <div class="signup_gender male">
@@ -70,10 +81,10 @@
                     <option value="20">24</option>
                     <option value="20">25</option>
                 </select>
-                <span class="error" id="ageError"></span>
+                <div class="strongAge-message hide">* 나이를 선택해주세요</div>
             </div>
             <div>
-                <button type="submit" class="signup_btn">가입 완료</button>
+                <button type="submit" class="signup_btn">회원 가입</button>
             </div>
         </form>
 

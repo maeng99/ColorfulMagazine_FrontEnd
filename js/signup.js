@@ -1,94 +1,162 @@
-/*
-나이 드롭다운
-https://choiiis.github.io/web/toy-project-sign-up-and-in-page-2/
+// 1. 아이디 입력창 정보 가져오기
+let elInputUsername = document.querySelector('#username'); // input#username
+// 2. 성공 메시지 정보 가져오기
+let elSuccessMessage = document.querySelector('.success-message'); // div.success-message.hide
+// 3. 실패 메시지 정보 가져오기 (글자수 제한 4~12글자)
+let elFailureMessage = document.querySelector('.failure-message'); // div.failure-message.hide
+// 4. 실패 메시지2 정보 가져오기 (영어 또는 숫자)
+let elFailureMessageTwo = document.querySelector('.failure-message2'); // div.failure-message2.hide
 
-// '출생 연도' 셀렉트 박스 option 목록 동적 생성
-const birthYearEl = document.querySelector('#birth-year')
-// option 목록 생성 여부 확인
-isYearOptionExisted = false;
-birthYearEl.addEventListener('focus', function () {
-  // year 목록 생성되지 않았을 때 (최초 클릭 시)
-  if(!isYearOptionExisted) {
-    isYearOptionExisted = true
-    for(var i = 1940; i <= 2022; i++) {
-      // option element 생성
-      const YearOption = document.createElement('option')
-      YearOption.setAttribute('value', i)
-      YearOption.innerText = i
-      // birthYearEl의 자식 요소로 추가
-      this.appendChild(YearOption);
+// 1. 닉네임 입력창 정보 가져오기
+let elInputNickname = document.querySelector('#nickname'); // input#nickname
+// 2. 성공 메시지 정보 가져오기
+let elSuccessMessageNickname = document.querySelector('.success-message-nic'); // div.success-message.hide
+// 3. 실패 메시지 정보 가져오기 (글자수 제한 4~12글자)
+let elFailureMessageNickname = document.querySelector('.failure-message-nic'); // div.failure-message.hide
+// 4. 실패 메시지2 정보 가져오기 (영어 또는 숫자)
+let elFailureMessageTwoNickname = document.querySelector('.failure-message2-nic'); // div.failure-message2.hide
+
+
+// 1. 비밀번호 입력창 정보 가져오기
+let elInputPassword = document.querySelector('#password'); // input#password
+// 2. 비밀번호 확인 입력창 정보 가져오기
+let elInputPasswordRetype = document.querySelector('#repassword'); // input#password-retype
+// 3. 실패 메시지 정보 가져오기 (비밀번호 불일치)
+let elMismatchMessage = document.querySelector('.mismatch-message'); // div.mismatch-message.hide
+// 4. 실패 메시지 정보 가져오기 (8글자 이상, 영문, 숫자, 특수문자 미사용)
+let elStrongPasswordMessage = document.querySelector('.strongPassword-message'); // div.strongPassword-message.hide
+
+// 1. 나이선택 입력창 정보 가져오기
+let elInputAge = document.querySelector('#age'); // input#age
+// 4. 실패 메시지 정보 가져오기 (8글자 이상, 영문, 숫자, 특수문자 미사용)
+let elStrongAgeMessage = document.querySelector('.strongAge-message'); // div.strongPassword-message.hide
+
+
+
+//아이디 길이
+function idLength(value) {
+    return value.length >= 4 && value.length <= 12
+}
+//영어랑 숫자만 가능
+function onlyNumberAndEnglish(str) {
+    return /^[A-Za-z0-9][A-Za-z0-9]*$/.test(str);
+}
+//한국어랑 숫자만 가능
+function onlyKoreanAndNumber(str) {
+    return /^[가-힣0-9][가-힣0-9]*$/.test(str);
+}
+//8글자 이상이면서 영문,숫자,특수문자 사용
+function strongPassword (str) {
+    return /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/.test(str);
+}
+//비밀번호와 비밀번호 확인 일치
+function isMatch (password1, password2) {
+    return password1 === password2;
+}
+
+
+elInputUsername.onkeyup = function () {
+    // 값을 입력한 경우
+    if (elInputUsername.value.length !== 0) {
+      // 영어 또는 숫자 외의 값을 입력했을 경우
+      if(onlyNumberAndEnglish(elInputUsername.value) === false) {
+        elSuccessMessage.classList.add('hide');
+        elFailureMessage.classList.add('hide');
+        elFailureMessageTwo.classList.remove('hide'); // 영어 또는 숫자만 가능합니다
+      }
+      // 글자 수가 4~12글자가 아닐 경우
+      else if(idLength(elInputUsername.value) === false) {
+        elSuccessMessage.classList.add('hide'); // 성공 메시지가 가려져야 함
+        elFailureMessage.classList.remove('hide'); // 아이디는 4~12글자이어야 합니다
+        elFailureMessageTwo.classList.add('hide'); // 실패 메시지2가 가려져야 함
+      }
+      // 조건을 모두 만족할 경우
+      else if(idLength(elInputUsername.value) || onlyNumberAndEnglish(elInputUsername.value)) {
+        elSuccessMessage.classList.remove('hide'); // 사용할 수 있는 아이디입니다
+        elFailureMessage.classList.add('hide'); // 실패 메시지가 가려져야 함
+        elFailureMessageTwo.classList.add('hide'); // 실패 메시지2가 가려져야 함
+      }
     }
-  }
-});
-// Month, Day도 동일한 방식으로 구현
-*/
+    // 값을 입력하지 않은 경우 (지웠을 때)
+    // 모든 메시지를 가린다.
+    else {
+      elSuccessMessage.classList.add('hide');
+      elFailureMessage.classList.add('hide');
+      elFailureMessageTwo.classList.add('hide');
+    }
+}
 
-document.getElementById('signupForm').addEventListener('submit', function (event) {
-    event.preventDefault(); // 기본 제출 동작 방지
+elInputNickname.onkeyup = function () {
+    // 값을 입력한 경우
+    if (elInputNickname.value.length !== 0) {
+      // 영어 또는 숫자 외의 값을 입력했을 경우
+      if(onlyKoreanAndNumber(elInputNickname.value) === false) {
+        elSuccessMessageNickname.classList.add('hide');
+        elFailureMessageNickname.classList.add('hide');
+        elFailureMessageTwoNickname.classList.remove('hide'); // 영어 또는 숫자만 가능합니다
+      }
+      // 글자 수가 4~12글자가 아닐 경우
+      else if(idLength(elInputNickname.value) === false) {
+        elSuccessMessageNickname.classList.add('hide'); // 성공 메시지가 가려져야 함
+        elFailureMessageNickname.classList.remove('hide'); // 아이디는 4~12글자이어야 합니다
+        elFailureMessageTwoNickname.classList.add('hide'); // 실패 메시지2가 가려져야 함
+      }
+      // 조건을 모두 만족할 경우
+      else if(idLength(elInputNickname.value) || onlyNumberAndEnglish(elInputUsername.value)) {
+        elSuccessMessageNickname.classList.remove('hide'); // 사용할 수 있는 아이디입니다
+        elFailureMessageNickname.classList.add('hide'); // 실패 메시지가 가려져야 함
+        elFailureMessageTwoNickname.classList.add('hide'); // 실패 메시지2가 가려져야 함
+      }
+    }
+    // 값을 입력하지 않은 경우 (지웠을 때)
+    // 모든 메시지를 가린다.
+    else {
+      elSuccessMessage.classList.add('hide');
+      elFailureMessage.classList.add('hide');
+      elFailureMessageTwo.classList.add('hide');
+    }
+}
 
-    // 유효성 검사
-    let isValid = true;
+elInputPassword.onkeyup = function () {
 
-    // 아이디 검사
-    const username = document.getElementById('username').value;
-    const usernameError = document.getElementById('usernameError');
-    if (!/^[a-zA-Z0-9!@#$%^&*]{2,20}$/.test(username)) {
-        usernameError.textContent = '아이디는 영문, 숫자, 특수문자 2-20자여야 합니다.';
-        usernameError.style.display = 'block';
-        isValid = false;
+    // console.log(elInputPassword.value);
+    // 값을 입력한 경우
+    if (elInputPassword.value.length !== 0) {
+      if(strongPassword(elInputPassword.value)) {
+        elStrongPasswordMessage.classList.add('hide'); // 실패 메시지가 가려져야 함
+      }
+      else {
+        elStrongPasswordMessage.classList.remove('hide'); // 실패 메시지가 보여야 함
+      }
+    }
+    // 값을 입력하지 않은 경우 (지웠을 때)
+    // 모든 메시지를 가린다.
+    else {
+      elStrongPasswordMessage.classList.add('hide');
+    }
+};
+
+elInputPasswordRetype.onkeyup = function () {
+
+    // console.log(elInputPasswordRetype.value);
+    if (elInputPasswordRetype.value.length !== 0) {
+      if(isMatch(elInputPassword.value, elInputPasswordRetype.value)) {
+        elMismatchMessage.classList.add('hide'); // 실패 메시지가 가려져야 함
+      }
+      else {
+        elMismatchMessage.classList.remove('hide'); // 실패 메시지가 보여야 함
+      }
+    }
+    else {
+      elMismatchMessage.classList.add('hide'); // 실패 메시지가 가려져야 함
+    }
+};
+
+elInputAge.onchange = function () {
+    // 나이 선택값을 가져옴
+    if (elInputAge.value === "나이 선택") {
+        elStrongAgeMessage.classList.remove('hide'); // 실패 메시지가 보여야 함
     } else {
-        usernameError.style.display = 'none';
+        elStrongAgeMessage.classList.add('hide'); // 실패 메시지가 가려져야 함
     }
-
-    // 닉네임 검사
-    const nickname = document.getElementById('nickname').value;
-    const nicknameError = document.getElementById('nicknameError');
-    if (!/^[가-힣0-9]{2,10}$/.test(nickname)) {
-        nicknameError.textContent = '닉네임은 한글, 숫자 2-10자여야 합니다.';
-        nicknameError.style.display = 'block';
-        isValid = false;
-    } else {
-        nicknameError.style.display = 'none';
-    }
-
-    // 비밀번호 검사
-    const password = document.getElementById('password').value;
-    const passwordError = document.getElementById('passwordError');
-    if (!/^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^&*]).{8,20}$/.test(password)) {
-        passwordError.textContent = '비밀번호는 영문, 숫자, 특수문자가 모두 들어간 8-20자여야 합니다.';
-        passwordError.style.display = 'block';
-        isValid = false;
-    } else {
-        passwordError.style.display = 'none';
-    }
-
-    // 비밀번호 확인 검사
-    const repassword = document.getElementById('repassword').value;
-    const repasswordError = document.getElementById('repasswordError');
-    if (password !== repassword) {
-        repasswordError.textContent = '비밀번호가 일치하지 않습니다.';
-        repasswordError.style.display = 'block';
-        isValid = false;
-    } else {
-        repasswordError.style.display = 'none';
-    }
-
-    // 나이 검사
-    const age = document.getElementById('age').value;
-    const ageError = document.getElementById('ageError');
-    if (!age) {
-        ageError.textContent = '나이를 선택해 주세요.';
-        ageError.style.display = 'block';
-        isValid = false;
-    } else {
-        ageError.style.display = 'none';
-    }
-
-    if (isValid) {
-        // 유효성 검사가 모두 통과되면 폼 제출
-        this.submit();
-        console.log(isVaild);
-        alert('정보 입력 완료. 반갑습니다.');
-        window.location.href = 'login.html';
-    }
-});
+};
