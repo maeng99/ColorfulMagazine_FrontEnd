@@ -285,6 +285,9 @@ body {
     color: #666;
 }
 
+.hide {
+    display: none;
+}
 
 /*
 .signup_button1 {

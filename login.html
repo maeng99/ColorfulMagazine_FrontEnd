@@ -1,45 +1,35 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>login</title>
-  <link rel="stylesheet" href="css/login.css">
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
-</head>
-<body>
-  <div class="login_top">
-    <div class="login_top_logo" style="width: 177px; height: 154px; left: 631px; top: 243px; position: absolute">
-      <div style="left: 0px; top: 77px; position: absolute; color: #2C323E; font-size: 64px; font-family: Inter; font-weight: 900; word-wrap: break-word">주간지</div>
-      <div style="left: 0px; top: 0px; position: absolute; color: #2C323E; font-size: 64px; font-family: Inter; font-weight: 900; word-wrap: break-word">색다른</div>
-      <div class="Color" style="left: 32px; top: 30px; position: absolute; color: #8298CA; font-size: 64px; font-family: Kapakana; font-weight: 400; word-wrap: break-word">color</div>
-    </div>
-    <div style="left: 638px; top: 190px; position: absolute; color: #2C323E; font-size: 20px; font-family: Inter; font-weight: 700; word-wrap: break-word">나만의 <br/>다채로운 주간지</div>
-    <div style="left: 638px; top: 190px; position: absolute; color: #2C323E; font-size: 20px; font-family: Inter; font-weight: 700; word-wrap: break-word">나만의 <br/>다채로운 주간지</div>
-  </div>
-  <div class="login_main">
-    <div class="container">
-      <form action="/submit-login" method="post">
-        <div>
-          <div class="login_id">아이디</div>
-          <label for="username"></label>
-          <input type="text" id="username" name="username"  required>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>색다른 주간지</title>
+        <link rel="icon" href="./img/small_logo.png" type="image/x-icon" />
+        <link rel="stylesheet" href="./css/screens/login.css" />
+        <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="login_logo">
+            <div class="login_logo_text">나만의 <br />다채로운 주간지</div>
+            <img src="./img/main_logo.png" alt="login_logo" class="login_logo_img" />
         </div>
-        <div>
-          <div class="login_password">비밀번호</div>
-          <label for="password"></label>
-          <input type="password" id="password" name="password"  required>
+
+        <form action="/submit-login" method="post" class="login_form">
+            <div>
+                <label for="username" class="login_id">아이디</label><br />
+                <input type="text" id="username" name="username" required />
+            </div>
+            <div>
+                <label for="password" class="login_password">비밀번호</label><br />
+                <input type="password" id="password" name="password" required />
+            </div>
+            <div>
+                <button type="submit" class="login_btn" onclick="location.href='index.html'">로그인</button>
+            </div>
+        </form>
+
+        <div class="login_signup_div">
+            <a href="signup.html" class="login_signup_btn">회원가입</a>
         </div>
-        <a href="index.html" class="login_login_btn">
-          <span>로그인</span>
-        </a>
-        <div class="login_signup_btn">
-          <a href="signup.html">
-            <span>회원가입</span>
-          </a>
-        </div>
-      </form>
-    </div>
-  </div>
-</body>
+    </body>
 </html>
