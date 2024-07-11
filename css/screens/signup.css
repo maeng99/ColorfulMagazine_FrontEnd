@@ -49,6 +49,7 @@ body {
     font-size: 15px;
     font-family: Inter;
     font-weight: 600;
+    display: block;
 }
 
 #username {
@@ -59,13 +60,14 @@ body {
     border-radius: 10px;
     border: 1px rgba(0, 0, 0, 0.1) solid;
     margin-top: 4px;
-    margin-bottom: 10px;
 }
 
 .signup_nickname {
     font-size: 15px;
     font-family: Inter;
     font-weight: 600;
+    display: block;
+    margin-top: 15px;
 }
 
 #nickname {
@@ -76,13 +78,14 @@ body {
     border-radius: 10px;
     border: 1px rgba(0, 0, 0, 0.1) solid;
     margin-top: 4px;
-    margin-bottom: 10px;
 }
 
 .signup_password {
     font-size: 15px;
     font-family: Inter;
     font-weight: 600;
+    display: block;
+    margin-top: 15px;
 }
 
 #password {
@@ -93,13 +96,14 @@ body {
     border-radius: 10px;
     border: 1px rgba(0, 0, 0, 0.1) solid;
     margin-top: 4px;
-    margin-bottom: 10px;
 }
 
 .signup_repassword {
     font-size: 15px;
     font-family: Inter;
     font-weight: 600;
+    display: block;
+    margin-top: 15px;
 }
 
 #repassword {
@@ -110,13 +114,13 @@ body {
     border-radius: 10px;
     border: 1px rgba(0, 0, 0, 0.1) solid;
     margin-top: 4px;
-    margin-bottom: 10px;
 }
 
 .signup_gender_text {
     font-size: 15px;
     font-family: Inter;
     font-weight: 600;
+    margin-top: 15px;
 }
 
 .signup_gender-selection {
@@ -124,7 +128,6 @@ body {
     display: flex;
     justify-content: space-around;
     margin-top: 4px;
-    margin-bottom: 10px;
 }
 
 .signup_gender {
@@ -167,6 +170,7 @@ body {
     font-size: 15px;
     font-family: Inter;
     font-weight: 600;
+    margin-top: 15px;
 }
 
 #age {
@@ -177,7 +181,6 @@ body {
     border-radius: 10px;
     border: 1px rgba(0, 0, 0, 0.1) solid;
     margin-top: 4px;
-    margin-bottom: 10px;
 }
 
 .signup_btn {
@@ -201,26 +204,17 @@ body {
     cursor: pointer;
 }
 
-.error {
-    color: red;
-    font-size: 12px;
-    display: none;
-}
-
 .hide {
     display: none;
 }
 
-.success-message, .success-message-nic {
+.success_message {
     font-size: 12px;
     color: green; /* 성공 메시지는 초록색 */
-    margin-top: -8px;
-    padding-bottom: 10px;
 }
 
-.failure-message, .failure-message2, .failure-message-nic, .failure-message2-nic, .strongPassword-message, .mismatch-message, .strongAge-message {
+.failure_message {
     font-size: 12px; /* 글씨 크기 */
     color: red; /* 글씨 색 */
-    margin-top: -8px;
-    padding-bottom: 10px;
 }
+

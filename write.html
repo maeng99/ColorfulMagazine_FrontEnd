@@ -7,39 +7,6 @@
         <link rel="icon" href="./img/small_logo.png" type="image/x-icon" />
         <link rel="stylesheet" href="./components/nav.css" />
         <link rel="stylesheet" href="./css/screens/write.css" />
-
-        <script type="text/javascript">
-            function colorInfoPopup() {
-                const popup = document.getElementById('popup');
-                popup.style.display = popup.style.display === 'block' ? 'none' : 'block';
-            }
-
-            // 클릭 이벤트가 팝업 외부에서 발생하면 팝업을 닫음
-            window.onclick = function (event) {
-                const popup = document.getElementById('popup');
-                if (event.target === popup) {
-                    popup.style.display = 'none';
-                }
-            };
-            function validateForm(event) {
-                event.preventDefault(); // 기본 폼 제출 동작 방지
-
-                const title = document.querySelector('.write_form_title').value.trim();
-                const date = document.querySelector('.write_form_date').value.trim();
-                const color = document.querySelector('input[name="color"]:checked');
-                const content = document.querySelector('.write_form_content').value.trim();
-                const comment = document.querySelector('.write_form_comment').value.trim();
-
-                if (!title || !date || !color || !content || !comment) {
-                    alert("⚠️ 모든 입력란을 입력해주세요 ⚠️");
-                    return false;
-                }
-
-                // 모든 필드가 채워졌을 때 폼 제출
-                window.location.href = 'ex_article1.html';
-                return true;
-            }
-        </script>
     </head>
     <body>
         <div class="nav">
@@ -52,10 +19,10 @@
             <button type="button" class="nav_logout" onclick="location.href='login.html'">로그아웃</button>
         </div>
 
-        <form class="write_form">
+        <form class="write_form" onsubmit="return validateForm(event)">
             <div id="write_input_div" class="write_form_input_div">
                 <div>
-                    <input type="text" class="write_form_title" placeholder="제목을 입력해주세요" required />
+                    <input type="text" class="write_form_title" placeholder="제목을 입력해주세요" />
                 </div>
                 <hr class="write_hr" />
                 <div>
@@ -67,7 +34,6 @@
                         min="2000-01-01"
                         max="2030-12-31"
                         placeholder="날짜를 입력해주세요"
-                        required
                     />
                 </div>
                 <hr class="write_hr" />
@@ -84,43 +50,43 @@
                     </label>
                     <div class="write_color-selection" required="">
                         <div class="write_color red">
-                            <input type="radio" name="color" value="red" id="red" required />
+                            <input type="radio" name="color" value="red" id="red" />
                             <label class="write_color_name" for="red">빨강</label>
                         </div>
                         <div class="write_color orange">
-                            <input type="radio" name="color" value="orange" id="orange" required />
+                            <input type="radio" name="color" value="orange" id="orange" />
                             <label class="write_color_name" for="orange">주황</label>
                         </div>
                         <div class="write_color yellow">
-                            <input type="radio" name="color" value="yellow" id="yellow" required />
+                            <input type="radio" name="color" value="yellow" id="yellow" />
                             <label class="write_color_name" for="yellow">노랑</label>
                         </div>
                         <div class="write_color green">
-                            <input type="radio" name="color" value="green" id="green" required />
+                            <input type="radio" name="color" value="green" id="green" />
                             <label class="write_color_name" for="green">초록</label>
                         </div>
                         <div class="write_color blue">
-                            <input type="radio" name="color" value="blue" id="blue" required />
+                            <input type="radio" name="color" value="blue" id="blue" />
                             <label class="write_color_name" for="blue">파랑</label>
                         </div>
                         <div class="write_color purple">
-                            <input type="radio" name="color" value="purple" id="purple" required />
+                            <input type="radio" name="color" value="purple" id="purple" />
                             <label class="write_color_name" for="purple">보라</label>
                         </div>
                     </div>
                 </div>
                 <hr class="write_hr" />
                 <div>
-                    <textarea class="write_form_content" placeholder="당신의 이야기를 적어주세요" required></textarea>
+                    <textarea class="write_form_content" placeholder="당신의 이야기를 적어주세요"></textarea>
                 </div>
                 <hr class="write_hr" />
                 <div>
-                    <textarea class="write_form_comment" placeholder="코멘트를 작성해주세요" required></textarea>
+                    <textarea class="write_form_comment" placeholder="코멘트를 작성해주세요"></textarea>
                 </div>
             </div>
             <div class="write_form_submit_div">
                 <button type="button" id="write_cancel" class="write_form_cancel">취소</button>
-                <button type="submit" class="write_form_submit" onclick="return validateForm(event)">발행</button>
+                <button type="submit" class="write_form_submit">발행</button>
             </div>
         </form>
 

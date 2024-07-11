@@ -62,34 +62,45 @@
         </div>
         <hr class="mypage_hr" />
 
-        <div class="mypage_article_list">
-            <span>전체</span
-            >&nbsp;|&nbsp;<span>빨강</span>&nbsp;|&nbsp;<span>주황</span>&nbsp;|&nbsp;<span>노랑</span>&nbsp;|&nbsp;<span>초록</span>&nbsp;|&nbsp;<span>파랑</span>&nbsp;|&nbsp;<span
-                >보라</span
-            >
+        <div class="mypage_article_color-selection">
+            <div class="write_color all">
+                <input type="radio" name="color" value="all" id="all" required checked />
+                <label class="write_color_name" for="all">전체</label>
+            </div>
+            <span>|</span>
+            <div class="write_color red">
+                <input type="radio" name="color" value="red" id="red" required />
+                <label class="write_color_name" for="red">빨강</label>
+            </div>
+            <span>|</span>
+            <div class="write_color orange">
+                <input type="radio" name="color" value="orange" id="orange" required />
+                <label class="write_color_name" for="orange">주황</label>
+            </div>
+            <span>|</span>
+            <div class="write_color yellow">
+                <input type="radio" name="color" value="yellow" id="yellow" required />
+                <label class="write_color_name" for="yellow">노랑</label>
+            </div>
+            <span>|</span>
+            <div class="write_color green">
+                <input type="radio" name="color" value="green" id="green" required />
+                <label class="write_color_name" for="green">초록</label>
+            </div>
+            <span>|</span>
+            <div class="write_color blue">
+                <input type="radio" name="color" value="blue" id="blue" required />
+                <label class="write_color_name" for="blue">파랑</label>
+            </div>
+            <span>|</span>
+            <div class="write_color purple">
+                <input type="radio" name="color" value="purple" id="purple" required />
+                <label class="write_color_name" for="purple">보라</label>
+            </div>
         </div>
 
-        <div class="mypage_article_div">
-            <div id="sumung_article_22" class="mypage_article" onclick="location.href='ex_article2.html'">
-                <div class="mypage_article_title">비가 오는 날</div>
-                <div class="mypage_article_subtitle">주간 아기사자 22호</div>
-            </div>
-            <div id="sumung_article_21" class="mypage_article">
-                <div class="mypage_article_title">제목</div>
-                <div class="mypage_article_subtitle">주간 아기사자 21호</div>
-            </div>
-            <div id="sumung_article_21" class="mypage_article">
-                <div class="mypage_article_title">제목</div>
-                <div class="mypage_article_subtitle">주간 아기사자 20호</div>
-            </div>
-            <div id="sumung_article_21" class="mypage_article">
-                <div class="mypage_article_title">제목</div>
-                <div class="mypage_article_subtitle">주간 아기사자 19호</div>
-            </div>
-            <div id="sumung_article_21" class="mypage_article">
-                <div class="mypage_article_title">제목</div>
-                <div class="mypage_article_subtitle">주간 아기사자 18호</div>
-            </div>
+        <div id="mypage_article_div" class="mypage_article_div">
+            <!-- 이 부분에 article 동적 할당 -->
         </div>
 
         <div class="bottomTabs_div">

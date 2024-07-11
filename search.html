@@ -21,64 +21,41 @@
             <button type="button" class="nav_logout" onclick="location.href='login.html';">로그아웃</button>
         </div>
 
-        <div class="search_headtext">원하는 색깔을 선택해주세요</div>
+        <div class="search_headtext">검색할 색깔을 선택해주세요</div>
 
         <div class="write_color-selection">
             <div class="write_color all">
                 <input type="radio" name="color" value="all" id="all" required checked />
-                <label for="all">전체</label>
+                <label class="write_color_name" for="all">전체</label>
             </div>
             <div class="write_color red">
                 <input type="radio" name="color" value="red" id="red" required />
-                <label for="red">빨강</label>
+                <label class="write_color_name" for="red">빨강</label>
             </div>
             <div class="write_color orange">
                 <input type="radio" name="color" value="orange" id="orange" required />
-                <label for="orange">주황</label>
+                <label class="write_color_name" for="orange">주황</label>
             </div>
             <div class="write_color yellow">
                 <input type="radio" name="color" value="yellow" id="yellow" required />
-                <label for="yellow">노랑</label>
+                <label class="write_color_name" for="yellow">노랑</label>
             </div>
             <div class="write_color green">
                 <input type="radio" name="color" value="green" id="green" required />
-                <label for="green">초록</label>
+                <label class="write_color_name" for="green">초록</label>
             </div>
             <div class="write_color blue">
                 <input type="radio" name="color" value="blue" id="blue" required />
-                <label for="blue">파랑</label>
+                <label class="write_color_name" for="blue">파랑</label>
             </div>
             <div class="write_color purple">
                 <input type="radio" name="color" value="purple" id="purple" required />
-                <label for="purple">보라</label>
+                <label class="write_color_name" for="purple">보라</label>
             </div>
         </div>
 
-        <div class="search_article_div">
-            <div id="sumung_article_22" class="search_article" onclick="location.href='ex_article2.html';">
-                <div class="search_article_title">비가 오는 날</div>
-                <div class="search_article_subtitle">주간 아기사자 22호</div>
-            </div>
-            <div id="sumung_article_21" class="search_article">
-                <div class="search_article_title">제목</div>
-                <div class="search_article_subtitle">주간 강아지 22호</div>
-            </div>
-            <div id="sumung_article_21" class="search_article">
-                <div class="search_article_title">제목</div>
-                <div class="search_article_subtitle">주간 고양이 22호</div>
-            </div>
-            <div id="sumung_article_21" class="search_article">
-                <div class="search_article_title">제목</div>
-                <div class="search_article_subtitle">주간 햄스터 22호</div>
-            </div>
-            <div id="sumung_article_21" class="search_article">
-                <div class="search_article_title">제목</div>
-                <div class="search_article_subtitle">주간 미어캣 22호</div>
-            </div>
-            <div id="sumung_article_21" class="search_article">
-                <div class="search_article_title">제목</div>
-                <div class="search_article_subtitle">주간 수뭉 22호</div>
-            </div>
+        <div id="search_article_div" class="search_article_div">
+            <!-- 이 부분에 article 동적 할당 -->
         </div>
 
         <div class="bottomTabs_div">

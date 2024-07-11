@@ -1,0 +1,21 @@
+.article {
+    width: 600px;
+    margin: 10px auto;
+    padding: 15px;
+    border-radius: 20px;
+}
+.article:hover {
+    cursor: pointer;
+}
+
+.article_title {
+    font-size: 15px;
+    font-size: Inter;
+    font-weight: 600;
+}
+
+.article_subtitle {
+    font-size: 12px;
+    font-size: Inter;
+    font-weight: 400;
+}

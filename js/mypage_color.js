@@ -34,7 +34,8 @@ function drawChart() {
             var selectedItem = chart.getSelection()[0];
             if (selectedItem) {
                 var color = data.getValue(selectedItem.row, 0);
-                handlePieSliceClick(color);
+                localStorage.setItem('selectedColor', color);
+                window.location.href = 'mypage_article.html';
             }
         });
     });
