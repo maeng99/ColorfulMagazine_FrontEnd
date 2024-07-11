@@ -167,6 +167,6 @@ function validateForm(event) {
     */
 
     // 모든 필드가 채워졌을 때 폼 제출
-    window.location.href = './article.html';
+    window.location.href = './search.html';
     return true;
 }
