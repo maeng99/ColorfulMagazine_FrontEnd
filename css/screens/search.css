@@ -137,3 +137,10 @@ body {
     font-size: Inter;
     font-weight: 400;
 }
+
+.info {
+    display: flex;
+    justify-content: center;
+    font-weight: bolder;
+    font-size: smaller;
+}
