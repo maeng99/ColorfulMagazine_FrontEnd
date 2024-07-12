@@ -11,7 +11,7 @@
     font-size: 10px;
 }
 
-.write_color {
+.badge_status {
     width: 30px;
     height: 10px;
     margin-right: 5px;
@@ -20,11 +20,11 @@
     border: none;
 }
 
-.write_color input[name='color'] {
+.badge_status input[name='badge_list'] {
     display: none;
 }
 
-.write_color label {
+.badge_status label {
     font-size: 10px;
     font-family: Inter;
     font-weight: 300;
@@ -36,20 +36,20 @@
     height: -webkit-fill-available;
 }
 /* Checked */
-.write_color input[name='color']:checked + label {
+.badge_status input[name='badge_list']:checked + label {
     color: rgb(0, 0, 0);
     font-weight: 600;
 }
 
 /* Hover */
-.write_color label:hover {
+.badge_status label:hover {
     color: rgba(0, 0, 0) !important;
     font-weight: 600 !important;
     cursor: pointer;
 }
 
 /* Disabled */
-.write_color input[name='color'] + label {
+.badge_status input[name='badge_list'] + label {
     color: rgba(0, 0, 0, 0.5);
 }
 
@@ -148,7 +148,7 @@
 }
 
 .mypage_progress_pct {
-    width: 100%;
+    width: 0%;
     height: 5px;
     background-color: #f3d1b9;
 }

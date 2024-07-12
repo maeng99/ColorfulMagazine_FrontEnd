@@ -22,30 +22,14 @@
 
         <div class="mypage_profile">
             <div class="mypage_profile_img_text">
-                <div>
-                    <img src="./img/profile.png" class="mypage_profile_img" />
-                </div>
-                <div class="mypage_profile_text">
-                    <span class="mypage_profile_nickname">아기사자</span><br /><br />
-                    <button type="button" class="mypage_follower_btn" onclick="location.href='follower_list.html'">
-                        팔로워 <span>00</span>명</button
-                    ><br />
-                    <button type="button" class="mypage_following_btn" onclick="location.href='following_list.html'">
-                        팔로잉 <span>00</span>명
-                    </button>
-                </div>
+                <!--여기에 마이프로필 정보 입력-->
             </div>
             <div class="mypage_main_btn_div">
                 <div class="mypage_main_btn_div_1">
                     <button type="button" class="mypage_main_btn" onclick="location.href='mypage_edit.html'">
                         프로필 수정
                     </button>
-                    <button
-                        type="button"
-                        id="mypage_badge_btn"
-                        class="mypage_main_btn"
-                        onclick="location.href='mypage_badge.html'"
-                    >
+                    <button type="button" class="mypage_main_btn" onclick="location.href='mypage_badge.html'">
                         <b>뱃지 설정</b>
                     </button>
                 </div>
@@ -62,19 +46,19 @@
         <hr class="mypage_hr" />
 
         <div class="mypage_badge_selection">
-            <div class="write_color all">
-                <input type="radio" name="color" value="all" id="all" required checked />
+            <div class="badge_status all">
+                <input type="radio" name="badge_list" value="all" id="all" required checked />
                 <label class="write_color_name" for="all">전체</label>
             </div>
             <span>|</span>
-            <div class="write_color red">
-                <input type="radio" name="color" value="red" id="red" required />
-                <label class="write_color_name" for="red">보유</label>
+            <div class="badge_status owned">
+                <input type="radio" name="badge_list" value="owned" id="owned" required />
+                <label class="write_color_name" for="owned">보유</label>
             </div>
             <span>|</span>
-            <div class="write_color orange">
-                <input type="radio" name="color" value="orange" id="orange" required />
-                <label class="write_color_name" for="orange">미보유</label>
+            <div class="badge_status not_owned">
+                <input type="radio" name="badge_list" value="not_owned" id="not_owned" required />
+                <label class="write_color_name" for="not_owned">미보유</label>
             </div>
         </div>
 
@@ -88,7 +72,7 @@
                     <div class="mypage_badge_task">주간지 1회 발행시 부여</div>
                     <div class="mypage_progress_div">
                         <div class="mypage_progress-bar">
-                            <div class="mypage_progress_pct"></div>
+                            <div class="mypage_progress_pct" id="progress1"></div>
                         </div>
                         <div class="mypage_progress">1/1</div>
                     </div>
@@ -103,7 +87,7 @@
                     <div class="mypage_badge_task">주간지 4회 발행시 부여</div>
                     <div class="mypage_progress_div">
                         <div class="mypage_progress-bar">
-                            <div class="mypage_progress_pct"></div>
+                            <div class="mypage_progress_pct" id="progress2"></div>
                         </div>
                         <div class="mypage_progress">4/4</div>
                     </div>
@@ -118,7 +102,7 @@
                     <div class="mypage_badge_task">주간지 8회 발행시 부여</div>
                     <div class="mypage_progress_div">
                         <div class="mypage_progress-bar">
-                            <div class="mypage_progress_pct" style="width: 75%"></div>
+                            <div class="mypage_progress_pct" id="progress3"></div>
                         </div>
                         <div class="mypage_progress">6/8</div>
                     </div>
@@ -133,7 +117,7 @@
                     <div class="mypage_badge_task">모든 색깔 1회 이상 발행시 부여</div>
                     <div class="mypage_progress_div">
                         <div class="mypage_progress-bar">
-                            <div class="mypage_progress_pct"></div>
+                            <div class="mypage_progress_pct" id="progress4"></div>
                         </div>
                         <div class="mypage_progress">6/6</div>
                     </div>
@@ -148,7 +132,7 @@
                     <div class="mypage_badge_task">공감수 10개 이상 달성시 부여</div>
                     <div class="mypage_progress_div">
                         <div class="mypage_progress-bar">
-                            <div class="mypage_progress_pct"></div>
+                            <div class="mypage_progress_pct" id="progress5"></div>
                         </div>
                         <div class="mypage_progress">10/10</div>
                     </div>
@@ -163,7 +147,7 @@
                     <div class="mypage_badge_task">공감수 50개 이상 달성시 부여</div>
                     <div class="mypage_progress_div">
                         <div class="mypage_progress-bar">
-                            <div class="mypage_progress_pct"></div>
+                            <div class="mypage_progress_pct" id="progress6"></div>
                         </div>
                         <div class="mypage_progress">50/50</div>
                     </div>
@@ -178,7 +162,7 @@
                     <div class="mypage_badge_task">공감수 100개 이상 달성 시 부여</div>
                     <div class="mypage_progress_div">
                         <div class="mypage_progress-bar">
-                            <div class="mypage_progress_pct" style="width: 60%"></div>
+                            <div class="mypage_progress_pct" id="progress7"></div>
                         </div>
                         <div class="mypage_progress">60/100</div>
                     </div>
@@ -193,7 +177,7 @@
                     <div class="mypage_badge_task">대표 코멘트 선정시 부여</div>
                     <div class="mypage_progress_div">
                         <div class="mypage_progress-bar">
-                            <div class="mypage_progress_pct"></div>
+                            <div class="mypage_progress_pct" id="progress8"></div>
                         </div>
                         <div class="mypage_progress">1/1</div>
                     </div>
@@ -208,7 +192,7 @@
                     <div class="mypage_badge_task">첫 팔로우시 부여</div>
                     <div class="mypage_progress_div">
                         <div class="mypage_progress-bar">
-                            <div class="mypage_progress_pct"></div>
+                            <div class="mypage_progress_pct" id="progress9"></div>
                         </div>
                         <div class="mypage_progress">1/1</div>
                     </div>
@@ -223,7 +207,7 @@
                     <div class="mypage_badge_task">첫 팔로워 달성시 부여</div>
                     <div class="mypage_progress_div">
                         <div class="mypage_progress-bar">
-                            <div class="mypage_progress_pct"></div>
+                            <div class="mypage_progress_pct" id="progress10"></div>
                         </div>
                         <div class="mypage_progress">1/1</div>
                     </div>
@@ -238,7 +222,7 @@
                     <div class="mypage_badge_task">팔로워 50명 달성시 부여</div>
                     <div class="mypage_progress_div">
                         <div class="mypage_progress-bar">
-                            <div class="mypage_progress_pct" style="width: 60%"></div>
+                            <div class="mypage_progress_pct" id="progress11"></div>
                         </div>
                         <div class="mypage_progress">30/50</div>
                     </div>
@@ -253,7 +237,7 @@
                     <div class="mypage_badge_task">팔로워 100명 달성시 부여</div>
                     <div class="mypage_progress_div">
                         <div class="mypage_progress-bar">
-                            <div class="mypage_progress_pct" style="width: 30%"></div>
+                            <div class="mypage_progress_pct" id="progress12"></div>
                         </div>
                         <div class="mypage_progress">30/100</div>
                     </div>
@@ -261,6 +245,7 @@
             </div>
         </div>
 
+        <script src="./js/mypage.js"></script>
         <script src="./js/mypage_badge.js"></script>
     </body>
 </html>

@@ -10,7 +10,7 @@ function submitLoginForm(event) {
     console.log(username, password);
 
     // 서버에 로그인 요청을 보냅니다.
-    fetch('https://cors-anywhere.herokuapp.com/' + API_SERVER_DOMAIN + 'users/login/', {
+    fetch(API_SERVER_DOMAIN + 'users/login/', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -27,14 +27,11 @@ function submitLoginForm(event) {
             return response.json();
         })
         .then((data) => {
-            console.log(data);
-            var accessToken = data.token;
-            setCookie('accessToken', accessToken, 1);
+            var accessToken = data.access_token;
+            var refreshToken = data.refresh_token;
 
-            /*
-            var refreshToken = data.refreshToken;
+            setCookie('accessToken', accessToken, 1);
             setCookie('refreshToken', refreshToken, 1);
-            */
 
             // 로그인이 성공하면 다음 동작을 수행합니다.
             window.location.replace('/index.html');

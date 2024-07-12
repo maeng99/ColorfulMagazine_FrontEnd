@@ -185,59 +185,6 @@ const ex_data = [
     },
 ];
 
-var API_SERVER_DOMAIN = '';
-
-function getCookie(name) {
-    var nameEQ = name + '=';
-    var cookies = document.cookie.split(';');
-    for (var i = 0; i < cookies.length; i++) {
-        var cookie = cookies[i];
-        while (cookie.charAt(0) === ' ') {
-            cookie = cookie.substring(1, cookie.length);
-        }
-        if (cookie.indexOf(nameEQ) === 0) {
-            return cookie.substring(nameEQ.length, cookie.length);
-        }
-    }
-    return null;
-}
-
-function getAccessTokenWithRefreshToken(accessToken, refreshToken) {
-    return fetch(API_SERVER_DOMAIN + '/auth/reissue', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-            accessToken: accessToken,
-            refreshToken: refreshToken,
-        }),
-    })
-        .then((response) => {
-            if (!response.ok) {
-                throw new Error('Failed to refresh access token');
-            }
-            return response.json();
-        })
-        .then((data) => {
-            return data.accessToken;
-        });
-}
-
-function getPostInfo(accessToken) {
-    return fetch(API_SERVER_DOMAIN + '/posts/my', {
-        method: 'GET',
-        headers: {
-            Authorization: 'Bearer ' + accessToken,
-        },
-    }).then((response) => {
-        if (!response.ok) {
-            throw new Error('Failed to fetch posts');
-        }
-        return response.json();
-    });
-}
-
 document.addEventListener('DOMContentLoaded', function () {
     const tabsContainer = document.querySelector('.bottomTabs');
     const colorFilters = document.querySelectorAll('input[name="color"]');

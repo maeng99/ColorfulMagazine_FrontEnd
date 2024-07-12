@@ -15,7 +15,7 @@ async function submitSignupForm(event) {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                id: id,
+                username: username,
                 nickname: nickname,
             }),
         });
@@ -29,14 +29,17 @@ async function submitSignupForm(event) {
         }
 
         // 서버에 회원가입 요청을 보냅니다.
-        let signupResponse = await fetch(API_SERVER_DOMAIN + 'signup', {
+        let signupResponse = await fetch(API_SERVER_DOMAIN + 'users/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                id: id,
+                password: password,
+                username: username,
                 nickname: nickname,
+                gender: gender,
+                age: age,
             }),
         });
 
