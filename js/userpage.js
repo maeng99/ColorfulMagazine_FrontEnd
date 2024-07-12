@@ -1,111 +1,4 @@
-const post_data = [
-    {
-        id: 1,
-        title: '색깔이 우리에게 주는 힘',
-        content:
-            '오늘은 아침에 일어나서 운동을 갔다. 산책을 하며 시원한 바람을 느끼고, 주변의 아름다운 자연경관을 감상했다. 점심에는 친구들과 함께 맛있는 피자를 먹었고, 오랜만에 만나서 즐거운 시간을 보냈다. 오후에는 카페에 가서 책을 읽으며 시간을 보냈고, 저녁에는 가족과 함께 저녁식사를 하며 하루를 마무리했다. 오늘 하루도 평화롭고 행복하게 보낸 것 같다.',
-        comment: '삐빅',
-        color: '#BBCBDE',
-        image: null,
-        date: '2024-07-05',
-        created_at: '2024-07-07T21:04:09.597236Z',
-        comments_num: 1,
-        user: {
-            id: 5,
-            nickname: '아기사자',
-            email: 'asdf@gmail.com',
-            gender: '남자',
-            age: 47,
-            profile_image: null,
-            followers_count: 0,
-            following_count: 0,
-            posts_num: 22,
-        },
-    },
-    {
-        id: 55,
-        title: '비가 오는 날',
-        content:
-            '오늘은 아침에 일어나서 운동을 갔다. 산책을 하며 시원한 바람을 느끼고, 주변의 아름다운 자연경관을 감상했다. 점심에는 친구들과 함께 맛있는 피자를 먹었고, 오랜만에 만나서 즐거운 시간을 보냈다. 오후에는 카페에 가서 책을 읽으며 시간을 보냈고, 저녁에는 가족과 함께 저녁식사를 하며 하루를 마무리했다. 오늘 하루도 평화롭고 행복하게 보낸 것 같다.',
-        comment: '삐빅',
-        color: '#D5DFD1',
-        image: null,
-        date: '2024-07-05',
-        created_at: '2024-07-07T21:04:09.597236Z',
-        comments_num: 1,
-        user: {
-            id: 6,
-            nickname: '수뭉이',
-            email: 'asdf@gmail.com',
-            gender: '남자',
-            age: 47,
-            profile_image: null,
-            followers_count: 0,
-            following_count: 0,
-            posts_num: 22,
-        },
-    },
-    {
-        id: 30,
-        title: '지피티의 하루',
-        content:
-            '오늘은 아침에 일어나서 운동을 갔다. 산책을 하며 시원한 바람을 느끼고, 주변의 아름다운 자연경관을 감상했다. 점심에는 친구들과 함께 맛있는 피자를 먹었고, 오랜만에 만나서 즐거운 시간을 보냈다. 오후에는 카페에 가서 책을 읽으며 시간을 보냈고, 저녁에는 가족과 함께 저녁식사를 하며 하루를 마무리했다. 오늘 하루도 평화롭고 행복하게 보낸 것 같다.',
-        comment: '삐빅',
-        color: '#FCF4C5',
-        image: null,
-        date: '2024-07-05',
-        created_at: '2024-07-07T21:04:09.597236Z',
-        comments_num: 1,
-        user: {
-            id: 7,
-            nickname: '춘식이',
-            email: 'asdf@gmail.com',
-            gender: '남자',
-            age: 47,
-            profile_image: null,
-            followers_count: 0,
-            following_count: 0,
-            posts_num: 2,
-        },
-    },
-];
-const ex_data = [
-    {
-        id: 5,
-        nickname: '아기사자',
-        email: 'asdf@gmail.com',
-        gender: '남자',
-        age: 47,
-        profile_image: null,
-        followers_count: 200,
-        following_count: 134,
-        posts_num: 22,
-    },
-    {
-        id: 6,
-        nickname: '수뭉이',
-        email: 'asdf@gmail.com',
-        gender: '남자',
-        age: 47,
-        profile_image: null,
-        followers_count: 0,
-        following_count: 0,
-        posts_num: 22,
-    },
-    {
-        id: 7,
-        nickname: '춘식이',
-        email: 'asdf@gmail.com',
-        gender: '남자',
-        age: 47,
-        profile_image: null,
-        followers_count: 0,
-        following_count: 0,
-        posts_num: 2,
-    },
-];
-
-var API_SERVER_DOMAIN = '';
+var API_SERVER_DOMAIN = 'http://3.39.171.235:8000/';
 
 function getCookie(name) {
     var nameEQ = name + '=';
@@ -122,14 +15,13 @@ function getCookie(name) {
     return null;
 }
 
-function getAccessTokenWithRefreshToken(accessToken, refreshToken) {
-    return fetch(API_SERVER_DOMAIN + '/auth/reissue', {
+function getAccessTokenWithRefreshToken(refreshToken) {
+    return fetch(API_SERVER_DOMAIN + 'users/refresh', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-            accessToken: accessToken,
             refreshToken: refreshToken,
         }),
     })
@@ -144,9 +36,10 @@ function getAccessTokenWithRefreshToken(accessToken, refreshToken) {
         });
 }
 
-function getUserInfo() {
-    return fetch(API_SERVER_DOMAIN + '/users/profile', {
+function getPostInfo() {
+    return fetch(API_SERVER_DOMAIN + '/posts/posts', {
         method: 'GET',
+        header: {},
     }).then((response) => {
         if (!response.ok) {
             throw new Error('Failed to fetch posts');
@@ -155,9 +48,10 @@ function getUserInfo() {
     });
 }
 
-function getPostInfo() {
-    return fetch(API_SERVER_DOMAIN + '/posts/posts', {
+function getUserInfo() {
+    return fetch(API_SERVER_DOMAIN + '/users/profile', {
         method: 'GET',
+        header: {},
     }).then((response) => {
         if (!response.ok) {
             throw new Error('Failed to fetch posts');
@@ -172,27 +66,44 @@ document.addEventListener('DOMContentLoaded', function () {
     const tabsContainer = document.querySelector('.bottomTabs');
     const colorFilters = document.querySelectorAll('input[name="color"]');
 
-    /*
+    const selectedUser = localStorage.getItem('user_id');
+
     var accessToken = getCookie('accessToken');
     var refreshToken = getCookie('refreshToken');
-    
+
     if (accessToken) {
         getPostInfo(accessToken)
             .then((data) => {
-                filteredData = data; // Initialize filteredData with fetched data
-                updatePagination();
-                displayArticles(currentPage);
+                const selectedUserData = data.find((data) => data.id == selectedUser);
+                colorFilters.forEach((filter) => {
+                    filter.addEventListener('change', function () {
+                        const selectedColor = this.value;
+
+                        if (selectedColor === 'all') {
+                            userFilteredData = data.filter((article) => article.user.id === selectedUser);
+                        } else {
+                            userFilteredData = data.filter(
+                                (article) =>
+                                    article.user.id === selectedUser &&
+                                    article.color === getColorKorfromEng(selectedColor)
+                            );
+                        }
+                        currentPage = 1;
+                        updatePagination();
+                        displayArticles(currentPage);
+                    });
+                });
+                createcard(selectedUserData);
             })
             .catch((error) => {
+                alert(error);
                 console.error('Failed to fetch posts:', error);
                 if (refreshToken) {
                     getAccessTokenWithRefreshToken(accessToken, refreshToken)
                         .then((newAccessToken) => {
                             getPostInfo(newAccessToken)
                                 .then((data) => {
-                                    filteredData = data; // Initialize filteredData with fetched data
-                                    updatePagination();
-                                    displayArticles(currentPage);
+                                    const selectedUserData = data.find((data) => data.id == selectedUser);
                                 })
                                 .catch((error) => {
                                     console.error('Failed to fetch posts after refreshing token:', error);
@@ -209,27 +120,19 @@ document.addEventListener('DOMContentLoaded', function () {
             });
     } else {
         location.href = 'login.html'; // Redirect to login page
-    }*/
+    }
 
-    const selectedUser = localStorage.getItem('user_id');
-    const selectedUserData = ex_data.find((data) => data.id == selectedUser);
-
-    colorFilters.forEach((filter) => {
-        filter.addEventListener('change', function () {
-            const selectedColor = this.value;
-
-            if (selectedColor === 'all') {
-                userFilteredData = post_data.filter((article) => article.user.id === selectedUser);
-            } else {
-                userFilteredData = post_data.filter(
-                    (article) => article.user.id === selectedUser && article.color === getColorCode(selectedColor)
-                );
-            }
-            currentPage = 1;
-            updatePagination();
-            displayArticles(currentPage);
-        });
-    });
+    function getColorKorfromEng(colorName) {
+        const colorMap = {
+            red: '빨강',
+            orange: '주황',
+            yellow: '노랑',
+            green: '초록',
+            blue: '파랑',
+            purple: '보라',
+        };
+        return colorMap[colorName];
+    }
 
     tabsContainer.addEventListener('click', function (event) {
         const target = event.target;
@@ -250,7 +153,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    createcard(selectedUserData);
     updatePagination();
     displayArticles(currentPage);
 });
@@ -332,7 +234,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const colorFilters = document.querySelectorAll('input[name="color"]');
 
     const selectedUser = localStorage.getItem('user_id');
-    const selectedUserData = ex_data.find((data) => data.id == selectedUser);
+    const selectedUserData = data.find((data) => data.id == selectedUser);
 
     // Initialize userFilteredData after DOM is loaded
     userFilteredData = post_data.filter((article) => article.user.id == selectedUser);
