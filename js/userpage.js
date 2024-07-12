@@ -1,4 +1,4 @@
-const ex_data = [
+const post_data = [
     {
         id: 1,
         title: '색깔이 우리에게 주는 힘',
@@ -68,120 +68,40 @@ const ex_data = [
             posts_num: 2,
         },
     },
+];
+const ex_data = [
     {
-        id: 400,
-        title: '지피티의 하루',
-        content:
-            '오늘은 아침에 일어나서 운동을 갔다. 산책을 하며 시원한 바람을 느끼고, 주변의 아름다운 자연경관을 감상했다. 점심에는 친구들과 함께 맛있는 피자를 먹었고, 오랜만에 만나서 즐거운 시간을 보냈다. 오후에는 카페에 가서 책을 읽으며 시간을 보냈고, 저녁에는 가족과 함께 저녁식사를 하며 하루를 마무리했다. 오늘 하루도 평화롭고 행복하게 보낸 것 같다.',
-        comment: '삐빅',
-        color: '#EEC8C8',
-        image: null,
-        date: '2024-07-05',
-        created_at: '2024-07-07T21:04:09.597236Z',
-        comments_num: 1,
-        user: {
-            id: 5,
-            nickname: '고양이',
-            email: 'asdf@gmail.com',
-            gender: '남자',
-            age: 47,
-            profile_image: null,
-            followers_count: 0,
-            following_count: 0,
-            posts_num: 2,
-        },
+        id: 5,
+        nickname: '아기사자',
+        email: 'asdf@gmail.com',
+        gender: '남자',
+        age: 47,
+        profile_image: null,
+        followers_count: 200,
+        following_count: 134,
+        posts_num: 22,
     },
     {
-        id: 200,
-        title: '지피티의 하루',
-        content:
-            '오늘은 아침에 일어나서 운동을 갔다. 산책을 하며 시원한 바람을 느끼고, 주변의 아름다운 자연경관을 감상했다. 점심에는 친구들과 함께 맛있는 피자를 먹었고, 오랜만에 만나서 즐거운 시간을 보냈다. 오후에는 카페에 가서 책을 읽으며 시간을 보냈고, 저녁에는 가족과 함께 저녁식사를 하며 하루를 마무리했다. 오늘 하루도 평화롭고 행복하게 보낸 것 같다.',
-        comment: '삐빅',
-        color: '#FFE5CA',
-        image: null,
-        date: '2024-07-05',
-        created_at: '2024-07-07T21:04:09.597236Z',
-        comments_num: 1,
-        user: {
-            id: 5,
-            nickname: '햄스터',
-            email: 'asdf@gmail.com',
-            gender: '남자',
-            age: 47,
-            profile_image: null,
-            followers_count: 0,
-            following_count: 0,
-            posts_num: 2,
-        },
+        id: 6,
+        nickname: '수뭉이',
+        email: 'asdf@gmail.com',
+        gender: '남자',
+        age: 47,
+        profile_image: null,
+        followers_count: 0,
+        following_count: 0,
+        posts_num: 22,
     },
     {
-        id: 10000,
-        title: '지피티의 하루',
-        content:
-            '오늘은 아침에 일어나서 운동을 갔다. 산책을 하며 시원한 바람을 느끼고, 주변의 아름다운 자연경관을 감상했다. 점심에는 친구들과 함께 맛있는 피자를 먹었고, 오랜만에 만나서 즐거운 시간을 보냈다. 오후에는 카페에 가서 책을 읽으며 시간을 보냈고, 저녁에는 가족과 함께 저녁식사를 하며 하루를 마무리했다. 오늘 하루도 평화롭고 행복하게 보낸 것 같다.',
-        comment: '삐빅',
-        color: '#FCF4C5',
-        image: null,
-        date: '2024-07-05',
-        created_at: '2024-07-07T21:04:09.597236Z',
-        comments_num: 1,
-        user: {
-            id: 5,
-            nickname: '남자',
-            email: 'asdf@gmail.com',
-            gender: '남자',
-            age: 47,
-            profile_image: null,
-            followers_count: 0,
-            following_count: 0,
-            posts_num: 2,
-        },
-    },
-    {
-        id: 200,
-        title: '지피티의 하루',
-        content:
-            '오늘은 아침에 일어나서 운동을 갔다. 산책을 하며 시원한 바람을 느끼고, 주변의 아름다운 자연경관을 감상했다. 점심에는 친구들과 함께 맛있는 피자를 먹었고, 오랜만에 만나서 즐거운 시간을 보냈다. 오후에는 카페에 가서 책을 읽으며 시간을 보냈고, 저녁에는 가족과 함께 저녁식사를 하며 하루를 마무리했다. 오늘 하루도 평화롭고 행복하게 보낸 것 같다.',
-        comment: '삐빅',
-        color: '#FFE5CA',
-        image: null,
-        date: '2024-07-05',
-        created_at: '2024-07-07T21:04:09.597236Z',
-        comments_num: 1,
-        user: {
-            id: 5,
-            nickname: '햄스터',
-            email: 'asdf@gmail.com',
-            gender: '남자',
-            age: 47,
-            profile_image: null,
-            followers_count: 0,
-            following_count: 0,
-            posts_num: 2,
-        },
-    },
-    {
-        id: 10000,
-        title: '지피티의 하루',
-        content:
-            '오늘은 아침에 일어나서 운동을 갔다. 산책을 하며 시원한 바람을 느끼고, 주변의 아름다운 자연경관을 감상했다. 점심에는 친구들과 함께 맛있는 피자를 먹었고, 오랜만에 만나서 즐거운 시간을 보냈다. 오후에는 카페에 가서 책을 읽으며 시간을 보냈고, 저녁에는 가족과 함께 저녁식사를 하며 하루를 마무리했다. 오늘 하루도 평화롭고 행복하게 보낸 것 같다.',
-        comment: '삐빅',
-        color: '#FCF4C5',
-        image: null,
-        date: '2024-07-05',
-        created_at: '2024-07-07T21:04:09.597236Z',
-        comments_num: 1,
-        user: {
-            id: 5,
-            nickname: '남자',
-            email: 'asdf@gmail.com',
-            gender: '남자',
-            age: 47,
-            profile_image: null,
-            followers_count: 0,
-            following_count: 0,
-            posts_num: 2,
-        },
+        id: 7,
+        nickname: '춘식이',
+        email: 'asdf@gmail.com',
+        gender: '남자',
+        age: 47,
+        profile_image: null,
+        followers_count: 0,
+        following_count: 0,
+        posts_num: 2,
     },
 ];
 
@@ -224,12 +144,9 @@ function getAccessTokenWithRefreshToken(accessToken, refreshToken) {
         });
 }
 
-function getPostInfo(accessToken) {
-    return fetch(API_SERVER_DOMAIN + '/posts/my', {
+function getUserInfo() {
+    return fetch(API_SERVER_DOMAIN + '/users', {
         method: 'GET',
-        headers: {
-            Authorization: 'Bearer ' + accessToken,
-        },
     }).then((response) => {
         if (!response.ok) {
             throw new Error('Failed to fetch posts');
@@ -237,6 +154,19 @@ function getPostInfo(accessToken) {
         return response.json();
     });
 }
+
+function getPostInfo() {
+    return fetch(API_SERVER_DOMAIN + '/posts/posts', {
+        method: 'GET',
+    }).then((response) => {
+        if (!response.ok) {
+            throw new Error('Failed to fetch posts');
+        }
+        return response.json();
+    });
+}
+
+var resultData = {};
 
 document.addEventListener('DOMContentLoaded', function () {
     const tabsContainer = document.querySelector('.bottomTabs');
@@ -281,6 +211,7 @@ document.addEventListener('DOMContentLoaded', function () {
         location.href = 'login.html'; // Redirect to login page
     }*/
 
+    const selectedUser = localStorage.getItem('user_id');
     const selectedColor = localStorage.getItem('selectedColor');
 
     if (selectedColor) {
@@ -296,7 +227,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (colorValue) {
             document.getElementById(colorValue).checked = true;
         }
-        filteredData = ex_data.filter((article) => article.color === getColorCode(colorValue));
+        filteredData = post_data.filter((article) => article.color === getColorCode(colorValue));
         localStorage.removeItem('selectedColor');
     }
 
@@ -304,9 +235,9 @@ document.addEventListener('DOMContentLoaded', function () {
         filter.addEventListener('change', function () {
             const selectedColor = this.value;
             if (selectedColor === 'all') {
-                filteredData = ex_data;
+                filteredData = post_data;
             } else {
-                filteredData = ex_data.filter((article) => article.color === getColorCode(selectedColor));
+                filteredData = post_data.filter((article) => article.color === getColorCode(selectedColor));
             }
             currentPage = 1;
             updatePagination();
@@ -333,6 +264,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+    createcard(selectedUser);
     updatePagination();
     displayArticles(currentPage);
 });
@@ -406,5 +338,50 @@ const articlesPerPage = 5;
 const maxVisiblePages = 5;
 let currentPage = 1;
 let data = []; // Initialize data as an empty array
-let filteredData = ex_data; // Initialize with all data
+let filteredData = post_data; // Initialize with all data
 const totalPages = () => Math.ceil(filteredData.length / articlesPerPage);
+
+document.getElementById('sumung_follow_state').addEventListener('click', function () {
+    if (this.innerText === '팔로우 취소') {
+        if (confirm('정말 취소하시겠습니까?')) {
+            alert('취소되었습니다.');
+            this.innerText = '팔로우';
+            this.style.backgroundColor = '#bdc6dc';
+        } else {
+        }
+    } else if (this.innerText === '팔로우') {
+        this.innerText = '팔로우 취소';
+        this.style.backgroundColor = '#fff';
+    }
+});
+
+function createcard(user) {
+    const profile = document.querySelector('.mypage_profile');
+
+    profile.innerHTML = `
+        <div class="mypage_profile_img_text">
+            <div>
+                <img src="./img/profile.png" class="mypage_profile_img" />
+            </div>
+            <div class="mypage_profile_text">
+                <span class="mypage_profile_nickname">${user.nickname}</span><br /><br />
+                <button type="button" class="mypage_follower_btn" onclick="location.href='follower_list.html'">
+                    팔로워 <span id="follower_num">${user.followers_count}</span>명</button
+                ><br />
+                <button type="button" class="mypage_following_btn" onclick="location.href='following_list.html'">
+                    팔로잉 <span id="following_num">${user.following_count}</span>명
+                </button>
+            </div>
+        </div>
+        <div class="mypage_main_btn_div">
+            <button
+                type="button"
+                id="sumung_follow_state"
+                class="mypage_main_btn follow"
+                style="width: 50%; padding: 10px; background-color: #bdc6dc"
+            >
+                팔로우
+            </button>
+        </div>
+        `;
+}

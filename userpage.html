@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>색다른 주간지</title>
+        <link rel="icon" href="./img/small_logo.png" type="image/x-icon" />
+        <link rel="stylesheet" href="./components/nav.css" />
+        <link rel="stylesheet" href="./components/bottomTabs.css" />
+        <link rel="stylesheet" href="./css/screens/mypage.css" />
+        <link rel="stylesheet" href="./css/screens/mypage_article.css" />
+    </head>
+    <body>
+        <div class="nav">
+            <a class="nav_logo" href="index.html">
+                <img src="./img/small_logo.png" class="nav_small_logo" />
+            </a>
+            <a class="nav_text" href="mypage.html"><b>마이페이지</b></a>
+            <a class="nav_text" href="write.html">작성페이지</a>
+            <a class="nav_text" href="search.html">검색페이지</a>
+            <button type="button" class="nav_logout" onclick="location.href='login.html'">로그아웃</button>
+        </div>
+
+        <div class="mypage_profile">
+            <!--이곳에 userprofile-->
+        </div>
+        <hr class="mypage_hr" />
+
+        <div class="mypage_article_color-selection">
+            <div class="write_color all">
+                <input type="radio" name="color" value="all" id="all" required checked />
+                <label class="write_color_name" for="all">전체</label>
+            </div>
+            <span>|</span>
+            <div class="write_color red">
+                <input type="radio" name="color" value="red" id="red" required />
+                <label class="write_color_name" for="red">빨강</label>
+            </div>
+            <span>|</span>
+            <div class="write_color orange">
+                <input type="radio" name="color" value="orange" id="orange" required />
+                <label class="write_color_name" for="orange">주황</label>
+            </div>
+            <span>|</span>
+            <div class="write_color yellow">
+                <input type="radio" name="color" value="yellow" id="yellow" required />
+                <label class="write_color_name" for="yellow">노랑</label>
+            </div>
+            <span>|</span>
+            <div class="write_color green">
+                <input type="radio" name="color" value="green" id="green" required />
+                <label class="write_color_name" for="green">초록</label>
+            </div>
+            <span>|</span>
+            <div class="write_color blue">
+                <input type="radio" name="color" value="blue" id="blue" required />
+                <label class="write_color_name" for="blue">파랑</label>
+            </div>
+            <span>|</span>
+            <div class="write_color purple">
+                <input type="radio" name="color" value="purple" id="purple" required />
+                <label class="write_color_name" for="purple">보라</label>
+            </div>
+        </div>
+
+        <div id="mypage_article_div" class="mypage_article_div">
+            <!-- 이 부분에 article 동적 할당 -->
+        </div>
+
+        <div class="bottomTabs_div">
+            <div class="bottomTabs">
+                <button class="bottomTab"><<</button>
+                <button class="bottomTab"><</button>
+                <button class="bottomTab">1</button>
+                <button class="bottomTab">2</button>
+                <button class="bottomTab">3</button>
+                <button class="bottomTab">4</button>
+                <button class="bottomTab">5</button>
+                <button class="bottomTab">></button>
+                <button class="bottomTab">>></button>
+            </div>
+        </div>
+
+        <script src="./js/mypage_article.js"></script>
+
+        <script src="./js/userpage.js"></script>
+    </body>
+</html>

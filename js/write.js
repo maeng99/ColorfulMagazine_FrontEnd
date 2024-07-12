@@ -1,4 +1,4 @@
-var API_SERVER_DOMAIN = '';
+var API_SERVER_DOMAIN = 'http://3.39.171.235:8000/';
 
 function getCookie(name) {
     var nameEQ = name + '=';
@@ -16,7 +16,7 @@ function getCookie(name) {
 }
 
 function getAccessTokenWithRefreshToken(accessToken, refreshToken) {
-    return fetch(API_SERVER_DOMAIN + '/auth/reissue', {
+    return fetch('https://cors-anywhere.herokuapp.com/' + API_SERVER_DOMAIN + '/auth/reissue', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -50,6 +50,77 @@ window.onclick = function (event) {
     }
 };
 
+document.addEventListener('DOMContentLoaded', function () {
+    var accessToken = getCookie('accessToken');
+    //var refreshToken = getCookie('refreshToken');
+
+    const postData = {
+        title,
+        content,
+        comment,
+        color,
+        date,
+    };
+
+    if (accessToken) {
+        fetch('https://cors-anywhere.herokuapp.com/' + API_SERVER_DOMAIN + '/posts/posts', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                Authorization: 'Bearer ' + accessToken,
+            },
+            body: JSON.stringify(postData),
+        })
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error('Failed to publish post');
+                }
+                return response.json();
+            })
+            .then((data) => {
+                window.location.href = data.url;
+            })
+            .catch((error) => {
+                console.error('Failed to publish post:', error);
+                /*
+                if (refreshToken) {
+                    getAccessTokenWithRefreshToken(accessToken, refreshToken)
+                        .then((newAccessToken) => {
+                            fetch('https://cors-anywhere.herokuapp.com/' + API_SERVER_DOMAIN + '/publish', {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                    Authorization: 'Bearer ' + newAccessToken,
+                                },
+                                body: JSON.stringify(postData),
+                            })
+                                .then((response) => {
+                                    if (!response.ok) {
+                                        throw new Error('Failed to publish post');
+                                    }
+                                    return response.json();
+                                })
+                                .then((data) => {
+                                    window.location.href = data.url;
+                                })
+                                .catch((error) => {
+                                    console.error('Failed to publish post after refreshing token:', error);
+                                    location.href = 'login.html'; // Redirect to login page
+                                });
+                        })
+                        .catch((error) => {
+                            console.error('Failed to refresh access token:', error);
+                            location.href = 'login.html'; // Redirect to login page
+                        });
+                } else {
+                    location.href = 'login.html'; // Redirect to login page
+                }*/
+            });
+    } else {
+        location.href = 'login.html'; // Redirect to login page
+    }
+});
+
 document.querySelectorAll('.write_color_name').forEach((label) => {
     label.addEventListener('click', function () {
         var writeBackground = document.getElementById('write_input_div');
@@ -75,10 +146,7 @@ document.getElementById('write_cancel').addEventListener('click', function () {
 
     if (userConfirmed) {
         // 사용자가 '확인'을 클릭했을 때 페이지를 나갑니다.
-        history.back(); // 여기에 취소 후 이동할 페이지 URL을 넣으세요.
-    } else {
-        // 사용자가 '취소'를 클릭했을 때 페이지를 유지합니다.
-        // 아무 작업도 하지 않습니다.
+        history.back();
     }
 });
 
@@ -96,77 +164,7 @@ function validateForm(event) {
         return false;
     }
 
-    /*
-    const postData = {
-        title,
-        date,
-        color,
-        content,
-        comment,
-    };
-
-    var accessToken = getCookie('accessToken');
-    var refreshToken = getCookie('refreshToken');
-
-    if (accessToken) {
-        fetch(API_SERVER_DOMAIN + '/posts', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': 'Bearer ' + accessToken,
-            },
-            body: JSON.stringify(postData),
-        })
-            .then((response) => {
-                if (!response.ok) {
-                    throw new Error('Failed to publish post');
-                }
-                return response.json();
-            })
-            .then((data) => {
-                window.location.href = data.url;
-            })
-            .catch((error) => {
-                console.error('Failed to publish post:', error);
-                if (refreshToken) {
-                    getAccessTokenWithRefreshToken(accessToken, refreshToken)
-                        .then((newAccessToken) => {
-                            fetch(API_SERVER_DOMAIN + '/publish', {
-                                method: 'POST',
-                                headers: {
-                                    'Content-Type': 'application/json',
-                                    'Authorization': 'Bearer ' + newAccessToken,
-                                },
-                                body: JSON.stringify(postData),
-                            })
-                                .then((response) => {
-                                    if (!response.ok) {
-                                        throw new Error('Failed to publish post');
-                                    }
-                                    return response.json();
-                                })
-                                .then((data) => {
-                                    window.location.href = data.url;
-                                })
-                                .catch((error) => {
-                                    console.error('Failed to publish post after refreshing token:', error);
-                                    location.href = 'login.html'; // Redirect to login page
-                                });
-                        })
-                        .catch((error) => {
-                            console.error('Failed to refresh access token:', error);
-                            location.href = 'login.html'; // Redirect to login page
-                        });
-                } else {
-                    location.href = 'login.html'; // Redirect to login page
-                }
-            });
-    } else {
-        location.href = 'login.html'; // Redirect to login page
-    }
-    */
-
     // 모든 필드가 채워졌을 때 폼 제출
-    window.location.href = './search.html';
+    //window.location.href = './search.html';
     return true;
 }

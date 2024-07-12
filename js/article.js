@@ -34,7 +34,7 @@ const data = [
         created_at: '2024-07-07T21:04:09.597236Z',
         comments_num: 1,
         user: {
-            id: 5,
+            id: 6,
             nickname: '수뭉이',
             email: 'asdf@gmail.com',
             gender: '남자',
@@ -57,7 +57,7 @@ const data = [
         created_at: '2024-07-07T21:04:09.597236Z',
         comments_num: 1,
         user: {
-            id: 5,
+            id: 7,
             nickname: '춘식이',
             email: 'asdf@gmail.com',
             gender: '남자',
@@ -80,7 +80,7 @@ const data = [
         created_at: '2024-07-07T21:04:09.597236Z',
         comments_num: 1,
         user: {
-            id: 5,
+            id: 8,
             nickname: '고양이',
             email: 'asdf@gmail.com',
             gender: '남자',
@@ -103,7 +103,7 @@ const data = [
         created_at: '2024-07-07T21:04:09.597236Z',
         comments_num: 1,
         user: {
-            id: 5,
+            id: 9,
             nickname: '햄스터',
             email: 'asdf@gmail.com',
             gender: '남자',
@@ -126,7 +126,7 @@ const data = [
         created_at: '2024-07-07T21:04:09.597236Z',
         comments_num: 1,
         user: {
-            id: 5,
+            id: 10,
             nickname: '남자',
             email: 'asdf@gmail.com',
             gender: '남자',
@@ -152,20 +152,21 @@ function getColorName(colorCode) {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    const selectedID = localStorage.getItem('id');
+    const selectedID = localStorage.getItem('post_id');
     const selectedData = data.find((data) => data.id == selectedID);
+    localStorage.setItem('user_id', selectedData.user.id);
     createcard(selectedData);
-    localStorage.removeItem('id');
 });
 
 function createcard(article) {
     const container = document.querySelector('.article_div');
 
-    console.log(article.color);
     container.style.backgroundColor = article.color;
 
     container.innerHTML = `
-    <div class="article_unit">[${getColorName(article.color)}] 주간 주간 ${article.user.nickname} ${
+    <div class="article_unit">[${getColorName(
+        article.color
+    )}] 주간&nbsp<a class="article_username" href="./userpage.html">${article.user.nickname}</a>&nbsp${
         article.user.posts_num
     }호</div>
     <div class="article_title">${article.title}</div>

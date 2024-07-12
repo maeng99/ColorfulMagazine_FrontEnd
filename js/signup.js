@@ -1,3 +1,90 @@
+const API_SERVER_DOMAIN = 'http://3.39.171.235:8000/';
+
+async function submitSignupForm(event) {
+    event.preventDefault(); // 기본 제출 동작을 막습니다.
+
+    // 사용자가 입력한 이메일과 비밀번호를 가져옵니다.
+    var id = document.getElementById('username').value;
+    var nickname = document.getElementById('nickname').value;
+
+    try {
+        // 아이디와 닉네임의 존재 여부를 확인합니다.
+        let checkResponse = await fetch(API_SERVER_DOMAIN + 'check', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                id: id,
+                nickname: nickname,
+            }),
+        });
+
+        let checkData = await checkResponse.json();
+
+        if (checkData.exists) {
+            // 아이디나 닉네임이 존재할 경우
+            alert('아이디나 닉네임이 이미 사용중입니다.');
+            return;
+        }
+
+        // 서버에 회원가입 요청을 보냅니다.
+        let signupResponse = await fetch(API_SERVER_DOMAIN + 'signup', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                id: id,
+                nickname: nickname,
+            }),
+        });
+
+        if (!signupResponse.ok) {
+            throw new Error('Signup failed');
+        }
+
+        let signupData = await signupResponse.json();
+        var accessToken = signupData.accessToken;
+        var refreshToken = signupData.refreshToken;
+
+        // 토큰을 쿠키에 저장합니다.
+        setCookie('accessToken', accessToken, 1);
+        setCookie('refreshToken', refreshToken, 1);
+
+        // 회원가입이 성공하면 다음 동작을 수행합니다.
+        window.location.href = './login.html';
+    } catch (error) {
+        alert('회원가입 중 오류가 발생했습니다.', error);
+    }
+}
+
+document.querySelector('form').addEventListener('submit', submitSignupForm);
+
+function setCookie(name, value, days) {
+    var expires = '';
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+        expires = '; expires=' + date.toUTCString();
+    }
+    document.cookie = name + '=' + value + expires + '; path=/';
+}
+
+function getCookie(name) {
+    var nameEQ = name + '=';
+    var cookies = document.cookie.split(';');
+    for (var i = 0; i < cookies.length; i++) {
+        var cookie = cookies[i];
+        while (cookie.charAt(0) === ' ') {
+            cookie = cookie.substring(1, cookie.length);
+        }
+        if (cookie.indexOf(nameEQ) === 0) {
+            return cookie.substring(nameEQ.length, cookie.length);
+        }
+    }
+    return null;
+}
 
 let elInputUsername = document.querySelector('#username'); // input#username
 let availUsername = document.querySelector('.avail_username'); // div.success-message.hide
@@ -126,7 +213,6 @@ elInputPassword.onkeyup = function () {
             nonePassword.classList.add('hide');
             wrongPassword.classList.remove('hide'); // 실패 메시지가 보여야 함
         }
-
     }
     // 값을 입력하지 않은 경우 (지웠을 때)
     // 모든 메시지를 가린다.
