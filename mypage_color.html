@@ -22,18 +22,7 @@
 
         <div class="mypage_profile">
             <div class="mypage_profile_img_text">
-                <div>
-                    <img src="./img/profile.png" class="mypage_profile_img" />
-                </div>
-                <div class="mypage_profile_text">
-                    <span class="mypage_profile_nickname">아기사자</span><br /><br />
-                    <button type="button" class="mypage_follower_btn" onclick="location.href='follower_list.html'">
-                        팔로워 <span>00</span>명</button
-                    ><br />
-                    <button type="button" class="mypage_following_btn" onclick="location.href='following_list.html'">
-                        팔로잉 <span>00</span>명
-                    </button>
-                </div>
+                <!--여기에 마이프로필 정보 입력-->
             </div>
             <div class="mypage_main_btn_div">
                 <div class="mypage_main_btn_div_1">
@@ -45,12 +34,7 @@
                     </button>
                 </div>
                 <div class="mypage_main_btn_div_1">
-                    <button
-                        type="button"
-                        id="mypage_color_btn"
-                        class="mypage_main_btn"
-                        onclick="location.href='mypage_color.html'"
-                    >
+                    <button type="button" class="mypage_main_btn" onclick="location.href='mypage_color.html'">
                         <b>나의 색깔들</b>
                     </button>
                     <button type="button" class="mypage_main_btn" onclick="location.href='mypage_article.html'">
@@ -65,6 +49,7 @@
         <div id="mypage_piechart"></div>
 
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script src="./js/mypage.js"></script>
         <script src="./js/mypage_color.js"></script>
     </body>
 </html>

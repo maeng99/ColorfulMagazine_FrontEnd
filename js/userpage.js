@@ -34,7 +34,7 @@ const post_data = [
         created_at: '2024-07-07T21:04:09.597236Z',
         comments_num: 1,
         user: {
-            id: 5,
+            id: 6,
             nickname: '수뭉이',
             email: 'asdf@gmail.com',
             gender: '남자',
@@ -57,7 +57,7 @@ const post_data = [
         created_at: '2024-07-07T21:04:09.597236Z',
         comments_num: 1,
         user: {
-            id: 5,
+            id: 7,
             nickname: '춘식이',
             email: 'asdf@gmail.com',
             gender: '남자',
@@ -145,7 +145,7 @@ function getAccessTokenWithRefreshToken(accessToken, refreshToken) {
 }
 
 function getUserInfo() {
-    return fetch(API_SERVER_DOMAIN + '/users', {
+    return fetch(API_SERVER_DOMAIN + '/users/profile', {
         method: 'GET',
     }).then((response) => {
         if (!response.ok) {
@@ -212,32 +212,18 @@ document.addEventListener('DOMContentLoaded', function () {
     }*/
 
     const selectedUser = localStorage.getItem('user_id');
-    const selectedColor = localStorage.getItem('selectedColor');
-
-    if (selectedColor) {
-        const colorMap = {
-            빨강: 'red',
-            주황: 'orange',
-            노랑: 'yellow',
-            초록: 'green',
-            파랑: 'blue',
-            보라: 'purple',
-        };
-        const colorValue = colorMap[selectedColor];
-        if (colorValue) {
-            document.getElementById(colorValue).checked = true;
-        }
-        filteredData = post_data.filter((article) => article.color === getColorCode(colorValue));
-        localStorage.removeItem('selectedColor');
-    }
+    const selectedUserData = ex_data.find((data) => data.id == selectedUser);
 
     colorFilters.forEach((filter) => {
         filter.addEventListener('change', function () {
             const selectedColor = this.value;
+
             if (selectedColor === 'all') {
-                filteredData = post_data;
+                userFilteredData = post_data.filter((article) => article.user.id === selectedUser);
             } else {
-                filteredData = post_data.filter((article) => article.color === getColorCode(selectedColor));
+                userFilteredData = post_data.filter(
+                    (article) => article.user.id === selectedUser && article.color === getColorCode(selectedColor)
+                );
             }
             currentPage = 1;
             updatePagination();
@@ -264,7 +250,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    createcard(selectedUser);
+    createcard(selectedUserData);
     updatePagination();
     displayArticles(currentPage);
 });
@@ -298,7 +284,7 @@ function updatePagination() {
 function displayArticles(page) {
     const startIndex = (page - 1) * articlesPerPage;
     const endIndex = startIndex + articlesPerPage;
-    const articlesToDisplay = filteredData.slice(startIndex, endIndex);
+    const articlesToDisplay = userFilteredData.slice(startIndex, endIndex);
 
     const container = document.getElementById('mypage_article_div');
     container.innerHTML = '';
@@ -338,30 +324,86 @@ const articlesPerPage = 5;
 const maxVisiblePages = 5;
 let currentPage = 1;
 let data = []; // Initialize data as an empty array
-let filteredData = post_data; // Initialize with all data
-const totalPages = () => Math.ceil(filteredData.length / articlesPerPage);
+let userFilteredData = []; // Initialize as an empty array
+const totalPages = () => Math.ceil(userFilteredData.length / articlesPerPage);
 
-document.getElementById('sumung_follow_state').addEventListener('click', function () {
-    if (this.innerText === '팔로우 취소') {
+document.addEventListener('DOMContentLoaded', function () {
+    const tabsContainer = document.querySelector('.bottomTabs');
+    const colorFilters = document.querySelectorAll('input[name="color"]');
+
+    const selectedUser = localStorage.getItem('user_id');
+    const selectedUserData = ex_data.find((data) => data.id == selectedUser);
+
+    // Initialize userFilteredData after DOM is loaded
+    userFilteredData = post_data.filter((article) => article.user.id == selectedUser);
+    console.log(userFilteredData);
+
+    colorFilters.forEach((filter) => {
+        filter.addEventListener('change', function () {
+            const selectedColor = this.value;
+            if (selectedColor === 'all') {
+                userFilteredData = post_data.filter((article) => article.user.id == selectedUser);
+            } else {
+                userFilteredData = post_data.filter(
+                    (article) => article.user.id == selectedUser && article.color === getColorCode(selectedColor)
+                );
+            }
+            currentPage = 1;
+            updatePagination();
+            displayArticles(currentPage);
+        });
+    });
+
+    tabsContainer.addEventListener('click', function (event) {
+        const target = event.target;
+        if (target.classList.contains('bottomTab')) {
+            if (target.innerText === '<<') {
+                currentPage = 1;
+            } else if (target.innerText === '<') {
+                if (currentPage > 1) currentPage--;
+            } else if (target.innerText === '>') {
+                if (currentPage < totalPages()) currentPage++;
+            } else if (target.innerText === '>>') {
+                currentPage = totalPages();
+            } else {
+                currentPage = parseInt(target.innerText);
+            }
+            updatePagination();
+            displayArticles(currentPage);
+        }
+    });
+
+    createcard(selectedUserData);
+    updatePagination();
+    displayArticles(currentPage);
+});
+
+function isFollow() {
+    var follow_btn = document.querySelector('#follow_state');
+    if (follow_btn.innerText === '팔로우 취소') {
         if (confirm('정말 취소하시겠습니까?')) {
             alert('취소되었습니다.');
-            this.innerText = '팔로우';
-            this.style.backgroundColor = '#bdc6dc';
+            follow_btn.innerText = '팔로우';
+            follow_btn.style.backgroundColor = '#bdc6dc';
         } else {
         }
-    } else if (this.innerText === '팔로우') {
-        this.innerText = '팔로우 취소';
-        this.style.backgroundColor = '#fff';
+    } else if (follow_btn.innerText === '팔로우') {
+        follow_btn.innerText = '팔로우 취소';
+        follow_btn.style.backgroundColor = '#fff';
     }
-});
+}
 
 function createcard(user) {
     const profile = document.querySelector('.mypage_profile');
+    var img_src = './img/profile.png';
+    if (user.profile_image !== null) {
+        img_src = user.profile_image;
+    }
 
     profile.innerHTML = `
         <div class="mypage_profile_img_text">
             <div>
-                <img src="./img/profile.png" class="mypage_profile_img" />
+                <img src="${img_src}" class="mypage_profile_img" />
             </div>
             <div class="mypage_profile_text">
                 <span class="mypage_profile_nickname">${user.nickname}</span><br /><br />
@@ -373,12 +415,14 @@ function createcard(user) {
                 </button>
             </div>
         </div>
+
         <div class="mypage_main_btn_div">
             <button
                 type="button"
-                id="sumung_follow_state"
+                id="follow_state"
                 class="mypage_main_btn follow"
                 style="width: 50%; padding: 10px; background-color: #bdc6dc"
+                onclick="isFollow()"
             >
                 팔로우
             </button>

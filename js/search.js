@@ -1,191 +1,4 @@
-const ex_data = [
-    {
-        id: 1,
-        title: '색깔이 우리에게 주는 힘',
-        content:
-            '오늘은 아침에 일어나서 운동을 갔다. 산책을 하며 시원한 바람을 느끼고, 주변의 아름다운 자연경관을 감상했다. 점심에는 친구들과 함께 맛있는 피자를 먹었고, 오랜만에 만나서 즐거운 시간을 보냈다. 오후에는 카페에 가서 책을 읽으며 시간을 보냈고, 저녁에는 가족과 함께 저녁식사를 하며 하루를 마무리했다. 오늘 하루도 평화롭고 행복하게 보낸 것 같다.',
-        comment: '삐빅',
-        color: '#BBCBDE',
-        image: null,
-        date: '2024-07-05',
-        created_at: '2024-07-07T21:04:09.597236Z',
-        comments_num: 1,
-        user: {
-            id: 5,
-            nickname: '아기사자',
-            email: 'asdf@gmail.com',
-            gender: '남자',
-            age: 47,
-            profile_image: null,
-            followers_count: 0,
-            following_count: 0,
-            posts_num: 22,
-        },
-    },
-    {
-        id: 55,
-        title: '비가 오는 날',
-        content:
-            '오늘은 아침에 일어나서 운동을 갔다. 산책을 하며 시원한 바람을 느끼고, 주변의 아름다운 자연경관을 감상했다. 점심에는 친구들과 함께 맛있는 피자를 먹었고, 오랜만에 만나서 즐거운 시간을 보냈다. 오후에는 카페에 가서 책을 읽으며 시간을 보냈고, 저녁에는 가족과 함께 저녁식사를 하며 하루를 마무리했다. 오늘 하루도 평화롭고 행복하게 보낸 것 같다.',
-        comment: '삐빅',
-        color: '#D5DFD1',
-        image: null,
-        date: '2024-07-05',
-        created_at: '2024-07-07T21:04:09.597236Z',
-        comments_num: 1,
-        user: {
-            id: 5,
-            nickname: '수뭉이',
-            email: 'asdf@gmail.com',
-            gender: '남자',
-            age: 47,
-            profile_image: null,
-            followers_count: 0,
-            following_count: 0,
-            posts_num: 22,
-        },
-    },
-    {
-        id: 30,
-        title: '지피티의 하루',
-        content:
-            '오늘은 아침에 일어나서 운동을 갔다. 산책을 하며 시원한 바람을 느끼고, 주변의 아름다운 자연경관을 감상했다. 점심에는 친구들과 함께 맛있는 피자를 먹었고, 오랜만에 만나서 즐거운 시간을 보냈다. 오후에는 카페에 가서 책을 읽으며 시간을 보냈고, 저녁에는 가족과 함께 저녁식사를 하며 하루를 마무리했다. 오늘 하루도 평화롭고 행복하게 보낸 것 같다.',
-        comment: '삐빅',
-        color: '#FCF4C5',
-        image: null,
-        date: '2024-07-05',
-        created_at: '2024-07-07T21:04:09.597236Z',
-        comments_num: 1,
-        user: {
-            id: 5,
-            nickname: '춘식이',
-            email: 'asdf@gmail.com',
-            gender: '남자',
-            age: 47,
-            profile_image: null,
-            followers_count: 0,
-            following_count: 0,
-            posts_num: 2,
-        },
-    },
-    {
-        id: 400,
-        title: '지피티의 하루',
-        content:
-            '오늘은 아침에 일어나서 운동을 갔다. 산책을 하며 시원한 바람을 느끼고, 주변의 아름다운 자연경관을 감상했다. 점심에는 친구들과 함께 맛있는 피자를 먹었고, 오랜만에 만나서 즐거운 시간을 보냈다. 오후에는 카페에 가서 책을 읽으며 시간을 보냈고, 저녁에는 가족과 함께 저녁식사를 하며 하루를 마무리했다. 오늘 하루도 평화롭고 행복하게 보낸 것 같다.',
-        comment: '삐빅',
-        color: '#EEC8C8',
-        image: null,
-        date: '2024-07-05',
-        created_at: '2024-07-07T21:04:09.597236Z',
-        comments_num: 1,
-        user: {
-            id: 5,
-            nickname: '고양이',
-            email: 'asdf@gmail.com',
-            gender: '남자',
-            age: 47,
-            profile_image: null,
-            followers_count: 0,
-            following_count: 0,
-            posts_num: 2,
-        },
-    },
-    {
-        id: 200,
-        title: '지피티의 하루',
-        content:
-            '오늘은 아침에 일어나서 운동을 갔다. 산책을 하며 시원한 바람을 느끼고, 주변의 아름다운 자연경관을 감상했다. 점심에는 친구들과 함께 맛있는 피자를 먹었고, 오랜만에 만나서 즐거운 시간을 보냈다. 오후에는 카페에 가서 책을 읽으며 시간을 보냈고, 저녁에는 가족과 함께 저녁식사를 하며 하루를 마무리했다. 오늘 하루도 평화롭고 행복하게 보낸 것 같다.',
-        comment: '삐빅',
-        color: '#FFE5CA',
-        image: null,
-        date: '2024-07-05',
-        created_at: '2024-07-07T21:04:09.597236Z',
-        comments_num: 1,
-        user: {
-            id: 5,
-            nickname: '햄스터',
-            email: 'asdf@gmail.com',
-            gender: '남자',
-            age: 47,
-            profile_image: null,
-            followers_count: 0,
-            following_count: 0,
-            posts_num: 2,
-        },
-    },
-    {
-        id: 10000,
-        title: '지피티의 하루',
-        content:
-            '오늘은 아침에 일어나서 운동을 갔다. 산책을 하며 시원한 바람을 느끼고, 주변의 아름다운 자연경관을 감상했다. 점심에는 친구들과 함께 맛있는 피자를 먹었고, 오랜만에 만나서 즐거운 시간을 보냈다. 오후에는 카페에 가서 책을 읽으며 시간을 보냈고, 저녁에는 가족과 함께 저녁식사를 하며 하루를 마무리했다. 오늘 하루도 평화롭고 행복하게 보낸 것 같다.',
-        comment: '삐빅',
-        color: '#FCF4C5',
-        image: null,
-        date: '2024-07-05',
-        created_at: '2024-07-07T21:04:09.597236Z',
-        comments_num: 1,
-        user: {
-            id: 5,
-            nickname: '남자',
-            email: 'asdf@gmail.com',
-            gender: '남자',
-            age: 47,
-            profile_image: null,
-            followers_count: 0,
-            following_count: 0,
-            posts_num: 2,
-        },
-    },
-    {
-        id: 200,
-        title: '지피티의 하루',
-        content:
-            '오늘은 아침에 일어나서 운동을 갔다. 산책을 하며 시원한 바람을 느끼고, 주변의 아름다운 자연경관을 감상했다. 점심에는 친구들과 함께 맛있는 피자를 먹었고, 오랜만에 만나서 즐거운 시간을 보냈다. 오후에는 카페에 가서 책을 읽으며 시간을 보냈고, 저녁에는 가족과 함께 저녁식사를 하며 하루를 마무리했다. 오늘 하루도 평화롭고 행복하게 보낸 것 같다.',
-        comment: '삐빅',
-        color: '#FFE5CA',
-        image: null,
-        date: '2024-07-05',
-        created_at: '2024-07-07T21:04:09.597236Z',
-        comments_num: 1,
-        user: {
-            id: 5,
-            nickname: '햄스터',
-            email: 'asdf@gmail.com',
-            gender: '남자',
-            age: 47,
-            profile_image: null,
-            followers_count: 0,
-            following_count: 0,
-            posts_num: 2,
-        },
-    },
-    {
-        id: 10000,
-        title: '지피티의 하루',
-        content:
-            '오늘은 아침에 일어나서 운동을 갔다. 산책을 하며 시원한 바람을 느끼고, 주변의 아름다운 자연경관을 감상했다. 점심에는 친구들과 함께 맛있는 피자를 먹었고, 오랜만에 만나서 즐거운 시간을 보냈다. 오후에는 카페에 가서 책을 읽으며 시간을 보냈고, 저녁에는 가족과 함께 저녁식사를 하며 하루를 마무리했다. 오늘 하루도 평화롭고 행복하게 보낸 것 같다.',
-        comment: '삐빅',
-        color: '#FCF4C5',
-        image: null,
-        date: '2024-07-05',
-        created_at: '2024-07-07T21:04:09.597236Z',
-        comments_num: 1,
-        user: {
-            id: 5,
-            nickname: '남자',
-            email: 'asdf@gmail.com',
-            gender: '남자',
-            age: 47,
-            profile_image: null,
-            followers_count: 0,
-            following_count: 0,
-            posts_num: 2,
-        },
-    },
-];
-
-var API_SERVER_DOMAIN = '';
+var API_SERVER_DOMAIN = 'http://3.39.171.235:8000/';
 
 function getCookie(name) {
     var nameEQ = name + '=';
@@ -202,14 +15,13 @@ function getCookie(name) {
     return null;
 }
 
-function getAccessTokenWithRefreshToken(accessToken, refreshToken) {
-    return fetch(API_SERVER_DOMAIN + '/auth/reissue', {
+function getAccessTokenWithRefreshToken(refreshToken) {
+    return fetch(API_SERVER_DOMAIN + 'users/refresh', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-            accessToken: accessToken,
             refreshToken: refreshToken,
         }),
     })
@@ -224,12 +36,10 @@ function getAccessTokenWithRefreshToken(accessToken, refreshToken) {
         });
 }
 
-function getPostInfo(accessToken) {
+function getPostInfo() {
     return fetch(API_SERVER_DOMAIN + '/posts/posts', {
         method: 'GET',
-        headers: {
-            Authorization: 'Bearer ' + accessToken,
-        },
+        header: {},
     }).then((response) => {
         if (!response.ok) {
             throw new Error('Failed to fetch posts');
@@ -238,16 +48,22 @@ function getPostInfo(accessToken) {
     });
 }
 
+const articlesPerPage = 6;
+const maxVisiblePages = 5;
+let currentPage = 1;
+let data = []; // Initialize data as an empty array
+let filteredData = data; // Initialize with all data
+const totalPages = () => Math.ceil(filteredData.length / articlesPerPage);
+
 document.addEventListener('DOMContentLoaded', function () {
     const tabsContainer = document.querySelector('.bottomTabs');
     const colorFilters = document.querySelectorAll('input[name="color"]');
 
-    /*
     var accessToken = getCookie('accessToken');
     var refreshToken = getCookie('refreshToken');
-    
+
     if (accessToken) {
-        getPostInfo(accessToken)
+        getPostInfo()
             .then((data) => {
                 filteredData = data; // Initialize filteredData with fetched data
                 updatePagination();
@@ -256,7 +72,7 @@ document.addEventListener('DOMContentLoaded', function () {
             .catch((error) => {
                 console.error('Failed to fetch posts:', error);
                 if (refreshToken) {
-                    getAccessTokenWithRefreshToken(accessToken, refreshToken)
+                    getAccessTokenWithRefreshToken(refreshToken)
                         .then((newAccessToken) => {
                             getPostInfo(newAccessToken)
                                 .then((data) => {
@@ -279,16 +95,17 @@ document.addEventListener('DOMContentLoaded', function () {
             });
     } else {
         location.href = 'login.html'; // Redirect to login page
-    }*/
+    }
 
     colorFilters.forEach((filter) => {
         filter.addEventListener('change', function () {
             const selectedColor = this.value;
             if (selectedColor === 'all') {
-                filteredData = ex_data;
+                filteredData = data;
             } else {
-                filteredData = ex_data.filter((article) => article.color === getColorCode(selectedColor));
+                filteredData = data.filter((article) => article.color === getColorKorfromEng(selectedColor));
             }
+            console.log(filteredData);
             currentPage = 1;
             updatePagination();
             displayArticles(currentPage);
@@ -355,7 +172,8 @@ function displayArticles(page) {
     articlesToDisplay.forEach((article) => {
         const articleDiv = document.createElement('div');
         articleDiv.classList.add('search_article');
-        articleDiv.style.backgroundColor = article.color;
+
+        articleDiv.style.backgroundColor = getColorCodefromKor(article.color);
 
         articleDiv.setAttribute('onclick', `viewArticle(${article.id})`);
         articleDiv.innerHTML = `
@@ -371,21 +189,26 @@ function viewArticle(id) {
     location.href = `./article.html`;
 }
 
-function getColorCode(colorName) {
+function getColorCodefromKor(colorName) {
     const colorMap = {
-        red: '#EEC8C8',
-        orange: '#FFE5CA',
-        yellow: '#FCF4C5',
-        green: '#D5DFD1',
-        blue: '#BBCBDE',
-        purple: '#D2C0CE',
+        빨강: '#EEC8C8',
+        주황: '#FFE5CA',
+        노랑: '#FCF4C5',
+        초록: '#D5DFD1',
+        파랑: '#BBCBDE',
+        보라: '#D2C0CE',
     };
     return colorMap[colorName];
 }
 
-const articlesPerPage = 6;
-const maxVisiblePages = 5;
-let currentPage = 1;
-let data = []; // Initialize data as an empty array
-let filteredData = ex_data; // Initialize with all data
-const totalPages = () => Math.ceil(filteredData.length / articlesPerPage);
+function getColorKorfromEng(colorName) {
+    const colorMap = {
+        red: '빨강',
+        orange: '주황',
+        yellow: '노랑',
+        green: '초록',
+        blue: '파랑',
+        purple: '보라',
+    };
+    return colorMap[colorName];
+}

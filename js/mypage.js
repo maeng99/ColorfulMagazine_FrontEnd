@@ -1,4 +1,16 @@
-var API_SERVER_DOMAIN = 'https://likelionshop.shop';
+const my_data = {
+    id: 5,
+    nickname: '유세리',
+    email: 'asdf@gmail.com',
+    gender: '여자',
+    age: 44,
+    profile_image: null,
+    followers_count: 520,
+    following_count: 0,
+    posts_num: 52,
+};
+
+var API_SERVER_DOMAIN = '';
 
 function getCookie(name) {
     var nameEQ = name + '=';
@@ -16,7 +28,7 @@ function getCookie(name) {
 }
 
 function getAccessTokenWithRefreshToken(accessToken, refreshToken) {
-    return fetch(API_SERVER_DOMAIN + '/auth/reissue', {
+    return fetch(API_SERVER_DOMAIN + 'users/refresh/', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -37,8 +49,8 @@ function getAccessTokenWithRefreshToken(accessToken, refreshToken) {
         });
 }
 
-function getUserInfo(accessToken) {
-    return fetch(API_SERVER_DOMAIN + '/user', {
+function getMyInfo(accessToken) {
+    return fetch(API_SERVER_DOMAIN + 'users/my', {
         method: 'GET',
         headers: {
             Authorization: 'Bearer ' + accessToken,
@@ -51,64 +63,68 @@ function getUserInfo(accessToken) {
             return response.json();
         })
         .then((data) => {
-            return data.name;
+            return data.JSON();
         });
 }
 
-function getOrderList(accessToken) {
-    return fetch(API_SERVER_DOMAIN + '/order/orders', {
-        method: 'GET',
-        headers: {
-            Authorization: 'Bearer ' + accessToken,
-        },
-    }).then((response) => {
-        if (!response.ok) {
-            throw new Error('Failed to fetch order list');
-        }
-        return response.json();
-    });
-}
-
 document.addEventListener('DOMContentLoaded', function () {
-    // 페이지 로드 시 실행되는 코드
-
-    // 쿠키에서 accessToken 가져오기
+    /*
     var accessToken = getCookie('accessToken');
     var refreshToken = getCookie('refreshToken');
-
+    
     if (accessToken) {
-        // accessToken이 있는 경우, 서버에 사용자 정보 요청
-        getUserInfo(accessToken)
-            .then((name) => {
-                var userNameSpans = document.querySelectorAll('.user-name');
-                userNameSpans.forEach((span) => {
-                    span.textContent = name;
-                    span.classList.remove('d-none');
-                });
+        getMyInfo(accessToken)
+            .then((data) => {
+                createcard(data);
             })
             .catch((error) => {
-                console.error('User info error:', error);
-                // accessToken이 만료된 경우 refresh 토큰을 사용하여 새로운 accessToken을 가져옴
+                console.error('Failed to fetch posts:', error);
                 if (refreshToken) {
                     getAccessTokenWithRefreshToken(accessToken, refreshToken)
                         .then((newAccessToken) => {
-                            // 새로운 accessToken으로 사용자 정보 요청
-                            getUserInfo(newAccessToken)
-                                .then((name) => {
-                                    var userNameSpans = document.querySelectorAll('.user-name');
-                                    userNameSpans.forEach((span) => {
-                                        span.textContent = name;
-                                        span.classList.remove('d-none');
-                                    });
+                            getMyInfo(newAccessToken)
+                                .then((data) => {
+                                    createcard(data);
                                 })
                                 .catch((error) => {
-                                    console.error('User info error after refreshing token:', error);
+                                    console.error('Failed to fetch posts after refreshing token:', error);
+                                    location.href = 'login.html'; // Redirect to login page
                                 });
                         })
                         .catch((error) => {
                             console.error('Failed to refresh access token:', error);
+                            location.href = 'login.html'; // Redirect to login page
                         });
+                } else {
+                    location.href = 'login.html'; // Redirect to login page
                 }
             });
-    }
+    } else {
+        location.href = 'login.html'; // Redirect to login page
+    }*/
+    console.log(my_data);
+    createcard(my_data);
 });
+
+function createcard(user) {
+    const profile = document.querySelector('.mypage_profile_img_text');
+    var img_src = './img/profile.png';
+    if (user.profile_image !== null) {
+        img_src = user.profile_image;
+    }
+
+    profile.innerHTML = `
+        <div>
+            <img src="${img_src}" class="mypage_profile_img" />
+        </div>
+        <div class="mypage_profile_text">
+            <span class="mypage_profile_nickname">${user.nickname}</span><br /><br />
+            <button type="button" class="mypage_follower_btn" onclick="location.href='follower_list.html'">
+                팔로워 <span>${user.followers_count}</span>명</button
+            ><br />
+            <button type="button" class="mypage_following_btn" onclick="location.href='following_list.html'">
+                팔로잉 <span>${user.following_count}</span>명
+            </button>
+        </div>
+        `;
+}

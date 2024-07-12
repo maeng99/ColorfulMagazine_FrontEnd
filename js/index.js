@@ -343,7 +343,7 @@ function displayFollowingArticles() {
 }
 
 function viewArticle(id) {
-    localStorage.setItem('id', id);
+    localStorage.setItem('post_id', id);
     location.href = `./article.html`;
 }
 

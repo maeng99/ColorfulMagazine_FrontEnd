@@ -57,12 +57,19 @@
         <form class="mypage_edit_form">
             <div>
                 <label for="nickname" class="mypage_edit_nickname">닉네임</label><br />
-                <input type="text" id="nickname" name="nickname" placeholder="  한글, 숫자 4-12자" required />
+                <input
+                    type="text"
+                    id="nickname"
+                    name="nickname"
+                    value="아기사자"
+                    placeholder="  한글, 숫자 4-12자"
+                    required
+                />
                 <div class="mypage_eidt_nickname_message">
                     <div class="success-message-nic hide">✅ 사용 가능한 닉네임입니다</div>
                     <div class="failure-message-nic hide">* 닉네임은 한글, 숫자 포함 4~12자이어야 합니다</div>
                     <div class="failure-message2-nic hide">* 한글 또는 숫자만 가능합니다</div>
-                  </div>
+                </div>
             </div>
             <div>
                 <label for="password" class="mypage_edit_password">비밀번호</label><br />
@@ -73,7 +80,9 @@
                     placeholder=" 영문, 숫자, 특수문자(@$!%*#?&)가 모두 들어간 8자 이상"
                     required
                 />
-                <div class="strongPassword-message hide">* 8글자 이상, 영문, 숫자, 특수문자(@$!%*#?&)를 모두 사용하세요</div>
+                <div class="strongPassword-message hide">
+                    * 8글자 이상, 영문, 숫자, 특수문자(@$!%*#?&)를 모두 사용하세요
+                </div>
             </div>
             <div>
                 <label for="repassword" class="mypage_edit_repassword">비밀번호 확인</label><br />
@@ -88,14 +97,8 @@
             </div>
             <div>
                 <div class="mypage_edit_age">나이</div>
-                <select class="mypage_edit_age_select" id="age">
+                <select class="mypage_edit_age_select" id="age" required>
                     <option disabled selected>나이 선택</option>
-                    <option value="20">20</option>
-                    <option value="20">21</option>
-                    <option value="20">22</option>
-                    <option value="20">23</option>
-                    <option value="20">24</option>
-                    <option value="20">25</option>
                 </select>
             </div>
             <div class="mypage_edit_form_submit_div">
