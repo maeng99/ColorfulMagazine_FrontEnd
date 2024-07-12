@@ -27,6 +27,14 @@ body {
     padding: 30px 0;
 }
 
+.article_username {
+    color: #000;
+    text-decoration-line: none;
+}
+.article_username:hover {
+    font-weight: 600;
+}
+
 .article_title {
     display: flex;
     justify-content: center;

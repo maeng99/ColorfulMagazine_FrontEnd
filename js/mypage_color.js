@@ -1,15 +1,119 @@
+var data = {
+    result: {
+        빨강: 11,
+        주황: 6,
+        노랑: 7,
+        초록: 4,
+        파랑: 9,
+        보라: 10,
+    },
+};
+
+var resultData = {};
+
 google.charts.load('current', { packages: ['corechart'] });
 google.charts.setOnLoadCallback(drawChart);
 
+var API_SERVER_DOMAIN = 'http://127.0.0.1:8000/';
+
+function getCookie(name) {
+    var nameEQ = name + '=';
+    var cookies = document.cookie.split(';');
+    for (var i = 0; i < cookies.length; i++) {
+        var cookie = cookies[i];
+        while (cookie.charAt(0) === ' ') {
+            cookie = cookie.substring(1, cookie.length);
+        }
+        if (cookie.indexOf(nameEQ) === 0) {
+            return cookie.substring(nameEQ.length, cookie.length);
+        }
+    }
+    return null;
+}
+
+function getAccessTokenWithRefreshToken(accessToken, refreshToken) {
+    return fetch(API_SERVER_DOMAIN + '/auth/reissue', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            accessToken: accessToken,
+            refreshToken: refreshToken,
+        }),
+    })
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error('Failed to refresh access token');
+            }
+            return response.json();
+        })
+        .then((data) => {
+            return data.accessToken;
+        });
+}
+
+function getPostInfo(accessToken) {
+    return fetch(API_SERVER_DOMAIN + '/posts/mycolors', {
+        method: 'GET',
+        headers: {
+            Authorization: 'Bearer ' + accessToken,
+        },
+    }).then((response) => {
+        if (!response.ok) {
+            throw new Error('Failed to fetch posts');
+        }
+        return response.json();
+    });
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    /*
+    var accessToken = getCookie('accessToken');
+    var refreshToken = getCookie('refreshToken');
+    
+    if (accessToken) {
+        getPostInfo(accessToken)
+            .then((data) => {
+                resultData = data;
+            })
+            .catch((error) => {
+                console.error('Failed to fetch posts:', error);
+                if (refreshToken) {
+                    getAccessTokenWithRefreshToken(accessToken, refreshToken)
+                        .then((newAccessToken) => {
+                            getPostInfo(newAccessToken)
+                                .then((data) => {
+                                    resultData = data;
+                                })
+                                .catch((error) => {
+                                    console.error('Failed to fetch posts after refreshing token:', error);
+                                    location.href = 'login.html'; // Redirect to login page
+                                });
+                        })
+                        .catch((error) => {
+                            console.error('Failed to refresh access token:', error);
+                            location.href = 'login.html'; // Redirect to login page
+                        });
+                } else {
+                    location.href = 'login.html'; // Redirect to login page
+                }
+            });
+    } else {
+        location.href = 'login.html'; // Redirect to login page
+    }*/
+    resultData = data;
+});
+
 function drawChart() {
-    var data = google.visualization.arrayToDataTable([
+    var colorData = google.visualization.arrayToDataTable([
         ['Color', 'Num of article'],
-        ['빨강', 11],
-        ['주황', 2],
-        ['노랑', 2],
-        ['초록', 2],
-        ['파랑', 7],
-        ['보라', 7],
+        ['빨강', resultData.result.빨강],
+        ['주황', resultData.result.주황],
+        ['노랑', resultData.result.노랑],
+        ['초록', resultData.result.초록],
+        ['파랑', resultData.result.파랑],
+        ['보라', resultData.result.보라],
     ]);
 
     var options = {
@@ -33,28 +137,12 @@ function drawChart() {
         chartContainer.addEventListener('dblclick', function (event) {
             var selectedItem = chart.getSelection()[0];
             if (selectedItem) {
-                var color = data.getValue(selectedItem.row, 0);
+                var color = colorData.getValue(selectedItem.row, 0);
                 localStorage.setItem('selectedColor', color);
                 window.location.href = 'mypage_article.html';
             }
         });
     });
 
-    chart.draw(data, options);
-}
-
-function handlePieSliceClick(color) {
-    var urlMap = {
-        빨강: 'mypage_article.html?setting=red',
-        주황: 'mypage_article.html?setting=orange',
-        노랑: 'mypage_article.html?setting=yellow',
-        초록: 'mypage_article.html?setting=green',
-        파랑: 'mypage_article.html?setting=blue',
-        보라: 'mypage_article.html?setting=purple',
-    };
-
-    var url = urlMap[color];
-    if (url) {
-        window.location.href = url;
-    }
+    chart.draw(colorData, options);
 }

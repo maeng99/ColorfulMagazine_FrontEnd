@@ -185,7 +185,7 @@ const ex_data = [
     },
 ];
 
-var API_SERVER_DOMAIN = '';
+var API_SERVER_DOMAIN = 'http://127.0.0.1:8000/';
 
 function getCookie(name) {
     var nameEQ = name + '=';
@@ -224,12 +224,23 @@ function getAccessTokenWithRefreshToken(accessToken, refreshToken) {
         });
 }
 
-function getNewPostInfo(accessToken) {
-    return fetch(API_SERVER_DOMAIN + '/posts/posts', {
+function getCurrentUserInfo(accessToken) {
+    return fetch(API_SERVER_DOMAIN + '/users/profile/', {
         method: 'GET',
         headers: {
             Authorization: 'Bearer ' + accessToken,
         },
+    }).then((response) => {
+        if (!response.ok) {
+            throw new Error('Failed to fetch user info');
+        }
+        return response.json();
+    });
+}
+
+function getNewPostInfo() {
+    return fetch(API_SERVER_DOMAIN + '/posts/posts', {
+        method: 'GET',
     }).then((response) => {
         if (!response.ok) {
             throw new Error('Failed to fetch posts');
@@ -258,9 +269,9 @@ document.addEventListener('DOMContentLoaded', function () {
     var refreshToken = getCookie('refreshToken');
     
     if (accessToken) {
-        getNewPostInfo(accessToken)
+        getNewPostInfo()
             .then((data) => {
-                displayArticles();
+                displayNewArticles();
             })
             .catch((error) => {
                 console.error('Failed to fetch posts:', error);
