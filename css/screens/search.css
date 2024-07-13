@@ -112,7 +112,7 @@ body {
 }
 
 .search_article_div {
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
 .search_article {
@@ -141,6 +141,5 @@ body {
 .info {
     display: flex;
     justify-content: center;
-    font-weight: bolder;
     font-size: smaller;
 }

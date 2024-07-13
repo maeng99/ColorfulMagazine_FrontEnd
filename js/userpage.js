@@ -233,9 +233,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const tabsContainer = document.querySelector('.bottomTabs');
     const colorFilters = document.querySelectorAll('input[name="color"]');
 
-    const selectedUser = localStorage.getItem('user_id');
-    const selectedUserData = data.find((data) => data.id == selectedUser);
-
     // Initialize userFilteredData after DOM is loaded
     userFilteredData = post_data.filter((article) => article.user.id == selectedUser);
     console.log(userFilteredData);
@@ -275,7 +272,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    createcard(selectedUserData);
     updatePagination();
     displayArticles(currentPage);
 });
@@ -296,6 +292,7 @@ function isFollow() {
 }
 
 function createcard(user) {
+    console.log(user);
     const profile = document.querySelector('.mypage_profile');
     var img_src = './img/profile.png';
     if (user.profile_image !== null) {

@@ -59,7 +59,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const tabsContainer = document.querySelector('.bottomTabs');
     const colorFilters = document.querySelectorAll('input[name="color"]');
     const infoContainer = document.getElementById('infoContainer');
-
+    infoContainer.textContent = `#열정 #행동 #사회성 #모험 #행복 #창의성 #균형 #성장 #평온 #지혜 #독창성 #변화`;
+    //name이 color인 input html요소들 다 선택
     var accessToken = getCookie('accessToken');
     var refreshToken = getCookie('refreshToken');
 
@@ -71,8 +72,47 @@ document.addEventListener('DOMContentLoaded', function () {
                 displayArticles(currentPage);
                 colorFilters.forEach((filter) => {
                     filter.addEventListener('change', function () {
+                        let infoText = '';
+                        switch (filter.value) {
+                            case 'all':
+                                infoText =
+                                    '#열정 #행동 #사회성 #모험 #행복 #창의성 #균형 #성장 #평온 #지혜 #독창성 #변화';
+                                textColor = 'black';
+
+                                break;
+                            case 'red':
+                                infoText = '#열정 #행동';
+                                textColor = '#D47C7C ';
+                                break;
+                            case 'orange':
+                                infoText = '#사회성 #모험';
+                                textColor = '#FCBF81  ';
+                                break;
+                            case 'yellow':
+                                infoText = '#행복 #창의성';
+                                textColor = 'rgba(209, 209, 0, 0.84) ';
+                                break;
+                            case 'green':
+                                infoText = '#균형#성장';
+                                textColor = '#9CB18E ';
+                                break;
+                            case 'blue':
+                                infoText = '#평온#지혜';
+                                textColor = '#5D83AF ';
+
+                                break;
+                            case 'purple':
+                                infoText = '#독창성 #변화';
+                                textColor = '#93698B ';
+                                break;
+                            default:
+                                infoText = '';
+                        }
+                        // infoContainer의 내용을 선택한 색상에 따라 업데이트합니다
+                        infoContainer.textContent = infoText;
+                        infoContainer.style.color = textColor;
+
                         const selectedColor = this.value;
-                        console.log(selectedColor);
                         if (selectedColor === 'all') {
                             filteredData = data;
                         } else {
@@ -154,7 +194,6 @@ document.addEventListener('DOMContentLoaded', function () {
                                             displayArticles(currentPage);
                                         });
                                     });
-                                    infoContainer.textContent = `#열정 #행동 #사회성 #모험 #행복 #창의성 #균형 #성장 #평온 #지혜 #독창성 #변화`;
                                 })
                                 .catch((error) => {
                                     console.error('Failed to fetch posts after refreshing token:', error);
