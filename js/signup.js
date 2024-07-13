@@ -4,12 +4,17 @@ async function submitSignupForm(event) {
     event.preventDefault(); // 기본 제출 동작을 막습니다.
 
     // 사용자가 입력한 이메일과 비밀번호를 가져옵니다.
-    var id = document.getElementById('username').value;
+    var password = document.getElementById('password').value;
+    var username = document.getElementById('username').value;
     var nickname = document.getElementById('nickname').value;
+    var gender = document.querySelector('input[name=gener]:checked').value;
+    var age = document.getElementById('age').value;
+
+    console.log(gender + age);
 
     try {
         // 아이디와 닉네임의 존재 여부를 확인합니다.
-        let checkResponse = await fetch(API_SERVER_DOMAIN + 'check', {
+        let checkResponse = await fetch(API_SERVER_DOMAIN + 'users/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

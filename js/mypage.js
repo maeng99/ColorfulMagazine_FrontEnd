@@ -1,12 +1,12 @@
 const my_data = {
     id: 5,
-    nickname: '유세리',
+    nickname: '아기사자',
     email: 'asdf@gmail.com',
     gender: '여자',
-    age: 44,
+    age: 26,
     profile_image: null,
-    followers_count: 520,
-    following_count: 0,
+    followers_count: 43,
+    following_count: 33,
     posts_num: 52,
 };
 
